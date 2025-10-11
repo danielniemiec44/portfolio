@@ -1,62 +1,145 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
+import { Container, Row, Col, Button, Tab, Nav } from "react-bootstrap";
+import AuthorCard from "../components/portfolio/AuthorCard";
+import ProjectCard from "../components/portfolio/ProjectCard";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
+  const authors = useMemo(
+    () => [
+      {
+        id: "autor1",
+        name: "Daniel Niemiec",
+        role: "Frontend Developer",
+        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupiam się na wydajności, dostępności i perfekcyjnych detalach UI.",
+        skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
+        projects: [
+          {
+            title: "Panel administracyjny Softify",
+            description: "Zaawansowany panel do zarządzania treściami z naciskiem na intuicyjność i szybkość.",
+            tags: ["React", "React Query", "Charts"],
+          },
+          {
+            title: "Landing page produktu",
+            description: "Wysokokonwertująca strona docelowa z A/B testami i animacjami.",
+            tags: ["SEO", "Animations", "A/B"],
+          },
+          {
+            title: "Komponenty UI Softify",
+            description: "Biblioteka spójnych komponentów zgodnych z design systemem marki.",
+            tags: ["UI Kit", "Design System", "Docs"],
+          },
+        ],
+      },
+      {
+        id: "autor2",
+        name: "Anna Kowalska",
+        role: "Full‑Stack Developer",
+        bio: "Buduję kompletne rozwiązania – od API po dopracowane interfejsy. Lubię prostotę, testy i czysty kod.",
+        skills: ["Node.js", "Express", "PostgreSQL", "React", "Tests"],
+        projects: [
+          {
+            title: "API analityczne",
+            description: "Skalowalny serwis zbierający i raportujący metryki w czasie rzeczywistym.",
+            tags: ["Node", "Streams", "Postgres"],
+          },
+          {
+            title: "Portal klienta",
+            description: "Aplikacja do obsługi klientów z modułami faktur i ticketów wsparcia.",
+            tags: ["Auth", "RBAC", "PDF"],
+          },
+          {
+            title: "Monitor wydajności",
+            description: "Dashboard prezentujący KPI i alerty, z naciskiem na czytelność.",
+            tags: ["Metrics", "Dashboards", "UX"],
+          },
+        ],
+      },
+    ],
+    [],
+  );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
-    </div>
+    <>
+      {/* Hero */}
+      <section className="softify-hero py-5 py-lg-6 position-relative overflow-hidden">
+        <Container className="text-center text-lg-start position-relative" style={{ zIndex: 1 }}>
+          <Row className="align-items-center g-4">
+            <Col lg={7} className="mx-auto mx-lg-0">
+              <h1 className="display-5 fw-extrabold mb-3 text-white">
+                Softify — Zespół kreatywnych twórców
+              </h1>
+              <p className="lead text-white-50 mb-4">
+                Portfolio dwóch autorów, którzy łączą estetykę i technologię, aby tworzyć dopracowane produkty cyfrowe.
+              </p>
+              <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
+                <Button variant="light" href="#projekty" className="px-4 py-2 fw-semibold">
+                  Zobacz projekty
+                </Button>
+                <Button variant="outline-light" href="#autor1" className="px-4 py-2 fw-semibold">
+                  Poznaj autorów
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <div className="softify-hero-blur" />
+      </section>
+
+      {/* Authors & Portfolio split */}
+      <section id="projekty" className="py-5">
+        <Container>
+          <div className="d-flex flex-column flex-lg-row align-items-start gap-4">
+            <div className="w-100 w-lg-25" style={{ maxWidth: 420 }}>
+              <h2 className="h4 fw-bold mb-3">Autorzy</h2>
+              <div className="d-grid gap-3">
+                <AuthorCard
+                  id={authors[0].id}
+                  name={authors[0].name}
+                  role={authors[0].role}
+                  bio={authors[0].bio}
+                  skills={authors[0].skills}
+                />
+                <AuthorCard
+                  id={authors[1].id}
+                  name={authors[1].name}
+                  role={authors[1].role}
+                  bio={authors[1].bio}
+                  skills={authors[1].skills}
+                />
+              </div>
+            </div>
+
+            <div className="flex-grow-1 w-100">
+              <Tab.Container defaultActiveKey={authors[0].id}>
+                <div className="d-flex align-items-center justify-content-between mb-3">
+                  <h2 className="h4 fw-bold mb-0">Portfolio</h2>
+                  <Nav variant="pills" className="softify-segment">
+                    {authors.map((a) => (
+                      <Nav.Item key={a.id}>
+                        <Nav.Link eventKey={a.id}>{a.name.split(" ")[0]}</Nav.Link>
+                      </Nav.Item>
+                    ))}
+                  </Nav>
+                </div>
+
+                <Tab.Content>
+                  {authors.map((a) => (
+                    <Tab.Pane key={a.id} eventKey={a.id} mountOnEnter unmountOnExit>
+                      <Row xs={1} md={2} lg={3} className="g-4">
+                        {a.projects.map((p) => (
+                          <Col key={p.title}>
+                            <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                          </Col>
+                        ))}
+                      </Row>
+                    </Tab.Pane>
+                  ))}
+                </Tab.Content>
+              </Tab.Container>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
