@@ -11,7 +11,7 @@ export default function Index() {
         id: "autor1",
         name: "Defective",
         role: "Frontend Developer",
-        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z u��yciem React oraz TypeScript. Skupia się na wydajności, dostępności i dopracowanym UI.",
+        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupia się na wydajności, dostępności i dopracowanym UI.",
         skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
         projects: [],
       },
@@ -166,13 +166,21 @@ export default function Index() {
               {authors.map((a) => (
                 <section key={a.id} className="mb-5">
                   <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
-                  <Row xs={1} md={2} lg={3} className="g-4">
-                    {a.projects.map((p) => (
-                      <Col key={p.title}>
-                        <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                  {a.projects.length === 1 ? (
+                    <Row className="g-4">
+                      <Col>
+                        <ProjectCard title={a.projects[0].title} description={a.projects[0].description} tags={a.projects[0].tags} />
                       </Col>
-                    ))}
-                  </Row>
+                    </Row>
+                  ) : (
+                    <Row xs={1} md={2} lg={3} className="g-4">
+                      {a.projects.map((p) => (
+                        <Col key={p.title}>
+                          <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                        </Col>
+                      ))}
+                    </Row>
+                  )}
 
                   {a.id === "autor2" && (
                     <div className="mt-4">
