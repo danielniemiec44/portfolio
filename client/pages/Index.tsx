@@ -183,9 +183,23 @@ export default function Index() {
                   )}
 
                   {a.id === "autor2" && (
-                    <div className="mt-4">
+                    <div className="mt-4" id="realizacja-galeria">
                       <h4 className="h6 fw-semibold mb-3">Galeria — Realizacja SI (zrzuty ekranu)</h4>
                       <Gallery images={deeRaveImages} columns={3} />
+                    </div>
+                  )}
+
+                  {a.id === "autor2" && a.projects.length === 1 && (
+                    <div className="mt-3">
+                      <Button
+                        variant="primary"
+                        onClick={() => {
+                          const el = document.getElementById("realizacja-galeria");
+                          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }}
+                      >
+                        Zobacz galerię projektu
+                      </Button>
                     </div>
                   )}
                 </section>
