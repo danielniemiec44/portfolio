@@ -13,7 +13,7 @@ interface GalleryProps {
   columns?: number;
 }
 
-export default function Gallery({ images, columns = 3 }: GalleryProps) {
+const GalleryInner = ({ images, columns = 3 }: GalleryProps) => {
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -80,4 +80,23 @@ export default function Gallery({ images, columns = 3 }: GalleryProps) {
       </Modal>
     </Container>
   );
-}
+};
+
+export default forwardRef(function Gallery({ images, columns = 3 }: GalleryProps, ref) {
+  const innerRef: any = {};
+
+  // We'll use a small hack: render inner component and manage imperative handle via wrapper state
+  // But easier: create ref to control via events - instead, implement imperative handle calling document events
+
+  // Create a function to open modal via custom event
+  const open = (i: number) => {
+    // dispatch custom event with detail
+    const ev = new CustomEvent("gallery-open", { detail: { index: i } });
+    window.dispatchEvent(ev);
+  };
+
+  useImperativeHandle(ref, () => ({ open }));
+
+  // The inner component will listen to the custom event to open modal
+  return <GalleryInner images={images} columns={columns} />;
+});
