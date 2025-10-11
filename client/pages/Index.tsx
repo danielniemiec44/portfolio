@@ -188,6 +188,13 @@ export default function Index() {
                       </Col>
                     ))}
                   </Row>
+
+                  {a.id === "autor2" && (
+                    <div className="mt-4">
+                      <h4 className="h6 fw-semibold mb-3">Galeria — Realizacja SI (zrzuty ekranu)</h4>
+                      <Gallery images={deeRaveImages} columns={3} />
+                    </div>
+                  )}
                 </section>
               ))}
             </div>
