@@ -12,14 +12,7 @@ export default function Index() {
         role: "Frontend Developer",
         bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupia się na wydajności, dostępności i dopracowanym UI.",
         skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
-        projects: [
-          {
-            title: "Webowy System Magazynowy",
-            description: "Praca inżynierska obroniona 10.10.2025 — webowy system do zarządzania magazynem, obejmujący backend, API oraz interfejs użytkownika.",
-            tags: ["Node.js", "React", "PostgreSQL"],
-            date: "2025-10-10",
-          },
-        ],
+        projects: [],
       },
       {
         id: "autor2",
