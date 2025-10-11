@@ -22,6 +22,12 @@ export default function Index() {
         skills: ["Node.js", "Express", "PostgreSQL", "React", "Tests"],
         projects: [
           {
+            title: "Webowy System Magazynowy",
+            description: "Praca inżynierska obroniona 10.10.2025 — webowy system do zarządzania magazynem, obejmujący backend, API oraz interfejs użytkownika.",
+            tags: ["Node.js", "React", "PostgreSQL"],
+            date: "2025-10-10",
+          },
+          {
             title: "API analityczne",
             description: "Skalowalny serwis zbierający i raportujący metryki w czasie rzeczywistym.",
             tags: ["Node", "Streams", "Postgres"],
