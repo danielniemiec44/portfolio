@@ -169,7 +169,16 @@ export default function Index() {
                   {a.projects.length === 1 ? (
                     <Row className="g-4">
                       <Col>
-                        <ProjectCard title={a.projects[0].title} description={a.projects[0].description} tags={a.projects[0].tags} />
+                        <ProjectCard
+                          title={a.projects[0].title}
+                          description={a.projects[0].description}
+                          tags={a.projects[0].tags}
+                          galleryLabel="Zobacz galerię projektu"
+                          onGallery={() => {
+                            const el = document.getElementById("realizacja-galeria");
+                            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                          }}
+                        />
                       </Col>
                     </Row>
                   ) : (
