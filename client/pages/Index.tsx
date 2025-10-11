@@ -49,6 +49,81 @@ export default function Index() {
     [],
   );
 
+  const deeRaveImages = useMemo(() => [
+    {
+      src: "/assets/realizacja/rysunek-1.jpg",
+      title: "Ekran logowania do systemu WSM",
+      description:
+        "Strona logowania umożliwiająca uwierzytelnienie użytkownika (login + hasło). Widok jest prosty i czytelny, z walidacją pól i komunikatami błędów dla niepoprawnych danych.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-2.jpg",
+      title: "Główny widok aplikacji po zalogowaniu",
+      description:
+        "Centralny panel nawigacyjny z kaflami do najważniejszych modułów: Magazyn, Klienci, Przyjęcia i Wydania. Widok jest responsywny i utrzymany w stylistyce Material Design.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-3.jpg",
+      title: "Menu zakładek modułów w trybie mobilnym",
+      description:
+        "Zoptymalizowane menu mobilne dające szybki dostęp do kluczowych sekcji aplikacji. Pozycje są kontekstowe i zależne od uprawnień aktualnego użytkownika.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-4.jpg",
+      title: "Główna strona modułu 'Magazyn' – bez wybranej kategorii",
+      description:
+        "Widok informuje użytkownika o konieczności wyboru kategorii produktów, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-5.jpg",
+      title: "Menu wyboru dostępnych kategorii produktów",
+      description:
+        "Okno wyboru kategorii z listą istniejących grup produktowych oraz możliwością dodania lub edycji kategorii (ikona ołówka).",
+    },
+    {
+      src: "/assets/realizacja/rysunek-6.jpg",
+      title: "Dodawanie i modyfikacja kategorii produktów",
+      description:
+        "Formularz pozwalający zdefiniować nazwę kategorii oraz dodać dowolną liczbę pól własnych (nazwa, typ, wartość domyślna).",
+    },
+    {
+      src: "/assets/realizacja/rysunek-7.jpg",
+      title: "Widok tabeli produktów w wybranej kategorii",
+      description:
+        "Tabela produktów (przykład: Komputer PC) z kolumnami: nazwa, ilość, kod kreskowy oraz dodatkowe właściwości. Umożliwia filtrowanie i zaznaczanie pozycji.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-8.jpg",
+      title: "Szczegóły ilościowe produktu – widok pusty",
+      description:
+        "Modal analizy ilościowej produktu z zakładkami: spis wydań, spis przyjęć, wykres. Widok pusty oznacza brak historii dla danego towaru.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-9.jpg",
+      title: "Szczegóły ilościowe produktu – spis wydań zewnętrznych",
+      description:
+        "Lista zrealizowanych wydań z detalami: numer dokumentu, kontrahent, ilość, data, operator oraz stan magazynowy przed i po operacji.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-10.jpg",
+      title: "Szczegóły ilościowe produktu – spis przyjęć zewnętrznych",
+      description:
+        "Zakładka z listą przyjęć (PZ) zawierająca numer dokumentu, datę, dostawcę i liczbę pozycji, umożliwiająca przejście do szczegółów kontrahenta.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-11.jpg",
+      title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
+      description:
+        "Chronologiczne zestawienie wszystkich operacji magazynowych dotyczących produktu z wyróżnieniem przyjęć i wydań oraz zmianą stanów.",
+    },
+    {
+      src: "/assets/realizacja/rysunek-12.jpg",
+      title: "Szczegóły ilościowe produktu – wizualizacja w formie wykresu",
+      description:
+        "Wizualizacja liniowa prezentująca liczbę przyjęć i wydań w czasie, z podsumowaniem sum przyjęć i wydań oraz identyfikacją trendów.",
+    },
+  ], []);
+
   return (
     <>
       {/* Hero */}
