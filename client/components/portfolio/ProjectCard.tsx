@@ -1,14 +1,18 @@
 import { Card } from "react-bootstrap";
 
+import { Card, Button } from "react-bootstrap";
+
 interface ProjectCardProps {
   title: string;
   description: string;
   image?: string;
   tags?: string[];
   link?: string;
+  galleryLabel?: string;
+  onGallery?: () => void;
 }
 
-export default function ProjectCard({ title, description, image, tags, link }: ProjectCardProps) {
+export default function ProjectCard({ title, description, image, tags, link, galleryLabel = "Zobacz galerię", onGallery }: ProjectCardProps) {
   return (
     <Card className="h-100 shadow-sm border-0 rounded-4 overflow-hidden softify-card">
       {image && (
@@ -26,6 +30,15 @@ export default function ProjectCard({ title, description, image, tags, link }: P
             </span>
           ))}
         </div>
+
+        {onGallery && (
+          <div className="mt-3">
+            <Button variant="outline-primary" onClick={onGallery} size="sm">
+              {galleryLabel}
+            </Button>
+          </div>
+        )}
+
         {link && (
           <a href={link} className="stretched-link" aria-label={title}></a>
         )}
