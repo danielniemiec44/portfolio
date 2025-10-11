@@ -8,19 +8,17 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Navbar expand="lg" className="py-3 softify-navbar" bg="light" variant="light">
+      <Navbar expand={false} className="py-3 softify-navbar" bg="light" variant="light">
         <Container>
           <Navbar.Brand href="/" className="fw-bold text-primary">
             <span className="softify-logo bg-gradient">S</span> Softify
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="softify-nav" />
-          <Navbar.Collapse id="softify-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#autor1">Autor 1</Nav.Link>
-              <Nav.Link href="#autor2">Autor 2</Nav.Link>
-              <Nav.Link href="#projekty">Projekty</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+
+          <Nav className="ms-auto d-flex flex-row gap-3 align-items-center">
+            <Nav.Link href="#autor1">Defective</Nav.Link>
+            <Nav.Link href="#autor2">DeeRave</Nav.Link>
+            <Nav.Link href="#projekty">Projekty</Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
 
