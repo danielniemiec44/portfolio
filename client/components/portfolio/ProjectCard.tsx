@@ -1,5 +1,3 @@
-import { Card } from "react-bootstrap";
-
 import { Card, Button } from "react-bootstrap";
 
 interface ProjectCardProps {
