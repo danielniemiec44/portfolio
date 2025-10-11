@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Container, Row, Col, Button, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
 
@@ -8,9 +8,9 @@ export default function Index() {
     () => [
       {
         id: "autor1",
-        name: "Daniel Niemiec",
+        name: "Defective",
         role: "Frontend Developer",
-        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupiam się na wydajności, dostępności i perfekcyjnych detalach UI.",
+        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupia się na wydajności, dostępności i dopracowanym UI.",
         skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
         projects: [
           {
@@ -32,9 +32,9 @@ export default function Index() {
       },
       {
         id: "autor2",
-        name: "Anna Kowalska",
+        name: "DeeRave",
         role: "Full‑Stack Developer",
-        bio: "Buduję kompletne rozwiązania – od API po dopracowane interfejsy. Lubię prostotę, testy i czysty kod.",
+        bio: "Buduje kompletne rozwiązania – od API po dopracowane interfejsy. Koncentruje się na niezawodności, testach i skalowalności.",
         skills: ["Node.js", "Express", "PostgreSQL", "React", "Tests"],
         projects: [
           {
@@ -110,32 +110,20 @@ export default function Index() {
             </div>
 
             <div className="flex-grow-1 w-100">
-              <Tab.Container defaultActiveKey={authors[0].id}>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                  <h2 className="h4 fw-bold mb-0">Portfolio</h2>
-                  <Nav variant="pills" className="softify-segment">
-                    {authors.map((a) => (
-                      <Nav.Item key={a.id}>
-                        <Nav.Link eventKey={a.id}>{a.name.split(" ")[0]}</Nav.Link>
-                      </Nav.Item>
-                    ))}
-                  </Nav>
-                </div>
+              <h2 className="h4 fw-bold mb-4">Portfolio</h2>
 
-                <Tab.Content>
-                  {authors.map((a) => (
-                    <Tab.Pane key={a.id} eventKey={a.id} mountOnEnter unmountOnExit>
-                      <Row xs={1} md={2} lg={3} className="g-4">
-                        {a.projects.map((p) => (
-                          <Col key={p.title}>
-                            <ProjectCard title={p.title} description={p.description} tags={p.tags} />
-                          </Col>
-                        ))}
-                      </Row>
-                    </Tab.Pane>
-                  ))}
-                </Tab.Content>
-              </Tab.Container>
+              {authors.map((a) => (
+                <section key={a.id} className="mb-5">
+                  <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
+                  <Row xs={1} md={2} lg={3} className="g-4">
+                    {a.projects.map((p) => (
+                      <Col key={p.title}>
+                        <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                      </Col>
+                    ))}
+                  </Row>
+                </section>
+              ))}
             </div>
           </div>
         </Container>
