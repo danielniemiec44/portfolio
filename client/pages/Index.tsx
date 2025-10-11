@@ -14,19 +14,10 @@ export default function Index() {
         skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
         projects: [
           {
-            title: "Panel administracyjny Softify",
-            description: "Zaawansowany panel do zarządzania treściami z naciskiem na intuicyjność i szybkość.",
-            tags: ["React", "React Query", "Charts"],
-          },
-          {
-            title: "Landing page produktu",
-            description: "Wysokokonwertująca strona docelowa z A/B testami i animacjami.",
-            tags: ["SEO", "Animations", "A/B"],
-          },
-          {
-            title: "Komponenty UI Softify",
-            description: "Biblioteka spójnych komponentów zgodnych z design systemem marki.",
-            tags: ["UI Kit", "Design System", "Docs"],
+            title: "Webowy System Magazynowy",
+            description: "Praca inżynierska obroniona 10.10.2025 — webowy system do zarządzania magazynem, obejmujący backend, API oraz interfejs użytkownika.",
+            tags: ["Node.js", "React", "PostgreSQL"],
+            date: "2025-10-10",
           },
         ],
       },
