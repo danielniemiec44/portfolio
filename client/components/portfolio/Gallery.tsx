@@ -17,6 +17,18 @@ const GalleryInner = ({ images, columns = 3 }: GalleryProps) => {
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(0);
 
+  React.useEffect(() => {
+    const handler = (e: any) => {
+      const i = e?.detail?.index ?? 0;
+      if (typeof i === "number") {
+        setIndex(i);
+        setShow(true);
+      }
+    };
+    window.addEventListener("gallery-open", handler as EventListener);
+    return () => window.removeEventListener("gallery-open", handler as EventListener);
+  }, []);
+
   if (!images || images.length === 0) return null;
 
   const openAt = (i: number) => {
