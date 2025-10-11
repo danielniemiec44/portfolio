@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
+import Gallery from "../components/portfolio/Gallery";
 
 export default function Index() {
   const authors = useMemo(
