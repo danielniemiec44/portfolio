@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { Row, Col, Image, Modal, Carousel, Container, Button } from "react-bootstrap";
 
 interface GalleryImage {
