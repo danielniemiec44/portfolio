@@ -19,7 +19,7 @@ export default function Index() {
       {
         id: "autor2",
         name: "DeeRave",
-        role: "Full‑Stack Developer",
+        role: "Full‑Stack & Game/Plugins Developer",
         bio: "Tworzę kompletne rozwiązania — od API po dopracowane interfejsy. Pracuję z Node.js i React, piszę boty Discord oraz wtyczki do Minecraft (Spigot/Bukkit/Paper). Posiadam podstawową znajomość Linux i Windows Server.",
         skills: ["Node.js", "Express", "PostgreSQL", "React", "Java", "Unity", "C#", "Python", "Discord bots", "Minecraft plugins (Spigot/Bukkit/Paper)", "Linux", "Windows Server"],
         projects: [
@@ -98,7 +98,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-11.jpg",
-      title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
+      title: "Szczegóły ilościowe produktu – ł��czony spis wydań i przyjęć",
       description:
         "Chronologiczne zestawienie wszystkich operacji magazynowych dotyczących produktu z wyróżnieniem przyjęć i wydań oraz zmianą stanów.",
     },
