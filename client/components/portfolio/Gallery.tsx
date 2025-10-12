@@ -1,4 +1,3 @@
-import React, { useState, forwardRef, useImperativeHandle } from "react";
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import { Row, Col, Image, Modal, Carousel, Container, Button } from "react-bootstrap";
 
@@ -49,7 +48,7 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
                   role="button"
                   onClick={() => openAt(i)}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter") openAt(i);
+                    if ((e as any).key === "Enter") openAt(i);
                   }}
                   tabIndex={0}
                   className="rounded-3 overflow-hidden border bg-white shadow-sm"
@@ -74,7 +73,7 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
           <Modal.Title>{images[index]?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Carousel activeIndex={index} onSelect={(selected) => setIndex(selected)} variant="dark" interval={null} indicators>
+          <Carousel activeIndex={index} onSelect={(selectedIndex: number) => setIndex(selectedIndex)} variant="dark" interval={null} indicators>
             {images.map((img, i) => (
               <Carousel.Item key={i}>
                 <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
@@ -101,14 +100,8 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
 };
 
 export default forwardRef(function Gallery({ images, columns = 3, hideThumbnails = false }: GalleryProps, ref) {
-  const innerRef: any = {};
-
-  // We'll use a small hack: render inner component and manage imperative handle via wrapper state
-  // But easier: create ref to control via events - instead, implement imperative handle calling document events
-
   // Create a function to open modal via custom event
   const open = (i: number) => {
-    // dispatch custom event with detail
     const ev = new CustomEvent("gallery-open", { detail: { index: i } });
     window.dispatchEvent(ev);
   };
