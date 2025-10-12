@@ -1,5 +1,4 @@
 import React, { useMemo, useRef } from "react";
-import React, { useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
@@ -57,7 +56,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-4.jpg",
-      title: "Główna strona modułu 'Magazyn' – bez wybranej kategorii",
+      title: "Główna strona modułu 'Magazyn' ��� bez wybranej kategorii",
       description:
         "Widok informuje użytkownika o konieczności wyboru kategorii produktów, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
     },
