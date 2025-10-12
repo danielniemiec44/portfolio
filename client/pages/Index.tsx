@@ -11,7 +11,7 @@ export default function Index() {
       {
         id: "autor1",
         name: "Defective",
-        role: "Backend Developer (Java)",
+        role: "Backend & Tooling Developer (Java)",
         bio: "Mój skillset to głównie Java z frameworkami takimi jak Spring, Javalin i Hibernate. Dodatkowo używam Pythona do zastosowań DSP oraz C++ głównie do AVR. Mam też doświadczenie w modowaniu Minecraft (Forge, Fabric, Bukkit/Spigot/Paper) oraz w pisaniu botów i aplikacji Discord.",
         skills: ["Java", "Spring", "Javalin", "Hibernate", "SQL", "Python (DSP)", "C++ (AVR)", "Minecraft Forge", "Fabric", "Bukkit/Spigot/Paper", "Discord bots", "API Design"],
         projects: [],
@@ -98,7 +98,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-11.jpg",
-      title: "Szczegóły ilościowe produktu – ł��czony spis wydań i przyjęć",
+      title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
       description:
         "Chronologiczne zestawienie wszystkich operacji magazynowych dotyczących produktu z wyróżnieniem przyjęć i wydań oraz zmianą stanów.",
     },
