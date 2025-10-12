@@ -1,6 +1,6 @@
-import { Card, Button } from "react-bootstrap";
+import { Card as RBCard, Button } from "react-bootstrap";
 
-import { Card, Button } from "react-bootstrap";
+import { Card as RBCard, Button } from "react-bootstrap";
 
 interface ProjectCardProps {
   title: string;
