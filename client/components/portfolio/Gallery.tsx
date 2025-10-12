@@ -12,13 +12,14 @@ interface GalleryImage {
 interface GalleryProps {
   images: GalleryImage[];
   columns?: number;
+  hideThumbnails?: boolean;
 }
 
-const GalleryInner = ({ images, columns = 3 }: GalleryProps) => {
+const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryProps) => {
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handler = (e: any) => {
       const i = e?.detail?.index ?? 0;
       if (typeof i === "number") {
@@ -38,31 +39,35 @@ const GalleryInner = ({ images, columns = 3 }: GalleryProps) => {
   };
 
   return (
-    <Container className="py-4">
-      <Row xs={1} sm={2} md={columns} className="g-3">
-        {images.map((img, i) => (
-          <Col key={i}>
-            <div
-              role="button"
-              onClick={() => openAt(i)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") openAt(i);
-              }}
-              tabIndex={0}
-              className="rounded-3 overflow-hidden border bg-white shadow-sm"
-              style={{ cursor: "pointer" }}
-            >
-              <div style={{ aspectRatio: "16/9", width: "100%", overflow: "hidden" }}>
-                <Image src={img.src} alt={img.alt || img.title || `image-${i}`} fluid style={{ objectFit: "cover", width: "100%", height: "100%" }} />
-              </div>
-              <div className="p-2">
-                <div className="fw-semibold small mb-1">{img.title}</div>
-                <div className="text-muted small" style={{ maxHeight: 56, overflow: "hidden" }}>{img.description}</div>
-              </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
+    <>
+      {!hideThumbnails && (
+        <Container className="py-4">
+          <Row xs={1} sm={2} md={columns} className="g-3">
+            {images.map((img, i) => (
+              <Col key={i}>
+                <div
+                  role="button"
+                  onClick={() => openAt(i)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") openAt(i);
+                  }}
+                  tabIndex={0}
+                  className="rounded-3 overflow-hidden border bg-white shadow-sm"
+                  style={{ cursor: "pointer" }}
+                >
+                  <div style={{ aspectRatio: "16/9", width: "100%", overflow: "hidden" }}>
+                    <Image src={img.src} alt={img.alt || img.title || `image-${i}`} fluid style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+                  </div>
+                  <div className="p-2">
+                    <div className="fw-semibold small mb-1">{img.title}</div>
+                    <div className="text-muted small" style={{ maxHeight: 56, overflow: "hidden" }}>{img.description}</div>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )}
 
       <Modal show={show} onHide={() => setShow(false)} size="xl" centered>
         <Modal.Header closeButton>
@@ -91,11 +96,11 @@ const GalleryInner = ({ images, columns = 3 }: GalleryProps) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </Container>
+    </>
   );
 };
 
-export default forwardRef(function Gallery({ images, columns = 3 }: GalleryProps, ref) {
+export default forwardRef(function Gallery({ images, columns = 3, hideThumbnails = false }: GalleryProps, ref) {
   const innerRef: any = {};
 
   // We'll use a small hack: render inner component and manage imperative handle via wrapper state
@@ -111,5 +116,5 @@ export default forwardRef(function Gallery({ images, columns = 3 }: GalleryProps
   useImperativeHandle(ref, () => ({ open }));
 
   // The inner component will listen to the custom event to open modal
-  return <GalleryInner images={images} columns={columns} />;
+  return <GalleryInner images={images} columns={columns} hideThumbnails={hideThumbnails} />;
 });
