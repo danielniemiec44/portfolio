@@ -1,10 +1,12 @@
 import { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
 import Gallery from "../components/portfolio/Gallery";
 
 export default function Index() {
+  const galleryRef = useRef<any>(null);
   const authors = useMemo(
     () => [
       {
@@ -167,20 +169,15 @@ export default function Index() {
                 <section key={a.id} className="mb-5">
                   <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
                   {a.projects.length === 1 ? (
-                    <Row className="g-4">
-                      <Col>
-                        <ProjectCard
-                          title={a.projects[0].title}
-                          description={a.projects[0].description}
-                          tags={a.projects[0].tags}
-                          galleryLabel="Zobacz galerię projektu"
-                          onGallery={() => {
-                            const el = document.getElementById("realizacja-galeria");
-                            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                          }}
-                        />
-                      </Col>
-                    </Row>
+                    <div className="w-100">
+                      <ProjectCard
+                        title={a.projects[0].title}
+                        description={a.projects[0].description}
+                        tags={a.projects[0].tags}
+                        galleryLabel="Zobacz galerię projektu"
+                        onGallery={() => galleryRef.current?.open(0)}
+                      />
+                    </div>
                   ) : (
                     <Row xs={1} md={2} lg={3} className="g-4">
                       {a.projects.map((p) => (
@@ -191,32 +188,16 @@ export default function Index() {
                     </Row>
                   )}
 
-                  {a.id === "autor2" && (
-                    <div className="mt-4" id="realizacja-galeria">
-                      <h4 className="h6 fw-semibold mb-3">Galeria — Realizacja SI (zrzuty ekranu)</h4>
-                      <Gallery images={deeRaveImages} columns={3} />
-                    </div>
-                  )}
 
-                  {a.id === "autor2" && a.projects.length === 1 && (
-                    <div className="mt-3">
-                      <Button
-                        variant="primary"
-                        onClick={() => {
-                          const el = document.getElementById("realizacja-galeria");
-                          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }}
-                      >
-                        Zobacz galerię projektu
-                      </Button>
-                    </div>
-                  )}
                 </section>
               ))}
             </div>
           </div>
         </Container>
       </section>
+
+      {/* Hidden gallery modal instance (no inline grid) */}
+      <Gallery ref={galleryRef} images={deeRaveImages} hideThumbnails columns={3} />
     </>
   );
 }
