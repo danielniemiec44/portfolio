@@ -1,6 +1,6 @@
-import { Card, Badge, Stack } from "react-bootstrap";
+import { Card as RBCard, Badge, Stack } from "react-bootstrap";
 
-import { Card, Badge, Stack } from "react-bootstrap";
+import { Card as RBCard, Badge, Stack } from "react-bootstrap";
 
 interface AuthorCardProps {
   id: string;
