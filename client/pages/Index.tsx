@@ -6,6 +6,21 @@ import Gallery from "../components/portfolio/Gallery";
 
 export default function Index() {
   const galleryRef = useRef<any>(null);
+  const highlightTimeout = useRef<number | null>(null);
+
+  const scrollToAuthorPortfolio = (id: string) => {
+    const el = document.getElementById(`portfolio-${id}`);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("border", "border-3", "border-primary", "rounded-3");
+    if (highlightTimeout.current) window.clearTimeout(highlightTimeout.current);
+    // remove the highlight after 3s
+    highlightTimeout.current = window.setTimeout(() => {
+      el.classList.remove("border", "border-3", "border-primary", "rounded-3");
+      highlightTimeout.current = null;
+    }, 3000) as unknown as number;
+  };
+
   const authors = useMemo(
     () => [
       {
