@@ -1,5 +1,4 @@
 import React, { useMemo, useRef } from "react";
-import React, { useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
