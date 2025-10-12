@@ -1,5 +1,4 @@
 import React, { useMemo, useRef } from "react";
-import React, { useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
@@ -107,7 +106,7 @@ export default function Index() {
       src: "/assets/realizacja/rysunek-12.jpg",
       title: "Szczegóły ilościowe produktu – wizualizacja w formie wykresu",
       description:
-        "Wizualizacja liniowa prezentująca liczbę przyjęć i wydań w czasie, z podsumowaniem sum przyjęć i wydań oraz identyfikacją trendów.",
+        "Wizualizacja liniowa prezentująca liczbę przyjęć i wydań w czasie, z podsumowaniem sum przyjęć i wydań oraz identyfikacj�� trendów.",
     },
   ], []);
 
