@@ -1,4 +1,5 @@
 import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
@@ -80,7 +81,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-8.jpg",
-      title: "Szczegóły ilościowe produktu – widok pusty",
+      title: "Szczeg��ły ilościowe produktu – widok pusty",
       description:
         "Modal analizy ilościowej produktu z zakładkami: spis wydań, spis przyjęć, wykres. Widok pusty oznacza brak historii dla danego towaru.",
     },
