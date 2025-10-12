@@ -21,7 +21,7 @@ export default function Index() {
         name: "DeeRave",
         role: "Full‑Stack Developer",
         bio: "Buduje kompletne rozwiązania – od API po dopracowane interfejsy. Koncentruje się na niezawodności, testach i skalowalności.",
-        skills: ["Node.js", "Express", "PostgreSQL", "React", "Tests"],
+        skills: ["Node.js", "Express", "PostgreSQL", "React", "Java"],
         projects: [
           {
             title: "Webowy System Magazynowy",
