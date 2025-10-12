@@ -12,8 +12,8 @@ export default function Index() {
         id: "autor1",
         name: "Defective",
         role: "Backend Developer (Java)",
-        bio: "Backend Developer specjalizujący się w Javie; doświadczenie z Hibernate i Javalin oraz projektowaniem skalowalnych API i baz danych.",
-        skills: ["Java", "Hibernate", "Javalin", "Spring", "SQL", "Python", "C++", "API Design"],
+        bio: "Mój skillset to głównie Java z frameworkami takimi jak Spring, Javalin i Hibernate. Dodatkowo używam Pythona do zastosowań DSP (niekoniecznie wliczać w portfolio) oraz C++ głównie do AVR.",
+        skills: ["Java", "Spring", "Javalin", "Hibernate", "SQL", "Python (DSP)", "C++ (AVR)", "API Design"],
         projects: [],
       },
       {
