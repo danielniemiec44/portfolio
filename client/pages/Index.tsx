@@ -13,7 +13,7 @@ export default function Index() {
         name: "Defective",
         role: "Backend Developer (Java)",
         bio: "Backend Developer specjalizujący się w Javie; doświadczenie z Hibernate i Javalin oraz projektowaniem skalowalnych API i baz danych.",
-        skills: ["Java", "Hibernate", "Javalin", "SQL", "API Design"],
+        skills: ["Java", "Hibernate", "Javalin", "Spring", "SQL", "Python", "C++", "API Design"],
         projects: [],
       },
       {
@@ -40,7 +40,7 @@ export default function Index() {
       src: "/assets/realizacja/rysunek-1.jpg",
       title: "Ekran logowania do systemu WSM",
       description:
-        "Strona logowania umożliwiająca uwierzytelnienie użytkownika (login + hasło). Widok jest prosty i czytelny, z walidacją pól i komunikatami błędów dla niepoprawnych danych.",
+        "Strona logowania umożliwiająca uwierzytelnienie u��ytkownika (login + hasło). Widok jest prosty i czytelny, z walidacją pól i komunikatami błędów dla niepoprawnych danych.",
     },
     {
       src: "/assets/realizacja/rysunek-2.jpg",
