@@ -13,7 +13,7 @@ export default function Index() {
         name: "Defective",
         role: "Backend Developer (Java)",
         bio: "Backend Developer specjalizujący się w Javie; doświadczenie z Hibernate i Javalin oraz projektowaniem skalowalnych API i baz danych.",
-        skills: ["Java", "Hibernate", "Javalin", "PostgreSQL", "API Design"],
+        skills: ["Java", "Hibernate", "Javalin", "SQL", "API Design"],
         projects: [],
       },
       {
@@ -80,7 +80,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-8.jpg",
-      title: "Szczeg����y ilościowe produktu – widok pusty",
+      title: "Szczeg��ły ilościowe produktu – widok pusty",
       description:
         "Modal analizy ilościowej produktu z zakładkami: spis wydań, spis przyjęć, wykres. Widok pusty oznacza brak historii dla danego towaru.",
     },
