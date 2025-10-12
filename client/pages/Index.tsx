@@ -11,9 +11,9 @@ export default function Index() {
       {
         id: "autor1",
         name: "Defective",
-        role: "Frontend Developer",
-        bio: "Specjalizuje się w tworzeniu nowoczesnych aplikacji webowych z użyciem React oraz TypeScript. Skupia się na wydajności, dostępności i dopracowanym UI.",
-        skills: ["React", "TypeScript", "React-Bootstrap", "Vite", "UX"],
+        role: "Backend Developer (Java)",
+        bio: "Backend Developer specjalizujący się w Javie; doświadczenie z Hibernate i Javalin oraz projektowaniem skalowalnych API i baz danych.",
+        skills: ["Java", "Hibernate", "Javalin", "PostgreSQL", "API Design"],
         projects: [],
       },
       {
@@ -56,7 +56,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-4.jpg",
-      title: "Główna strona modułu 'Magazyn' ��� bez wybranej kategorii",
+      title: "Główna strona modułu 'Magazyn' – bez wybranej kategorii",
       description:
         "Widok informuje użytkownika o konieczności wyboru kategorii produktów, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
     },
@@ -80,7 +80,7 @@ export default function Index() {
     },
     {
       src: "/assets/realizacja/rysunek-8.jpg",
-      title: "Szczeg��ły ilościowe produktu – widok pusty",
+      title: "Szczeg����y ilościowe produktu – widok pusty",
       description:
         "Modal analizy ilościowej produktu z zakładkami: spis wydań, spis przyjęć, wykres. Widok pusty oznacza brak historii dla danego towaru.",
     },
