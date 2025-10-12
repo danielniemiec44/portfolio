@@ -137,61 +137,48 @@ export default function Index() {
         <div className="softify-hero-blur" />
       </section>
 
-      {/* Authors & Portfolio split */}
+      {/* Authors & Portfolio: authors side-by-side with projects beneath each */}
       <section id="projekty" className="py-5">
         <Container>
-          <div className="d-flex flex-column flex-lg-row align-items-start gap-4">
-            <div className="w-100 w-lg-25" style={{ maxWidth: 420 }}>
-              <h2 className="h4 fw-bold mb-3">Autorzy</h2>
-              <div className="d-grid gap-3">
-                <AuthorCard
-                  id={authors[0].id}
-                  name={authors[0].name}
-                  role={authors[0].role}
-                  bio={authors[0].bio}
-                  skills={authors[0].skills}
-                />
-                <AuthorCard
-                  id={authors[1].id}
-                  name={authors[1].name}
-                  role={authors[1].role}
-                  bio={authors[1].bio}
-                  skills={authors[1].skills}
-                />
-              </div>
-            </div>
+          <h2 className="h4 fw-bold mb-4">Autorzy</h2>
 
-            <div className="flex-grow-1 w-100">
-              <h2 className="h4 fw-bold mb-4">Portfolio</h2>
+          <Row className="g-4 mb-5">
+            {authors.map((a) => (
+              <Col key={a.id} xs={12} md={6}>
+                <AuthorCard id={a.id} name={a.name} role={a.role} bio={a.bio} skills={a.skills} />
+              </Col>
+            ))}
+          </Row>
 
-              {authors.map((a) => (
-                <section key={a.id} className="mb-5">
-                  <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
-                  {a.projects.length === 1 ? (
-                    <div className="w-100">
-                      <ProjectCard
-                        title={a.projects[0].title}
-                        description={a.projects[0].description}
-                        tags={a.projects[0].tags}
-                        galleryLabel="Zobacz galerię projektu"
-                        onGallery={() => galleryRef.current?.open(0)}
-                      />
-                    </div>
-                  ) : (
-                    <Row xs={1} md={2} lg={3} className="g-4">
-                      {a.projects.map((p) => (
-                        <Col key={p.title}>
-                          <ProjectCard title={p.title} description={p.description} tags={p.tags} />
-                        </Col>
-                      ))}
-                    </Row>
-                  )}
+          <h2 className="h4 fw-bold mb-4">Portfolio</h2>
 
+          <Row className="g-4">
+            {authors.map((a) => (
+              <Col key={a.id} xs={12} md={6}>
+                <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
 
-                </section>
-              ))}
-            </div>
-          </div>
+                {a.projects.length === 1 ? (
+                  <ProjectCard
+                    title={a.projects[0].title}
+                    description={a.projects[0].description}
+                    tags={a.projects[0].tags}
+                    galleryLabel="Zobacz galerię projektu"
+                    onGallery={() => galleryRef.current?.open(0)}
+                  />
+                ) : a.projects.length > 1 ? (
+                  <Row xs={1} className="g-3">
+                    {a.projects.map((p) => (
+                      <Col key={p.title}>
+                        <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                      </Col>
+                    ))}
+                  </Row>
+                ) : (
+                  <div className="text-muted">Brak projektów do wyświetlenia.</div>
+                )}
+              </Col>
+            ))}
+          </Row>
         </Container>
       </section>
 
