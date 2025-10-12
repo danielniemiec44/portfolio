@@ -157,7 +157,7 @@ export default function Index() {
 
           <Row className="g-4">
             {authors.map((a) => (
-              <Col key={a.id} xs={12} md={6}>
+              <Col key={a.id} id={`portfolio-${a.id}`} xs={12} md={6}>
                 <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
 
                 {a.projects.length === 1 ? (
@@ -182,6 +182,17 @@ export default function Index() {
               </Col>
             ))}
           </Row>
+
+          {/* Contact / Social */}
+          <section className="mt-5 pt-4 border-top">
+            <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
+            <p className="mb-2">Masz pytania lub chcesz współpracować? Napisz do nas.</p>
+            <div className="d-flex flex-wrap gap-2">
+              <a className="btn btn-outline-dark" href="mailto:kontakt@softify.local">kontakt@softify.local</a>
+              <a className="btn btn-outline-dark" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+              <a className="btn btn-outline-dark" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </section>
         </Container>
       </section>
 
