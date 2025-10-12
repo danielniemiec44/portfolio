@@ -145,7 +145,11 @@ export default function Index() {
                 <Button variant="outline-light" href="#autor1" className="px-4 py-2 fw-semibold">
                   Poznaj autorów
                 </Button>
-                <Button variant="primary" href="#portfolio-autor2" className="px-4 py-2 fw-semibold">
+                <Button
+                  variant="primary"
+                  onClick={() => scrollToAuthorPortfolio("autor2")}
+                  className="px-4 py-2 fw-semibold"
+                >
                   Case study: WSM
                 </Button>
               </div>
