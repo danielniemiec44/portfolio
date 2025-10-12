@@ -121,7 +121,7 @@ export default function Index() {
                 Softify — Zespół kreatywnych twórców
               </h1>
               <p className="lead text-white-50 mb-4">
-                Portfolio dwóch autorów, którzy ł��czą estetykę i technologię, aby tworzyć dopracowane produkty cyfrowe.
+                Portfolio dwóch autorów, którzy łączą estetykę i technologię, aby tworzyć dopracowane produkty cyfrowe.
               </p>
               <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
                 <Button variant="light" href="#projekty" className="px-4 py-2 fw-semibold">
@@ -129,13 +129,6 @@ export default function Index() {
                 </Button>
                 <Button variant="outline-light" href="#autor1" className="px-4 py-2 fw-semibold">
                   Poznaj autorów
-                </Button>
-                <Button
-                  variant="primary"
-                  onClick={() => scrollToAuthorPortfolio("autor2")}
-                  className="px-4 py-2 fw-semibold"
-                >
-                  Case study: WSM
                 </Button>
               </div>
             </Col>
