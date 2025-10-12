@@ -20,8 +20,8 @@ export default function Index() {
         id: "autor2",
         name: "DeeRave",
         role: "Full‑Stack & Game/Plugins Developer",
-        bio: "Tworzę kompletne rozwiązania — od API po dopracowane interfejsy. Pracuję z Node.js i React, piszę boty Discord oraz wtyczki do Minecraft (Spigot/Bukkit/Paper). Posiadam podstawową znajomość Linux i Windows Server.",
-        skills: ["Node.js", "Express", "PostgreSQL", "React", "Java", "Unity", "C#", "Python", "Discord bots", "Minecraft plugins (Spigot/Bukkit/Paper)", "Linux", "Windows Server"],
+        bio: "Full‑Stack developer specjalizujący się w budowie skalowalnych aplikacji webowych z wykorzystaniem Node.js i React. Doświadczenie w projektowaniu API, integracji z bazami danych oraz automatyzacji (boty Discord). Tworzę również wtyczki do Minecraft (Spigot/Paper) oraz aplikacje w Unity (C#). Posiadam praktyczną znajomość administracji Linux i Windows Server.",
+        skills: ["Node.js", "Express", "React", "PostgreSQL", "Python", "Discord bots", "Minecraft plugins (Spigot/Paper)", "Unity", "C#", "Linux", "Windows Server", "Java"],
         projects: [
           {
             title: "Webowy System Magazynowy",
