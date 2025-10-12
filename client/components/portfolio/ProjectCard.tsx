@@ -1,5 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 
+import { Card, Button } from "react-bootstrap";
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -15,7 +17,7 @@ export default function ProjectCard({ title, description, image, tags, link, gal
     <Card className="h-100 shadow-sm border-0 rounded-4 overflow-hidden softify-card">
       {image && (
         <div className="ratio ratio-16x9 bg-body-secondary">
-          <img src={image} alt={title} className="w-100 h-100 object-fit-cover" />
+          <img src={image} alt={title} loading="lazy" className="w-100 h-100 object-fit-cover" />
         </div>
       )}
       <Card.Body className="p-4 d-flex flex-column">
@@ -31,7 +33,7 @@ export default function ProjectCard({ title, description, image, tags, link, gal
 
         {onGallery && (
           <div className="mt-3">
-            <Button variant="outline-primary" onClick={onGallery} size="sm">
+            <Button variant="primary" onClick={onGallery} className="w-100">
               {galleryLabel}
             </Button>
           </div>
