@@ -12,7 +12,7 @@ export default function Index() {
         id: "autor1",
         name: "Defective",
         role: "Java Backend & Embedded Systems Developer",
-        bio: "Mój skillset to głównie Java z frameworkami takimi jak Spring, Javalin i Hibernate. Dodatkowo używam Pythona do zastosowań DSP oraz C++ głównie do AVR. Mam też doświadczenie w modowaniu Minecraft (Forge, Fabric, Bukkit/Spigot/Paper) oraz w pisaniu botów i aplikacji Discord.",
+        bio: "Java backend developer z doświadczeniem w frameworkach Spring, Javalin i Hibernate. Projektuję oraz wdrażam skalowalne API i rozwiązania oparte na SQL. Dodatkowo pracuję z Pythonem (DSP) i C++ (AVR), a także tworzę modyfikacje i pluginy do Minecraft (Forge, Fabric, Spigot/Paper) oraz boty i aplikacje dla Discord.",
         skills: ["Java", "Spring", "Javalin", "Hibernate", "SQL", "Python (DSP)", "C++ (AVR)", "Minecraft Forge", "Fabric", "Bukkit/Spigot/Paper", "Discord bots", "API Design"],
         projects: [],
       },
