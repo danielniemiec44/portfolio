@@ -55,7 +55,7 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
                   style={{ cursor: "pointer" }}
                 >
                   <div style={{ aspectRatio: "16/9", width: "100%", overflow: "hidden" }}>
-                    <Image src={img.src} alt={img.alt || img.title || `image-${i}`} fluid style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+                    <Image src={img.src} alt={img.alt || img.title || `image-${i}`} fluid loading="lazy" style={{ objectFit: "cover", width: "100%", height: "100%" }} />
                   </div>
                   <div className="p-2">
                     <div className="fw-semibold small mb-1">{img.title}</div>
