@@ -1,7 +1,5 @@
 import { Card as RBCard, Badge, Stack } from "react-bootstrap";
 
-import { Card as RBCard, Badge, Stack } from "react-bootstrap";
-
 interface AuthorCardProps {
   id: string;
   name: string;
@@ -13,8 +11,8 @@ interface AuthorCardProps {
 
 export default function AuthorCard({ id, name, role, bio, skills, avatarUrl }: AuthorCardProps) {
   return (
-    <Card id={id} className="shadow-sm border-0 rounded-4 overflow-hidden softify-card">
-      <Card.Body className="p-4">
+    <RBCard id={id} className="shadow-sm border-0 rounded-4 overflow-hidden softify-card">
+      <RBCard.Body className="p-4">
         <div className="d-flex align-items-center gap-3 mb-3">
           <img
             src={avatarUrl || "/placeholder.svg"}
@@ -36,7 +34,7 @@ export default function AuthorCard({ id, name, role, bio, skills, avatarUrl }: A
             </Badge>
           ))}
         </Stack>
-      </Card.Body>
-    </Card>
+      </RBCard.Body>
+    </RBCard>
   );
 }
