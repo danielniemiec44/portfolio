@@ -1,4 +1,56 @@
-/* existing global styles... */
+/* Global styles restored + portfolio constraint styles */
+
+:root {
+  --softify-hero-bg: linear-gradient(135deg, #0f172a 0%, #0b1220 100%);
+  --softify-accent: #0d6efd; /* bootstrap primary */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+  background: #fff;
+  margin: 0;
+}
+
+/* Hero */
+.softify-hero {
+  background: var(--softify-hero-bg);
+  color: #fff;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.softify-hero .lead {
+  color: rgba(255,255,255,0.85);
+}
+
+.softify-hero-blur {
+  position: absolute;
+  right: -10%;
+  top: -5%;
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(circle at 30% 30%, rgba(13,110,253,0.08), transparent 20%), radial-gradient(circle at 70% 70%, rgba(13,110,253,0.06), transparent 30%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Cards */
+.softify-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.softify-badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+}
 
 /* Constrain portfolio columns on medium+ screens to avoid one column expanding too much */
 @media (min-width: 768px) {
