@@ -184,25 +184,27 @@ export default function Index() {
               <Col key={a.id} id={`portfolio-${a.id}`} xs={12} md={6}>
                 <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
 
-                {a.projects.length === 1 ? (
-                  <ProjectCard
-                    title={a.projects[0].title}
-                    description={a.projects[0].description}
-                    tags={a.projects[0].tags}
-                    galleryLabel="Zobacz galerię projektu"
-                    onGallery={() => galleryRef.current?.open(0)}
-                  />
-                ) : a.projects.length > 1 ? (
-                  <Row xs={1} className="g-3">
-                    {a.projects.map((p) => (
-                      <Col key={p.title}>
-                        <ProjectCard title={p.title} description={p.description} tags={p.tags} />
-                      </Col>
-                    ))}
-                  </Row>
-                ) : (
-                  <div className="text-muted">Brak projektów do wyświetlenia.</div>
-                )}
+                <div className="portfolio-column">
+                  {a.projects.length === 1 ? (
+                    <ProjectCard
+                      title={a.projects[0].title}
+                      description={a.projects[0].description}
+                      tags={a.projects[0].tags}
+                      galleryLabel="Zobacz galerię projektu"
+                      onGallery={() => galleryRef.current?.open(0)}
+                    />
+                  ) : a.projects.length > 1 ? (
+                    <Row xs={1} className="g-3">
+                      {a.projects.map((p) => (
+                        <Col key={p.title}>
+                          <ProjectCard title={p.title} description={p.description} tags={p.tags} />
+                        </Col>
+                      ))}
+                    </Row>
+                  ) : (
+                    <div className="text-muted">Brak projektów do wyświetlenia.</div>
+                  )}
+                </div>
               </Col>
             ))}
           </Row>
