@@ -14,7 +14,34 @@ export default function Index() {
         role: "Java Backend & Embedded Systems Developer",
         bio: "Java backend developer z doświadczeniem w frameworkach Spring, Javalin i Hibernate. Projektuję oraz wdrażam skalowalne API i rozwiązania oparte na SQL. Posiadam doświadczenie w administracji systemów Linux oraz pracach serwerowych. Dodatkowo pracuję z Pythonem (DSP) i C++ (AVR), tworzę modyfikacje i pluginy do Minecraft (Forge, Fabric, Spigot/Paper) oraz boty i aplikacje dla Discord.",
         skills: ["Java", "Spring", "Javalin", "Hibernate", "SQL", "Python (DSP)", "C++ (AVR)", "Linux", "Minecraft Forge", "Fabric", "Bukkit/Spigot/Paper", "Discord bots", "API Design"],
-        projects: [],
+        projects: [
+          {
+            title: "Generator map pogodowych",
+            description: "Desktopowa i mobilna aplikacja do generowania graficznych map pogodowych oraz zarządzania zespołem synoptyków: grafik prognoz, lista nieobecności i powiadomienia w czasie rzeczywistym.",
+            tags: ["Java"],
+            date: "2023-06-01",
+          },
+          {
+            title: "SDR Toolkit",
+            description: "Zestaw narzędzi do komunikacji z serwerami RTL-TCP oraz podstawowej manipulacji cyfrowymi sygnałami (filtry, demodulacja, nagrywanie).",
+            tags: ["Java", "SDR"],
+            link: "https://github.com/Defective4/sdr-toolkit",
+            date: "2022-11-12",
+          },
+          {
+            title: "JDocDex",
+            description: "Self-hostowalna usługa do zarządzania kolekcją dokumentacji w formacie JavaDoc. Backend oparty na Javalin, frontend wykorzystuje Bootstrap. Demo zostanie wkrótce udostępnione.",
+            tags: ["Java", "Javalin"],
+            date: "2024-02-20",
+          },
+          {
+            title: "VCD4J",
+            description: "Lekka biblioteka do odczytu i modyfikacji plików VCD (Value Change Dump) wraz z narzędziami do odtwarzania i symulacji nagrań.",
+            tags: ["Java", "VCD"],
+            link: "https://github.com/Defective4/vcd4j",
+            date: "2021-08-05",
+          },
+        ],
       },
       {
         id: "autor2",
