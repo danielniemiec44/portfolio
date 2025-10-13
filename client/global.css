@@ -57,7 +57,15 @@ body {
 /* Cards */
 .softify-card { background: var(--softify-card-bg); border-radius: 0.5rem; border: 1px solid var(--softify-border); }
 .softify-card .card-title { font-weight: 700; color: #0b1220; }
-.softify-badge { font-size: 0.75rem; padding: 0.35rem 0.6rem; background: rgba(11,102,209,0.08); color: var(--softify-accent); border-radius: 999px; }
+.softify-badge {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  /* use high-contrast text on light background for accessibility */
+  background-color: #ffffff !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(11,102,209,0.12);
+  border-radius: 999px;
+}
 
 /* Buttons */
 .btn-primary {
