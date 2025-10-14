@@ -17,26 +17,40 @@ export default function Index() {
         projects: [
           {
             title: "Generator map pogodowych",
-            description: "Desktopowa i mobilna aplikacja do generowania graficznych map pogodowych oraz zarządzania zespołem synoptyków: grafik prognoz, lista nieobecności i powiadomienia w czasie rzeczywistym.",
+            description: `Generator map pogodowych [Java] [Closed-Source]
+Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
+Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
+Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
             tags: ["Java"],
             date: "2023-06-01",
           },
           {
             title: "SDR Toolkit",
-            description: "Zestaw narzędzi do komunikacji z serwerami RTL-TCP oraz podstawowej manipulacji cyfrowymi sygnałami (filtry, demodulacja, nagrywanie).",
+            description: `SDR Toolkit [Java]
+Zestaw narzędzi do interakcji z serwerami RTL-TCP i do podstawowej manipulacji cyfrowymi sygnałami
+
+https://github.com/Defective4/sdr-toolkit`,
             tags: ["Java", "SDR"],
             link: "https://github.com/Defective4/sdr-toolkit",
             date: "2022-11-12",
           },
           {
             title: "JDocDex",
-            description: "Self-hostowalna usługa do zarządzania kolekcją dokumentacji w formacie JavaDoc. Backend oparty na Javalin, frontend wykorzystuje Bootstrap. Demo zostanie wkrótce udostępnione.",
+            description: `JDocDex [Java] [Closed-Source]
+Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
+Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
+
+<Tu będzie link do demo jak zaczne hostować>`,
             tags: ["Java", "Javalin"],
             date: "2024-02-20",
           },
           {
             title: "VCD4J",
-            description: "Lekka biblioteka do odczytu i modyfikacji plików VCD (Value Change Dump) wraz z narzędziami do odtwarzania i symulacji nagrań.",
+            description: `VCD4J [Java]
+Prosta biblioteka do manipulacji plikami VCD (Value Change Dump).
+Pozwala na odczyt i modyfikację plików VCD, odtwarzanie i symulację istniejących nagrań jak i nagrywanie nowych z zewnętrznych źródeł.
+
+https://github.com/Defective4/vcd4j`,
             tags: ["Java", "VCD"],
             link: "https://github.com/Defective4/vcd4j",
             date: "2021-08-05",
