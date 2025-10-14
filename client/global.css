@@ -37,7 +37,7 @@ body {
   text-align: center;
   line-height: 34px;
   background: linear-gradient(135deg, var(--softify-accent), var(--softify-accent-2));
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
 .navbar .nav-link { color: #374151; }
