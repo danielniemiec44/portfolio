@@ -178,10 +178,10 @@ https://github.com/Defective4/vcd4j`,
         <div className="softify-hero-blur" />
       </section>
 
-      {/* Authors & Portfolio: authors side-by-side with projects beneath each */}
-      <section id="projekty" className="py-5">
+      {/* Authors */}
+      <section id="autorzy" className="py-5">
         <Container>
-          <h2 id="autorzy" className="h4 fw-bold mb-4">Autorzy</h2>
+          <h2 className="h4 fw-bold mb-4">Autorzy</h2>
 
           <Row className="g-4 mb-5">
             {authors.map((a) => (
@@ -190,7 +190,12 @@ https://github.com/Defective4/vcd4j`,
               </Col>
             ))}
           </Row>
+        </Container>
+      </section>
 
+      {/* Portfolio */}
+      <section id="projekty" className="py-5">
+        <Container>
           <h2 className="h4 fw-bold mb-4">Portfolio</h2>
 
           <Row className="g-4">
