@@ -27,6 +27,9 @@ body {
 /* ensure navbar sits flush to top */
 .softify-navbar { margin-top: 0 !important; top: 0 !important; }
 
+/* reserve space for fixed navbar to avoid content jump */
+body { padding-top: var(--navbar-height); }
+
 /* Navbar */
 .softify-navbar {
   background: #ffffff;
