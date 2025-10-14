@@ -33,16 +33,11 @@ export default function Layout({ children }: LayoutProps) {
         window.removeEventListener('scroll', onFirstScroll);
       };
 
-      // initialize observer when user scrolls, or after a short timeout (in case they don't scroll)
+      // initialize observer when user scrolls (no timeout)
       window.addEventListener('scroll', onFirstScroll, { passive: true });
-      const timeoutId = window.setTimeout(() => {
-        initObserver();
-        window.removeEventListener('scroll', onFirstScroll);
-      }, 1500);
 
       return () => {
         window.removeEventListener('scroll', onFirstScroll);
-        clearTimeout(timeoutId);
         if (observer) observer.disconnect();
       };
     }
