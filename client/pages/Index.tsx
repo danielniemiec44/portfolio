@@ -60,7 +60,7 @@ https://github.com/Defective4/vcd4j`,
       {
         id: "autor2",
         name: "DeeRave",
-        role: "Full‑Stack & Game Developer (Node.js, React, Unity/C#)",
+        role: "Full‑Stack & Game Developer",
         bio: "Full‑Stack developer specjalizujący się w budowie skalowalnych aplikacji webowych z wykorzystaniem Node.js i React. Doświadczenie w projektowaniu API, integracji z bazami danych oraz automatyzacji (boty Discord). Tworzę również wtyczki do Minecraft (Spigot/Paper) oraz aplikacje w Unity (C#). Posiadam praktyczną znajomość administracji Linux i Windows Server.",
         skills: ["Node.js", "Express", "React", "PostgreSQL", "Python", "Discord bots", "Minecraft plugins (Spigot/Paper)", "Unity", "C#", "Linux", "Windows Server", "Java"],
         projects: [
@@ -99,7 +99,7 @@ https://github.com/Defective4/vcd4j`,
       src: "/assets/realizacja/rysunek-4.jpg",
       title: "Główna strona modułu 'Magazyn' – bez wybranej kategorii",
       description:
-        "Widok informuje użytkownika o konieczności wyboru kategorii produktów, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
+        "Widok informuje użytkownika o konieczności wyboru kategorii produkt��w, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
     },
     {
       src: "/assets/realizacja/rysunek-5.jpg",
