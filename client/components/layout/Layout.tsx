@@ -41,7 +41,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Navbar expand={false} className="py-2 softify-navbar position-sticky top-0" bg="light" variant="light" style={{ zIndex: 1100 }}>
+      <Navbar expand={false} className="py-1 softify-navbar position-sticky top-0" bg="light" variant="light" style={{ zIndex: 1200 }}>
         <Container>
           <Navbar.Brand href="/" className="fw-bold text-primary">
             <span className="softify-logo bg-gradient">S</span> Softify
