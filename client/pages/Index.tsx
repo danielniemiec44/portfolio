@@ -60,7 +60,7 @@ https://github.com/Defective4/vcd4j`,
       {
         id: "autor2",
         name: "DeeRave",
-        role: "Game Developer",
+        role: "Full‑Stack Developer & Game Developer",
         bio: "Full‑Stack developer specjalizujący się w budowie skalowalnych aplikacji webowych z wykorzystaniem Node.js i React. Doświadczenie w projektowaniu API, integracji z bazami danych oraz automatyzacji (boty Discord). Tworzę również wtyczki do Minecraft (Spigot/Paper) oraz aplikacje w Unity (C#). Posiadam praktyczną znajomość administracji Linux i Windows Server.",
         skills: ["Node.js", "Express", "React", "PostgreSQL", "Python", "Discord bots", "Minecraft plugins (Spigot/Paper)", "Unity", "C#", "Linux", "Windows Server", "Java"],
         projects: [
