@@ -60,7 +60,7 @@ https://github.com/Defective4/vcd4j`,
       {
         id: "autor2",
         name: "DeeRave",
-        role: "Full‑Stack & Game/Plugins Developer",
+        role: "Full‑Stack Developer & Platform Engineer",
         bio: "Full‑Stack developer specjalizujący się w budowie skalowalnych aplikacji webowych z wykorzystaniem Node.js i React. Doświadczenie w projektowaniu API, integracji z bazami danych oraz automatyzacji (boty Discord). Tworzę również wtyczki do Minecraft (Spigot/Paper) oraz aplikacje w Unity (C#). Posiadam praktyczną znajomość administracji Linux i Windows Server.",
         skills: ["Node.js", "Express", "React", "PostgreSQL", "Python", "Discord bots", "Minecraft plugins (Spigot/Paper)", "Unity", "C#", "Linux", "Windows Server", "Java"],
         projects: [
@@ -87,7 +87,7 @@ https://github.com/Defective4/vcd4j`,
       src: "/assets/realizacja/rysunek-2.jpg",
       title: "Główny widok aplikacji po zalogowaniu",
       description:
-        "Centralny panel nawigacyjny z kaflami do najważniejszych modułów: Magazyn, Klienci, Przyjęcia i Wydania. Widok jest responsywny i utrzymany w stylistyce Material Design.",
+        "Centralny panel nawigacyjny z kaflami do najważniejszych modułów: Magazyn, Klienci, Przyj��cia i Wydania. Widok jest responsywny i utrzymany w stylistyce Material Design.",
     },
     {
       src: "/assets/realizacja/rysunek-3.jpg",
