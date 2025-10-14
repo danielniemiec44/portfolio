@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
 interface LayoutProps {
@@ -6,19 +6,67 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const [active, setActive] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Smooth scroll for hash links inside navbar
+    const nav = document.querySelector('.softify-navbar');
+    if (!nav) return;
+
+    const links: NodeListOf<HTMLAnchorElement> = nav.querySelectorAll('a[href^="#"]');
+    const onClick = (e: Event) => {
+      const el = e.currentTarget as HTMLAnchorElement;
+      const href = el.getAttribute('href') || '';
+      const id = href.replace('#', '');
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        const navHeight = (nav as HTMLElement).offsetHeight;
+        const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+        window.scrollTo({ top, behavior: 'smooth' });
+        // set active immediately
+        setActive(id);
+      }
+    };
+
+    links.forEach((l) => l.addEventListener('click', onClick));
+
+    // IntersectionObserver to update active link on scroll
+    const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach((s) => observer.observe(s));
+
+    return () => {
+      links.forEach((l) => l.removeEventListener('click', onClick));
+      observer.disconnect();
+    };
+  }, []);
+
+  const navItems = [
+    { href: '#autorzy', label: 'Autorzy', id: 'autorzy' },
+    { href: '#projekty', label: 'Portfolio', id: 'projekty' },
+    { href: '#kontakt', label: 'Kontakt', id: 'kontakt' },
+  ];
+
   return (
     <div className="d-flex flex-column min-vh-100">
-      <Navbar expand={false} className="py-3 softify-navbar" bg="light" variant="light">
+      <Navbar expand={false} className="py-3 softify-navbar position-sticky top-0" bg="light" variant="light" style={{ zIndex: 1100 }}>
         <Container>
           <Navbar.Brand href="/" className="fw-bold text-primary">
             <span className="softify-logo bg-gradient">S</span> Softify
           </Navbar.Brand>
 
           <Nav className="ms-auto d-flex flex-row gap-3 align-items-center">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#autorzy">Autorzy</Nav.Link>
-            <Nav.Link href="#projekty">Portfolio</Nav.Link>
-            <Nav.Link href="#kontakt">Kontakt</Nav.Link>
+            {navItems.map((n) => (
+              <Nav.Link key={n.id} href={n.href} active={active === n.id} className={active === n.id ? 'fw-semibold' : ''}>
+                {n.label}
+              </Nav.Link>
+            ))}
           </Nav>
         </Container>
       </Navbar>
