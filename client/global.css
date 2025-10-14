@@ -10,16 +10,20 @@
   --softify-border: rgba(15,23,42,0.06);
 }
 
-html, body, #root { height: 100%; }
+html, body, #root { height: 100%; padding: 0; }
 
 body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #0b1220;
   background: var(--softify-surface);
   margin: 0;
+  padding: 0 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ensure navbar sits flush to top */
+.softify-navbar { margin-top: 0 !important; top: 0 !important; }
 
 /* Navbar */
 .softify-navbar {
