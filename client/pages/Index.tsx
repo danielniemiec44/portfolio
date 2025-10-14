@@ -168,7 +168,7 @@ https://github.com/Defective4/vcd4j`,
                 <Button variant="light" href="#projekty" className="px-4 py-2 fw-semibold">
                   Zobacz projekty
                 </Button>
-                <Button variant="outline-light" href="#autor1" className="px-4 py-2 fw-semibold">
+                <Button variant="outline-light" href="#autorzy" className="px-4 py-2 fw-semibold">
                   Poznaj autorów
                 </Button>
               </div>
@@ -181,7 +181,7 @@ https://github.com/Defective4/vcd4j`,
       {/* Authors & Portfolio: authors side-by-side with projects beneath each */}
       <section id="projekty" className="py-5">
         <Container>
-          <h2 className="h4 fw-bold mb-4">Autorzy</h2>
+          <h2 id="autorzy" className="h4 fw-bold mb-4">Autorzy</h2>
 
           <Row className="g-4 mb-5">
             {authors.map((a) => (
@@ -224,7 +224,7 @@ https://github.com/Defective4/vcd4j`,
           </Row>
 
           {/* Contact / Social */}
-          <section className="mt-5 pt-4 border-top">
+          <section id="kontakt" className="mt-5 pt-4 border-top">
             <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
             <p className="mb-2">Masz pytania lub chcesz współpracować? Napisz do nas.</p>
             <div className="d-flex flex-wrap gap-2">
