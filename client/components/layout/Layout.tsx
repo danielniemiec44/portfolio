@@ -15,9 +15,10 @@ export default function Layout({ children }: LayoutProps) {
           </Navbar.Brand>
 
           <Nav className="ms-auto d-flex flex-row gap-3 align-items-center">
-            <Nav.Link href="#autor1">Defective</Nav.Link>
-            <Nav.Link href="#autor2">DeeRave</Nav.Link>
-            <Nav.Link href="#projekty">Projekty</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#autorzy">Autorzy</Nav.Link>
+            <Nav.Link href="#projekty">Portfolio</Nav.Link>
+            <Nav.Link href="#kontakt">Kontakt</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
