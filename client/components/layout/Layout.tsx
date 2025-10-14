@@ -9,28 +9,6 @@ export default function Layout({ children }: LayoutProps) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    // Smooth scroll for hash links inside navbar
-    const nav = document.querySelector('.softify-navbar');
-    if (!nav) return;
-
-    const links: NodeListOf<HTMLAnchorElement> = nav.querySelectorAll('a[href^="#"]');
-    const onClick = (e: Event) => {
-      const el = e.currentTarget as HTMLAnchorElement;
-      const href = el.getAttribute('href') || '';
-      const id = href.replace('#', '');
-      const target = document.getElementById(id);
-      if (target) {
-        e.preventDefault();
-        const navHeight = (nav as HTMLElement).offsetHeight;
-        const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-        window.scrollTo({ top, behavior: 'smooth' });
-        // set active immediately
-        setActive(id);
-      }
-    };
-
-    links.forEach((l) => l.addEventListener('click', onClick));
-
     // IntersectionObserver to update active link on scroll
     const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
     const observer = new IntersectionObserver((entries) => {
@@ -41,11 +19,19 @@ export default function Layout({ children }: LayoutProps) {
 
     sections.forEach((s) => observer.observe(s));
 
-    return () => {
-      links.forEach((l) => l.removeEventListener('click', onClick));
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
+
+  const handleNavClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
+    if (!target) return;
+    const navHeight = nav?.offsetHeight ?? 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+    window.scrollTo({ top, behavior: 'smooth' });
+    setActive(id);
+  };
 
   const navItems = [
     { href: '#autorzy', label: 'Autorzy', id: 'autorzy' },
@@ -63,7 +49,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <Nav className="ms-auto d-flex flex-row gap-3 align-items-center">
             {navItems.map((n) => (
-              <Nav.Link key={n.id} href={n.href} active={active === n.id} className={active === n.id ? 'fw-semibold' : ''}>
+              <Nav.Link key={n.id} href={n.href} onClick={handleNavClick(n.id)} active={active === n.id} className={active === n.id ? 'fw-semibold' : ''}>
                 {n.label}
               </Nav.Link>
             ))}
