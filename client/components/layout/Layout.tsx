@@ -11,38 +11,76 @@ export default function Layout({ children }: LayoutProps) {
   useEffect(() => {
     // Respect URL hash on initial load
     const initialHash = (window.location.hash || '').replace('#', '');
-    if (initialHash) setActive(initialHash);
-
-    // Only enable intersection observer to auto-update active when no explicit hash in URL
-    if (!initialHash) {
-      // Delay creating IntersectionObserver until user interaction (scroll) to prevent immediate auto-activation
-      let observer: IntersectionObserver | null = null;
-      const initObserver = () => {
-        const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
-        observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) setActive(entry.target.id);
-          });
-        }, { threshold: 0.5 });
-
-        sections.forEach((s) => observer!.observe(s));
-      };
-
-      const onFirstScroll = () => {
-        initObserver();
-        window.removeEventListener('scroll', onFirstScroll);
-      };
-
-      // initialize observer when user scrolls (no timeout)
-      window.addEventListener('scroll', onFirstScroll, { passive: true });
-
-      return () => {
-        window.removeEventListener('scroll', onFirstScroll);
-        if (observer) observer.disconnect();
-      };
+    if (initialHash) {
+      setActive(initialHash);
+      return; // if explicit hash provided, don't auto-switch
     }
 
-    return;
+    // If no hash, wait for user's first scroll to start active-tracking
+    const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
+    if (!sections.length) return;
+
+    let started = false;
+    let ticking = false;
+
+    const updateActiveFromScroll = () => {
+      const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
+      const navHeight = nav?.offsetHeight ?? 0;
+
+      // choose section whose top is closest to the nav offset but not below it
+      let best: string | null = null;
+      let bestOffset = -Infinity;
+
+      sections.forEach((s) => {
+        const rect = s.getBoundingClientRect();
+        const offset = rect.top - navHeight; // distance from nav bottom
+        if (offset <= 20 && offset > bestOffset) {
+          best = s.id;
+          bestOffset = offset;
+        }
+      });
+
+      // if none found, optionally select first section below the nav
+      if (!best) {
+        // find the section closest to top
+        let minAbs = Infinity;
+        sections.forEach((s) => {
+          const rect = s.getBoundingClientRect();
+          const offset = Math.abs(rect.top - navHeight);
+          if (offset < minAbs) {
+            minAbs = offset;
+            best = s.id;
+          }
+        });
+      }
+
+      setActive((prev) => (best === prev ? prev : best));
+    };
+
+    const onScroll = () => {
+      if (!started) return; // ignore until user explicitly scrolls
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateActiveFromScroll();
+          ticking = false;
+        });
+      }
+    };
+
+    const onFirstScroll = () => {
+      started = true;
+      updateActiveFromScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.removeEventListener('scroll', onFirstScroll);
+    };
+
+    window.addEventListener('scroll', onFirstScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', onFirstScroll);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const handleNavClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
