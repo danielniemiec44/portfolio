@@ -9,17 +9,25 @@ export default function Layout({ children }: LayoutProps) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    // IntersectionObserver to update active link on scroll
-    const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { threshold: 0.5 });
+    // Respect URL hash on initial load
+    const initialHash = (window.location.hash || '').replace('#', '');
+    if (initialHash) setActive(initialHash);
 
-    sections.forEach((s) => observer.observe(s));
+    // Only enable intersection observer to auto-update active when no explicit hash in URL
+    if (!initialHash) {
+      const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { threshold: 0.5 });
 
-    return () => observer.disconnect();
+      sections.forEach((s) => observer.observe(s));
+
+      return () => observer.disconnect();
+    }
+
+    return;
   }, []);
 
   const handleNavClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -30,6 +38,12 @@ export default function Layout({ children }: LayoutProps) {
     const navHeight = nav?.offsetHeight ?? 0;
     const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
     window.scrollTo({ top, behavior: 'smooth' });
+    // update URL hash without jumping
+    if (history && history.replaceState) {
+      history.replaceState(null, '', `#${id}`);
+    } else {
+      window.location.hash = `#${id}`;
+    }
     setActive(id);
   };
 
