@@ -15,16 +15,36 @@ export default function Layout({ children }: LayoutProps) {
 
     // Only enable intersection observer to auto-update active when no explicit hash in URL
     if (!initialHash) {
-      const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      }, { threshold: 0.5 });
+      // Delay creating IntersectionObserver until user interaction (scroll) to prevent immediate auto-activation
+      let observer: IntersectionObserver | null = null;
+      const initObserver = () => {
+        const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        }, { threshold: 0.5 });
 
-      sections.forEach((s) => observer.observe(s));
+        sections.forEach((s) => observer!.observe(s));
+      };
 
-      return () => observer.disconnect();
+      const onFirstScroll = () => {
+        initObserver();
+        window.removeEventListener('scroll', onFirstScroll);
+      };
+
+      // initialize observer when user scrolls, or after a short timeout (in case they don't scroll)
+      window.addEventListener('scroll', onFirstScroll, { passive: true });
+      const timeoutId = window.setTimeout(() => {
+        initObserver();
+        window.removeEventListener('scroll', onFirstScroll);
+      }, 1500);
+
+      return () => {
+        window.removeEventListener('scroll', onFirstScroll);
+        clearTimeout(timeoutId);
+        if (observer) observer.disconnect();
+      };
     }
 
     return;
