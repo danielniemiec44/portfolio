@@ -73,7 +73,7 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
           <Modal.Title>{images[index]?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Carousel activeIndex={index} onSelect={(selectedIndex: number) => setIndex(selectedIndex)} variant="dark" interval={null} indicators>
+          <Carousel activeIndex={index} onSelect={(selectedIndex: number) => setIndex(selectedIndex)} variant="dark" interval={null} indicators={false}>
             {images.map((img, i) => (
               <Carousel.Item key={i}>
                 <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
@@ -88,6 +88,20 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
               </Carousel.Item>
             ))}
           </Carousel>
+
+          <div className="d-flex justify-content-center mt-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={i === index ? "btn btn-sm btn-dark rounded-circle mx-1" : "btn btn-sm btn-light rounded-circle mx-1"}
+                onClick={() => setIndex(i)}
+                aria-label={`Przejdź do slajdu ${i + 1}`}
+                aria-current={i === index}
+                style={{ width: 10, height: 10, padding: 0 }}
+              />
+            ))}
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShow(false)}>
