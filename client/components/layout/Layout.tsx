@@ -27,9 +27,12 @@ export default function Layout({ children }: LayoutProps) {
       const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
       const navHeight = nav?.offsetHeight ?? 0;
 
-      const sectionsData = sections.map((s) => ({ id: s.id, top: s.getBoundingClientRect().top + window.scrollY }));
-      const chosen = chooseActiveSection(sectionsData, window.scrollY, navHeight, window.innerHeight, document.documentElement.scrollHeight);
-      setActive((prev) => (prev === chosen ? prev : chosen));
+      const sectionsData = sections.map((s) => {
+      const rect = s.getBoundingClientRect();
+      return { id: s.id, top: rect.top + window.scrollY, bottom: rect.bottom + window.scrollY };
+    });
+    const chosen = chooseActiveSection(sectionsData, window.scrollY, navHeight, window.innerHeight, document.documentElement.scrollHeight);
+    setActive((prev) => (prev === chosen ? prev : chosen));
     };
 
     const onScroll = () => {
