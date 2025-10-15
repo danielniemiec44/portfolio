@@ -84,8 +84,9 @@ export default function Layout({ children }: LayoutProps) {
     <div className="d-flex flex-column min-vh-100">
       <Navbar expand={false} className="py-1 softify-navbar position-fixed top-0 w-100" bg="light" variant="light" style={{ zIndex: 1030, paddingRight: '1.25rem' }}>
         <Container fluid className="px-3">
-          <Navbar.Brand href="/" className="fw-bold text-primary">
-            <span className="softify-logo bg-gradient">S</span> Softify
+          <Navbar.Brand href="/" className="fw-bold text-primary d-flex align-items-center">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F15aac3ea074c4328a2d0d02199bbede8?format=webp&width=800" alt="Softify logo" className="softify-logo-img me-2" />
+            <span>Softify</span>
           </Navbar.Brand>
 
           <Nav className="ms-auto d-flex flex-row gap-3 align-items-center pe-5">
