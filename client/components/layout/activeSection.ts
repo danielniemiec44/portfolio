@@ -1,5 +1,5 @@
 export function chooseActiveSection(
-  sections: { id: string; top: number }[],
+  sections: { id: string; top: number; bottom: number }[],
   scrollY: number,
   navHeight: number,
   innerHeight: number,
@@ -32,6 +32,20 @@ export function chooseActiveSection(
   const distToBottom = docHeight - (scrollY + innerHeight);
   const bottomThreshold = innerHeight < 600 ? 120 : 200;
   if (distToBottom <= bottomThreshold) chosenIndex = tops.length - 1;
+
+  // ensure chosen section is actually at least slightly visible (helps on mobile)
+  const chosen = sections[chosenIndex];
+  if (chosen) {
+    const visTop = Math.max(chosen.top - scrollY, navHeight);
+    const visBottom = Math.min(chosen.bottom - scrollY, innerHeight);
+    const visibleHeight = Math.max(0, visBottom - visTop);
+
+    // require some visibility for last section unless near bottom
+    if (chosenIndex === sections.length - 1 && distToBottom > bottomThreshold && visibleHeight < 40) {
+      // don't switch to last if it's not actually visible enough
+      return null;
+    }
+  }
 
   return sections[chosenIndex]?.id ?? null;
 }
