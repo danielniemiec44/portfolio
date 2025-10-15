@@ -25,44 +25,34 @@ export default function Layout({ children }: LayoutProps) {
     const computeActive = () => {
       const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
       const navHeight = nav?.offsetHeight ?? 0;
-      const scrollY = window.scrollY;
+      const scrollPoint = window.scrollY + navHeight + 20; // marker under navbar
 
-      // Use section document-top positions relative to navbar to pick the active one.
-      // Choose the last section whose top is <= current scroll position + small buffer.
-      let candidate: string | null = null;
-      sections.forEach((s) => {
-        const top = s.getBoundingClientRect().top + window.scrollY - navHeight - 8;
-        if (top <= scrollY + 20) {
-          candidate = s.id;
-        }
-      });
-
-      // If none matched yet, and we're close to the top of the first section, pick it
-      if (!candidate) {
-        const first = sections[0];
-        if (first) {
-          const rect = first.getBoundingClientRect();
-          if (rect.top <= navHeight + 100) {
-            candidate = first.id;
-          }
-        }
-      }
-
-      // If user is near page bottom, force last section active
-      const distToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
-      if (distToBottom <= 200) {
-        const last = sections[sections.length - 1];
-        if (last) {
-          setActive((prev) => (prev === last.id ? prev : last.id));
-          return;
-        }
-      }
-
-      if (candidate) {
-        setActive((prev) => (prev === candidate ? prev : candidate));
-      } else {
+      const tops = sections.map((s) => s.getBoundingClientRect().top + window.scrollY - navHeight - 8);
+      if (!tops.length) {
         setActive((prev) => (prev === null ? prev : null));
+        return;
       }
+
+      // compute midpoints between consecutive section tops
+      const boundaries: number[] = [];
+      for (let i = 0; i < tops.length - 1; i++) {
+        boundaries.push((tops[i] + tops[i + 1]) / 2);
+      }
+
+      let chosenIndex = tops.length - 1;
+      for (let i = 0; i < boundaries.length; i++) {
+        if (scrollPoint < boundaries[i]) {
+          chosenIndex = i;
+          break;
+        }
+      }
+
+      // near-bottom override to ensure last section becomes active
+      const distToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      if (distToBottom <= 200) chosenIndex = tops.length - 1;
+
+      const chosenId = sections[chosenIndex]?.id ?? null;
+      setActive((prev) => (prev === chosenId ? prev : chosenId));
     };
 
     const onScroll = () => {
