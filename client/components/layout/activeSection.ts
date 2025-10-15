@@ -6,9 +6,13 @@ export function chooseActiveSection(
   docHeight: number
 ) {
   if (!sections.length) return null;
-  const scrollPoint = scrollY + navHeight + 20;
 
-  const tops = sections.map((s) => s.top - navHeight - 8);
+  // dynamic buffer: smaller on short screens to avoid jumping
+  const baseBuffer = innerHeight < 600 ? 12 : 20;
+  const topOffset = navHeight + baseBuffer;
+  const scrollPoint = scrollY + topOffset;
+
+  const tops = sections.map((s) => s.top - topOffset);
 
   // compute midpoints between consecutive section tops
   const boundaries: number[] = [];
@@ -26,7 +30,8 @@ export function chooseActiveSection(
 
   // near-bottom override to ensure last section becomes active
   const distToBottom = docHeight - (scrollY + innerHeight);
-  if (distToBottom <= 200) chosenIndex = tops.length - 1;
+  const bottomThreshold = innerHeight < 600 ? 120 : 200;
+  if (distToBottom <= bottomThreshold) chosenIndex = tops.length - 1;
 
   return sections[chosenIndex]?.id ?? null;
 }
