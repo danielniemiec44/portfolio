@@ -171,7 +171,7 @@ https://github.com/Defective4/vcd4j`,
       },
       {
         src: "/assets/realizacja/wsm_page22_img1.png",
-        title: "Szczeg��ły ilościowe produktu – wizualizacja w formie wykresu",
+        title: "Szczegóły ilościowe produktu – wizualizacja w formie wykresu",
         description:
           "Wykres liniowy obrazuje przyjęcia (zielone) i wydania (czerwone) w funkcji daty; nad wykresem podsumowanie liczby operacji.",
       },
@@ -348,16 +348,16 @@ https://github.com/Defective4/vcd4j`,
 
           {/* Contact / Social */}
           <section id="kontakt" className="mt-5 pt-4 border-top">
-            <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
+            <h3 className="h5 fw-semibold mb-3">Kontak.</h3>
             <p className="mb-2">
               Masz pytania lub chcesz współpracować? Napisz do nas.
             </p>
             <div className="d-flex flex-wrap gap-2">
               <a
                 className="btn btn-outline-dark"
-                href="mailto:kontakt@softify.local"
+                href="mailto:kontakt@softify.com.pl"
               >
-                kontakt@softify.local
+                kontakt@softify.com.pl
               </a>
               <a
                 className="btn btn-outline-dark"
