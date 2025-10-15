@@ -92,10 +92,9 @@ https://github.com/Defective4/vcd4j`,
         ],
         projects: [
           {
-            title: "Webowy System Magazynowy",
-            description:
-              "Praca inżynierska obroniona 10.10.2025 — webowy system do zarządzania magazynem, obejmujący backend, API oraz interfejs użytkownika.",
-            tags: ["Node.js", "React", "PostgreSQL"],
+            title: "Webowy System Magazynowy (WSM)",
+            description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, JWT\nFrontend: React, Bootstrap, Chart.js\nNarzędzia: Docker, Git`,
+            tags: ["Node.js", "React", "PostgreSQL", "Express", "Bootstrap"],
             date: "2025-10-10",
           },
         ],
@@ -319,7 +318,7 @@ https://github.com/Defective4/vcd4j`,
                 <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
 
                 <div className="portfolio-column">
-                  {a.projects.length === 1 ? (
+                  {a.id === "autor2" && a.projects.length === 1 ? (
                     <ProjectCard
                       title={a.projects[0].title}
                       description={a.projects[0].description}
