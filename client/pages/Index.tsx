@@ -107,7 +107,7 @@ https://github.com/Defective4/vcd4j`,
         src: "/assets/realizacja/wsm_page11_img1.png",
         title: "Ekran logowania do systemu WSM",
         description:
-          "Mechanizm logowania chroni dostęp do systemu; błędne próby są odrzucane, co zabezpiecza dane uwierzytelniające.",
+          "Mechanizm logowania chroni dostęp do systemu; błędne pr��by są odrzucane, co zabezpiecza dane uwierzytelniające.",
       },
       {
         src: "/assets/realizacja/wsm_page12_img1.png",
@@ -358,22 +358,6 @@ https://github.com/Defective4/vcd4j`,
                 href="mailto:kontakt@softify.com.pl"
               >
                 kontakt@softify.com.pl
-              </a>
-              <a
-                className="btn btn-outline-dark"
-                href="https://github.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                className="btn btn-outline-dark"
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
               </a>
             </div>
           </section>
