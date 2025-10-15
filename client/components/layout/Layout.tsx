@@ -77,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
   const navItems = [
     { href: '#autorzy', label: 'Autorzy', id: 'autorzy' },
     { href: '#projekty', label: 'Portfolio', id: 'projekty' },
-    { href: '#kontakt', label: 'Kontak.', id: 'kontakt' },
+    { href: '#kontakt', label: 'Kontakt', id: 'kontakt' },
   ];
 
   return (
