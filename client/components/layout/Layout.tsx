@@ -83,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Navbar expand={false} className="py-1 softify-navbar position-fixed top-0 w-100" bg="light" variant="light" style={{ zIndex: 1030, paddingRight: '1.25rem' }}>
-        <Container>
+        <Container fluid className="px-3">
           <Navbar.Brand href="/" className="fw-bold text-primary">
             <span className="softify-logo bg-gradient">S</span> Softify
           </Navbar.Brand>
