@@ -110,142 +110,58 @@ https://github.com/Defective4/vcd4j`,
         src: "/assets/realizacja/page11_img1.png",
         title: "Dashboard — strona główna po zalogowaniu",
         description:
-          "Główny ekran aplikacji prezentujący kafle z modułami (Magazyn, Klienci, Przyjęcia, Wydania) oraz górną nawigację i CTA.",
+          "Główny ekran aplikacji prezentujący kafle z modułami (Magazyn, Klienci, Przyjęcia, Wydania) oraz górną nawigację i CTA. Umożliwia szybki dostęp do kluczowych funkcji systemu.",
       },
       {
         src: "/assets/realizacja/page12_img1.png",
         title: "Menu boczne — widok mobilny",
         description:
-          "Responsywne menu boczne zapewniające szybki dostęp do sekcji aplikacji; pozycje zależne od uprawnień użytkownika.",
+          "Responsywne menu boczne zapewniające szybki dostęp do sekcji aplikacji; pozycje zależne od uprawnień użytkownika. Idealne dla urządzeń mobilnych.",
       },
       {
         src: "/assets/realizacja/page13_img1.png",
         title: "Moduł Magazyn — widok bez wybranej kategorii",
         description:
-          "Ekran informujący użytkownika o konieczności wyboru kategorii przed przeglądaniem produktów oraz przyciski akcji.",
+          "Ekran informujący użytkownika o konieczności wyboru kategorii przed przeglądaniem produktów oraz przyciski akcji. Ułatwia nawigację w systemie.",
       },
       {
         src: "/assets/realizacja/page14_img1.png",
         title: "Wybór kategorii — modal",
         description:
-          "Modal z listą kategorii produktowych, możliwością dodania nowej kategorii i edycji istniejących.",
+          "Modal z listą kategorii produktowych, możliwością dodania nowej kategorii i edycji istniejących. Zapewnia elastyczność zarządzania danymi.",
       },
       {
         src: "/assets/realizacja/page15_img1.png",
         title: "Konfiguracja kategorii — pola własne",
         description:
-          "Formularz konfiguracji pól własnych dla kategorii (nazwa, typ pola, wartość domyślna) umożliwiający elastyczne modelowanie produktów.",
+          "Formularz konfiguracji pól własnych dla kategorii (nazwa, typ pola, wartość domyślna) umożliwiający elastyczne modelowanie produktów. Przydatne dla zaawansowanych użytkowników.",
       },
       {
         src: "/assets/realizacja/page16_img1.png",
         title: "Lista produktów — tabela kategorii",
         description:
-          "Tabela z listą produktów w wybranej kategorii z funkcjami filtrowania, sortowania i zaznaczania pozycji.",
+          "Tabela z listą produktów w wybranej kategorii z funkcjami filtrowania, sortowania i zaznaczania pozycji. Ułatwia zarządzanie dużymi zbiorami danych.",
       },
       {
         src: "/assets/realizacja/page17_img1.png",
         title: "Analiza ilościowa — podsumowanie",
         description:
-          "Modal prezentujący dostępne narzędzia analityczne: filtr dat, zakładki z historią wydań/przyjęć i wykresy.",
+          "Modal prezentujący dostępne narzędzia analityczne: filtr dat, zakładki z historią wydań/przyjęć i wykresy. Pomaga w podejmowaniu decyzji biznesowych.",
       },
       {
         src: "/assets/realizacja/page18_img1.png",
         title: "Szczegóły wydań — lista zewnętrzna",
         description:
-          "Widok listy wydań zewnętrznych pokazujący numer dokumentu, kontrahenta, ilość, datę i operatora.",
+          "Widok listy wydań zewnętrznych pokazujący numer dokumentu, kontrahenta, ilość, datę i operatora. Ułatwia śledzenie historii operacji.",
       },
       {
         src: "/assets/realizacja/page19_img1.png",
         title: "Szczegóły wydań — rozwinięcie wpisu",
         description:
-          "Rozszerzone informacje o pojedynczym wydaniu: szczegóły kontrahenta, stan magazynowy przed/po operacji oraz notatki.",
-      },
-      {
-        src: "/assets/realizacja/page20_img1.png",
-        title: "Lista przyjęć (PZ)",
-        description:
-          "Zakładka z listą przyjęć zewnętrznych zawierająca numer PZ, datę przyjęcia, dostawcę i liczbę pozycji.",
-      },
-      {
-        src: "/assets/realizacja/page21_img1.png",
-        title: "Historia operacji magazynowych",
-        description:
-          "Chronologiczne zestawienie operacji (przyjęcia i wydania) z informacją o zmianach stanu i operatorach.",
-      },
-      {
-        src: "/assets/realizacja/page22_img1.png",
-        title: "Konsolidowany widok operacji",
-        description:
-          "Widok łączący spis wydań i przyjęć oraz prezentujący zmiany stanów magazynowych przed i po.",
-      },
-      {
-        src: "/assets/realizacja/page23_img1.png",
-        title: "Wykres ilościowy — analiza trendów",
-        description:
-          "Interaktywny wykres ilustrujący liczbę przyjęć i wydań w zadanym przedziale czasowym oraz podsumowania.",
-      },
-      {
-        src: "/assets/realizacja/page24_img1.png",
-        title: "Dodawanie pozycji — formularz",
-        description:
-          "Modal tworzenia nowego wpisu produktu z polami podstawowymi (nazwa, ilość, kod kreskowy) i dodatkowymi właściwościami.",
-      },
-      {
-        src: "/assets/realizacja/page25_img1.png",
-        title: "Wydania — przegląd dokumentów",
-        description:
-          "Lista dokumentów wydania z możliwością wyszukiwania, filtrowania i przechodzenia do szczegółów pozycji.",
-      },
-      {
-        src: "/assets/realizacja/page26_img1.png",
-        title: "Wydania — szczegóły dokumentu",
-        description:
-          "Szczegółowy widok wpisu wydania z metadanymi kontrahenta oraz listą pozycji i ich ilości.",
-      },
-      {
-        src: "/assets/realizacja/page27_img1.png",
-        title: "Przyjęcia — lista dokumentów PZ",
-        description:
-          "Lista przyjęć zewnętrznych z numerami PZ, datami i ilościami pozycji; umożliwia szybkie przejście do szczegółów.",
-      },
-      {
-        src: "/assets/realizacja/page28_img1.png",
-        title: "Przyjęcia — szczegóły wpisu",
-        description:
-          "Rozwinięty widok pojedynczego przyjęcia zawierający dane dostawcy, ilość i dodatkowe atrybuty towaru.",
-      },
-      {
-        src: "/assets/realizacja/page29_img1.png",
-        title: "Klienci — lista kontaktów",
-        description:
-          "Panel listy klientów z wyszukiwarką i szybkim dostępem do karty kontrahenta oraz danych kontaktowych.",
-      },
-      {
-        src: "/assets/realizacja/page30_img1.png",
-        title: "Karta klienta — szczegóły",
-        description:
-          "Szczegółowy widok klienta z adresem, numerem telefonu, e‑mailem oraz dodatkowymi informacjami.",
-      },
-      {
-        src: "/assets/realizacja/page31_img1.png",
-        title: "Zarządzanie użytkownikami — lista",
-        description:
-          "Panel administracyjny z listą użytkowników systemu i akcjami (edytuj, usuń, zmień rolę).",
-      },
-      {
-        src: "/assets/realizacja/page32_img1.png",
-        title: "Zarządzanie użytkownikami — dodawanie/zmiana hasła",
-        description:
-          "Modal do dodawania nowego magazyniera oraz formularz zmiany hasła z ostrzeżeniem o wylogowaniu sesji.",
-      },
-      {
-        src: "/assets/realizacja/page33_img1.png",
-        title: "Logi audytu — inspekcja zdarzeń",
-        description:
-          "Widok logów audytowych zawierający datę, użytkownika, endpoint, status odpowiedzi i czas wykonania żądania.",
+          "Rozszerzone informacje o pojedynczym wydaniu: szczegóły kontrahenta, stan magazynowy przed/po operacji oraz notatki. Przydatne dla audytów i analiz.",
       },
     ],
-    [],
+    []
   );
 
   return (
