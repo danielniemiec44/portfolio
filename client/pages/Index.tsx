@@ -348,7 +348,7 @@ https://github.com/Defective4/vcd4j`,
 
           {/* Contact / Social */}
           <section id="kontakt" className="mt-5 pt-4 border-top">
-            <h3 className="h5 fw-semibold mb-3">Kontak.</h3>
+            <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
             <p className="mb-2">
               Masz pytania lub chcesz współpracować? Napisz do nas.
             </p>
