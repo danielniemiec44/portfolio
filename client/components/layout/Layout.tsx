@@ -46,21 +46,22 @@ export default function Layout({ children }: LayoutProps) {
       // But allow the last section to become active when near the bottom of the page
       const minVisible = Math.max(80, window.innerHeight * 0.09); // lower base to handle short sections
 
-      const isAtBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 2);
+      const distToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      const isNearBottom = distToBottom <= 200; // within 200px of page bottom
 
       if (bestVisible >= minVisible) {
         setActive((prev) => (prev === bestId ? prev : bestId));
         return;
       }
 
-      // If user scrolled to bottom, activate the last section explicitly
-    if (isAtBottom) {
-      const last = sections[sections.length - 1];
-      if (last) {
-        setActive((prev) => (prev === last.id ? prev : last.id));
-        return;
+      // If user scrolled to bottom (or near it), activate the last section explicitly
+      if (isNearBottom) {
+        const last = sections[sections.length - 1];
+        if (last) {
+          setActive((prev) => (prev === last.id ? prev : last.id));
+          return;
+        }
       }
-    }
 
       // If the best candidate is the last section and at least slightly visible, accept it
       const lastCandidate = sections[sections.length - 1];
