@@ -31,8 +31,7 @@ export default function Index() {
         projects: [
           {
             title: "Generator map pogodowych",
-            description: `Generator map pogodowych [Java] [Closed-Source]
-Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
+            description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
 Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
 Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
             tags: ["Java", "Closed-Source"],
@@ -40,8 +39,7 @@ Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsług
           },
           {
             title: "SDR Toolkit",
-            description: `SDR Toolkit [Java]
-Zestaw narzędzi do interakcji z serwerami RTL-TCP i do podstawowej manipulacji cyfrowymi sygnałami
+            description: `Zestaw narzędzi do interakcji z serwerami RTL-TCP i do podstawowej manipulacji cyfrowymi sygnałami
 
 https://github.com/Defective4/sdr-toolkit`,
             tags: ["Java", "SDR"],
@@ -50,8 +48,7 @@ https://github.com/Defective4/sdr-toolkit`,
           },
           {
             title: "JDocDex",
-            description: `JDocDex [Java] [Closed-Source]
-Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
+            description: `Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
 Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
 
 <Tu będzie link do demo jak zaczne hostować>`,
@@ -60,8 +57,7 @@ Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstra
           },
           {
             title: "VCD4J",
-            description: `VCD4J [Java]
-Prosta biblioteka do manipulacji plikami VCD (Value Change Dump).
+            description: `Prosta biblioteka do manipulacji plikami VCD (Value Change Dump).
 Pozwala na odczyt i modyfikację plików VCD, odtwarzanie i symulację istniejących nagrań jak i nagrywanie nowych z zewnętrznych źródeł.
 
 https://github.com/Defective4/vcd4j
