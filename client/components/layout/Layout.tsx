@@ -25,59 +25,44 @@ export default function Layout({ children }: LayoutProps) {
     const computeActive = () => {
       const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
       const navHeight = nav?.offsetHeight ?? 0;
-      const viewportTop = navHeight; // content starts below navbar
-      const viewportBottom = window.innerHeight;
+      const scrollY = window.scrollY;
 
-      let bestId: string | null = null;
-      let bestVisible = 0;
-
-      const debugRows: string[] = [];
+      // Use section document-top positions relative to navbar to pick the active one.
+      // Choose the last section whose top is <= current scroll position + small buffer.
+      let candidate: string | null = null;
       sections.forEach((s) => {
-        const rect = s.getBoundingClientRect();
-        const visibleTop = Math.max(rect.top, viewportTop);
-        const visibleBottom = Math.min(rect.bottom, viewportBottom);
-        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-        debugRows.push(`${s.id}: top=${Math.round(rect.top)}, bottom=${Math.round(rect.bottom)}, vis=${Math.round(visibleHeight)}`);
-        if (visibleHeight > bestVisible) {
-          bestVisible = visibleHeight;
-          bestId = s.id;
+        const top = s.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+        if (top <= scrollY + 20) {
+          candidate = s.id;
         }
       });
 
-      // debug output to help trace why Kontakt isn't activating
-      // Remove these logs after debugging
-      console.debug('[active-debug] scrollY=', Math.round(window.scrollY), 'innerH=', window.innerHeight, 'docH=', document.documentElement.scrollHeight);
-      console.debug('[active-debug] sections:', debugRows.join(' | '));
-      console.debug('[active-debug] bestVisible=', Math.round(bestVisible), 'bestId=', bestId);
+      // If none matched yet, and we're close to the top of the first section, pick it
+      if (!candidate) {
+        const first = sections[0];
+        if (first) {
+          const rect = first.getBoundingClientRect();
+          if (rect.top <= navHeight + 100) {
+            candidate = first.id;
+          }
+        }
+      }
 
-
-      // Only set active if the best visible amount is meaningful.
-      // But allow the last section to become active when near the bottom of the page
-      const minVisible = Math.max(80, window.innerHeight * 0.09); // lower base to handle short sections
-
+      // If user is near page bottom, force last section active
       const distToBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
-      const isNearBottom = distToBottom <= 200; // within 200px of page bottom
-
-      if (bestVisible >= minVisible) {
-        setActive((prev) => (prev === bestId ? prev : bestId));
-        return;
+      if (distToBottom <= 200) {
+        const last = sections[sections.length - 1];
+        if (last) {
+          setActive((prev) => (prev === last.id ? prev : last.id));
+          return;
+        }
       }
 
-      // Allow the last section to become active when the user scrolls it into view manually
-      const last = sections[sections.length - 1];
-      if (bestId === last?.id && bestVisible > 0) {
-        setActive((prev) => (prev === bestId ? prev : bestId));
-        return;
+      if (candidate) {
+        setActive((prev) => (prev === candidate ? prev : candidate));
+      } else {
+        setActive((prev) => (prev === null ? prev : null));
       }
-
-      // If user is near page bottom, activate last as a fallback
-      if (isNearBottom && last) {
-        setActive((prev) => (prev === last.id ? prev : last.id));
-        return;
-      }
-
-      // nothing meets criteria, clear active to avoid premature highlighting
-      setActive((prev) => (prev === null ? prev : null));
     };
 
     const onScroll = () => {
