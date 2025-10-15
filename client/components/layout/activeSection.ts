@@ -42,7 +42,14 @@ export function chooseActiveSection(
 
     // require some visibility for last section unless near bottom
     if (chosenIndex === sections.length - 1 && distToBottom > bottomThreshold && visibleHeight < 40) {
-      // don't switch to last if it's not actually visible enough
+      // try falling back to previous section if visible
+      const prev = sections[chosenIndex - 1];
+      if (prev) {
+        const prevVisTop = Math.max(prev.top - scrollY, navHeight);
+        const prevVisBottom = Math.min(prev.bottom - scrollY, innerHeight);
+        const prevVisible = Math.max(0, prevVisBottom - prevVisTop);
+        if (prevVisible >= 40) return prev.id;
+      }
       return null;
     }
   }
