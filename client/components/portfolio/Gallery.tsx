@@ -79,12 +79,12 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
                 <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
                   <img src={img.src} alt={img.alt || img.title} loading="lazy" style={{ maxWidth: "100%", maxHeight: "60vh", objectFit: "contain" }} />
                 </div>
-                <Carousel.Caption className="bg-transparent text-start mt-2 d-none d-md-block" style={{ bottom: "0" }}>
+                <div className="mt-3">
                   <div className="bg-white bg-opacity-90 p-3 rounded text-body shadow-sm" style={{ maxHeight: 200, overflowY: "auto" }}>
                     <div className="fw-bold mb-1">{img.title}</div>
                     <div className="small text-muted">{img.description}</div>
                   </div>
-                </Carousel.Caption>
+                </div>
               </Carousel.Item>
             ))}
           </Carousel>
