@@ -43,14 +43,40 @@ export default function Layout({ children }: LayoutProps) {
       });
 
       // Only set active if the best visible amount is meaningful.
-      // This prevents a tiny sliver of a section from making it active.
-      const minVisible = Math.max(120, window.innerHeight * 0.12);
+      // But allow the last section to become active when near the bottom of the page
+      const minVisible = Math.max(80, window.innerHeight * 0.09); // lower base to handle short sections
+
+      const isAtBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 2);
+
       if (bestVisible >= minVisible) {
         setActive((prev) => (prev === bestId ? prev : bestId));
-      } else {
-        // if nothing sufficiently visible, clear active to avoid premature highlighting
-        setActive((prev) => (prev === null ? prev : null));
+        return;
       }
+
+      // If user scrolled to bottom, activate the last section explicitly if it's at least partially visible
+      if (isAtBottom) {
+        const last = sections[sections.length - 1];
+        if (last) {
+          const rect = last.getBoundingClientRect();
+          const visibleTop = Math.max(rect.top, viewportTop);
+          const visibleBottom = Math.min(rect.bottom, viewportBottom);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          if (visibleHeight > 20) {
+            setActive((prev) => (prev === last.id ? prev : last.id));
+            return;
+          }
+        }
+      }
+
+      // If the best candidate is the last section and at least slightly visible, accept it
+      const lastCandidate = sections[sections.length - 1];
+      if (bestId === lastCandidate?.id && bestVisible > 20) {
+        setActive((prev) => (prev === bestId ? prev : bestId));
+        return;
+      }
+
+      // nothing meets criteria, clear active to avoid premature highlighting
+      setActive((prev) => (prev === null ? prev : null));
     };
 
     const onScroll = () => {
