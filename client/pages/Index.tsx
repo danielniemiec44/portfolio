@@ -20,7 +20,7 @@ export default function Index() {
             description: `Generator map pogodowych [Java] [Closed-Source]
 Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
 Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
-Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
+Projekt ma posta�� aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
             tags: ["Java"],
             date: "2023-06-01",
           },
@@ -78,76 +78,124 @@ https://github.com/Defective4/vcd4j`,
 
   const deeRaveImages = useMemo(() => [
     {
-      src: "/assets/realizacja/rysunek-1.jpg",
-      title: "Ekran logowania do systemu WSM",
-      description:
-        "Strona logowania umożliwiająca uwierzytelnienie u��ytkownika (login + hasło). Widok jest prosty i czytelny, z walidacją pól i komunikatami błędów dla niepoprawnych danych.",
+      src: "/assets/realizacja/page1_img1.png",
+      title: "Ekran logowania",
+      description: "Zrzut ekranu przedstawiający formularz logowania do Webowego Systemu Magazynowego.",
     },
     {
-      src: "/assets/realizacja/rysunek-2.jpg",
-      title: "Główny widok aplikacji po zalogowaniu",
-      description:
-        "Centralny panel nawigacyjny z kaflami do najważniejszych modułów: Magazyn, Klienci, Przyjęcia i Wydania. Widok jest responsywny i utrzymany w stylistyce Material Design.",
+      src: "/assets/realizacja/page11_img1.png",
+      title: "Pulpit po zalogowaniu",
+      description: "Główny widok aplikacji z kaflami do modułów: Magazyn, Klienci, Przyjęcia i Wydania.",
     },
     {
-      src: "/assets/realizacja/rysunek-3.jpg",
-      title: "Menu zakładek modułów w trybie mobilnym",
-      description:
-        "Zoptymalizowane menu mobilne dające szybki dostęp do kluczowych sekcji aplikacji. Pozycje są kontekstowe i zależne od uprawnień aktualnego użytkownika.",
+      src: "/assets/realizacja/page12_img1.png",
+      title: "Menu mobilne",
+      description: "Widok bocznego menu w trybie mobilnym z odnośnikami do modułów aplikacji.",
     },
     {
-      src: "/assets/realizacja/rysunek-4.jpg",
-      title: "Główna strona modułu 'Magazyn' – bez wybranej kategorii",
-      description:
-        "Widok informuje użytkownika o konieczności wyboru kategorii produkt��w, pokazuje przyciski akcji (wybierz kategorię, dodaj produkt) i stan paginacji.",
+      src: "/assets/realizacja/page13_img1.png",
+      title: "Moduł Magazyn – widok początkowy",
+      description: "Strona modułu Magazyn informująca o konieczności wybrania kategorii oraz pokazująca przyciski akcji.",
     },
     {
-      src: "/assets/realizacja/rysunek-5.jpg",
-      title: "Menu wyboru dostępnych kategorii produktów",
-      description:
-        "Okno wyboru kategorii z listą istniejących grup produktowych oraz możliwością dodania lub edycji kategorii (ikona ołówka).",
+      src: "/assets/realizacja/page14_img1.png",
+      title: "Wybór kategorii produktów",
+      description: "Okno modalne z listą kategorii i opcjami edycji oraz dodania nowej kategorii.",
     },
     {
-      src: "/assets/realizacja/rysunek-6.jpg",
-      title: "Dodawanie i modyfikacja kategorii produktów",
-      description:
-        "Formularz pozwalający zdefiniować nazwę kategorii oraz dodać dowolną liczbę pól własnych (nazwa, typ, wartość domyślna).",
+      src: "/assets/realizacja/page15_img1.png",
+      title: "Formularz dodawania kategorii – pola własne",
+      description: "Interfejs pozwalający dodać i skonfigurować pola własne dla kategorii produktów.",
     },
     {
-      src: "/assets/realizacja/rysunek-7.jpg",
-      title: "Widok tabeli produktów w wybranej kategorii",
-      description:
-        "Tabela produktów (przykład: Komputer PC) z kolumnami: nazwa, ilość, kod kreskowy oraz dodatkowe właściwości. Umożliwia filtrowanie i zaznaczanie pozycji.",
+      src: "/assets/realizacja/page16_img1.png",
+      title: "Tabela produktów w kategorii",
+      description: "Lista produktów w wybranej kategorii z kolumnami: nazwa, ilość, kod kreskowy i właściwości.",
     },
     {
-      src: "/assets/realizacja/rysunek-8.jpg",
-      title: "Szczeg��ły ilościowe produktu – widok pusty",
-      description:
-        "Modal analizy ilościowej produktu z zakładkami: spis wydań, spis przyjęć, wykres. Widok pusty oznacza brak historii dla danego towaru.",
+      src: "/assets/realizacja/page17_img1.png",
+      title: "Szczegóły ilościowe – widok ogólny",
+      description: "Modal szczegółów ilościowych produktu z zakładkami i polami dat do filtrowania.",
     },
     {
-      src: "/assets/realizacja/rysunek-9.jpg",
-      title: "Szczegóły ilościowe produktu – spis wydań zewnętrznych",
-      description:
-        "Lista zrealizowanych wydań z detalami: numer dokumentu, kontrahent, ilość, data, operator oraz stan magazynowy przed i po operacji.",
+      src: "/assets/realizacja/page18_img1.png",
+      title: "Szczegóły ilościowe – spis wydań zewnętrznych",
+      description: "Lista wydań zewnętrznych z informacjami o kontrahentach, ilościach i operatorach.",
     },
     {
-      src: "/assets/realizacja/rysunek-10.jpg",
-      title: "Szczegóły ilościowe produktu – spis przyjęć zewnętrznych",
-      description:
-        "Zakładka z listą przyjęć (PZ) zawierająca numer dokumentu, datę, dostawcę i liczbę pozycji, umożliwiająca przejście do szczegółów kontrahenta.",
+      src: "/assets/realizacja/page19_img1.png",
+      title: "Szczegóły ilościowe – szczegóły wpisu wydania",
+      description: "Rozwinięte szczegóły pojedynczego wpisu wydania z historią operacji.",
     },
     {
-      src: "/assets/realizacja/rysunek-11.jpg",
-      title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
-      description:
-        "Chronologiczne zestawienie wszystkich operacji magazynowych dotyczących produktu z wyróżnieniem przyjęć i wydań oraz zmianą stanów.",
+      src: "/assets/realizacja/page20_img1.png",
+      title: "Szczegóły ilościowe – lista przyjęć",
+      description: "Zakładka z listą przyjęć (PZ) zawierająca numery dokumentów, daty i dostawców.",
     },
     {
-      src: "/assets/realizacja/rysunek-12.jpg",
-      title: "Szczegóły ilościowe produktu – wizualizacja w formie wykresu",
-      description:
-        "Wizualizacja liniowa prezentująca liczbę przyjęć i wydań w czasie, z podsumowaniem sum przyjęć i wydań oraz identyfikacj�� trendów.",
+      src: "/assets/realizacja/page21_img1.png",
+      title: "Szczegóły ilościowe – historia operacji",
+      description: "Chronologiczna historia operacji magazynowych: przyjęcia i wydania z podsumowaniem.",
+    },
+    {
+      src: "/assets/realizacja/page22_img1.png",
+      title: "Szczegóły ilościowe – zestawienie łączone",
+      description: "Widok łączący spis wydań i przyjęć oraz stan magazynowy przed i po operacjach.",
+    },
+    {
+      src: "/assets/realizacja/page23_img1.png",
+      title: "Szczegóły ilościowe – wykres ilościowy",
+      description: "Wykres prezentujący liczbę przyjęć i wydań w wybranym przedziale czasowym.",
+    },
+    {
+      src: "/assets/realizacja/page24_img1.png",
+      title: "Dodawanie wpisu – formularz podstawowy",
+      description: "Modal dodawania nowego wpisu produktu z podstawowymi właściwościami (nazwa, ilość, kod).",
+    },
+    {
+      src: "/assets/realizacja/page25_img1.png",
+      title: "Wydania – lista dokumentów",
+      description: "Lista zrealizowanych dokumentów wydania z podstawowymi informacjami i paginacją.",
+    },
+    {
+      src: "/assets/realizacja/page26_img1.png",
+      title: "Wydania – szczegóły wpisu",
+      description: "Rozwinięte szczegóły wpisu wydania z opisem pozycji i metadanymi kontrahenta.",
+    },
+    {
+      src: "/assets/realizacja/page27_img1.png",
+      title: "Przyjęcia zewnętrzne – lista",
+      description: "Lista przyjęć zewnętrznych (PZ) z numerami dokumentów i ilością pozycji.",
+    },
+    {
+      src: "/assets/realizacja/page28_img1.png",
+      title: "Przyjęcia – szczegóły wpisu",
+      description: "Szczegółowy podgląd pojedynczego przyjęcia z informacją o dostawcy i wymiarach towaru.",
+    },
+    {
+      src: "/assets/realizacja/page29_img1.png",
+      title: "Klienci – lista",
+      description: "Panel listy klientów z możliwością wyszukiwania i przejścia do szczegółów.",
+    },
+    {
+      src: "/assets/realizacja/page30_img1.png",
+      title: "Klient – widok szczegółowy",
+      description: "Karta klienta z danymi kontaktowymi i adresem stosowania.",
+    },
+    {
+      src: "/assets/realizacja/page31_img1.png",
+      title: "Panel użytkowników – lista",
+      description: "Panel administracyjny do zarządzania użytkownikami systemu (dodawanie, zmiana hasła).",
+    },
+    {
+      src: "/assets/realizacja/page32_img1.png",
+      title: "Panel użytkowników – dodawanie/zmiana hasła",
+      description: "Modal dodawania nowego magazyniera oraz formularz zmiany hasła użytkownika.",
+    },
+    {
+      src: "/assets/realizacja/page33_img1.png",
+      title: "Logi audytu systemu",
+      description: "Lista logów audytowych z informacjami o endpointach, statusach i czasie odpowiedzi.",
     },
   ], []);
 
