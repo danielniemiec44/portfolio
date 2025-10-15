@@ -73,7 +73,16 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
           <Modal.Title>{images[index]?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Carousel activeIndex={index} onSelect={(selectedIndex: number) => setIndex(selectedIndex)} variant="dark" interval={null} indicators={false}>
+          <Carousel
+            activeIndex={index}
+            onSelect={(selectedIndex: number) => setIndex(selectedIndex)}
+            variant="dark"
+            interval={null}
+            indicators={false}
+            controls={true}
+            touch={true}
+            keyboard={true}
+          >
             {images.map((img, i) => (
               <Carousel.Item key={i}>
                 <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
