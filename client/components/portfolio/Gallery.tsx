@@ -108,9 +108,17 @@ function CarouselWrapper({ images, index, setIndex }: { images: GalleryImage[]; 
   const threshold = 50;
 
   const handlePointerDown = (e: React.PointerEvent) => {
+    const tgt = e.target as HTMLElement | null;
+    // if clicking on carousel controls, indicators or buttons, don't start drag
+    if (tgt && tgt.closest && tgt.closest('.carousel-control-prev, .carousel-control-next, .carousel-indicators, button, a')) {
+      isDown.current = false;
+      startX.current = null;
+      return;
+    }
+
     startX.current = e.clientX;
     isDown.current = true;
-    (e.currentTarget as Element).setPointerCapture(e.pointerId);
+    try { (e.currentTarget as Element).setPointerCapture(e.pointerId); } catch {}
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
