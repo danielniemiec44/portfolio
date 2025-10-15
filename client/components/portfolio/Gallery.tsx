@@ -102,6 +102,76 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
   );
 };
 
+function CarouselWrapper({ images, index, setIndex }: { images: GalleryImage[]; index: number; setIndex: (n: number) => void }) {
+  const startX = React.useRef<number | null>(null);
+  const isDown = React.useRef(false);
+  const threshold = 50;
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    startX.current = e.clientX;
+    isDown.current = true;
+    (e.currentTarget as Element).setPointerCapture(e.pointerId);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDown.current || startX.current === null) return;
+    const dx = e.clientX - startX.current;
+    if (Math.abs(dx) > threshold) {
+      if (dx > 0) {
+        // drag right => previous
+        setIndex(Math.max(0, index - 1));
+      } else {
+        // drag left => next
+        setIndex(Math.min(images.length - 1, index + 1));
+      }
+      isDown.current = false;
+      startX.current = null;
+      try { (e.currentTarget as Element).releasePointerCapture(e.pointerId); } catch {};
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    isDown.current = false;
+    startX.current = null;
+    try { (e.currentTarget as Element).releasePointerCapture(e.pointerId); } catch {}
+  };
+
+  return (
+    <div
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onPointerLeave={handlePointerUp}
+    >
+      <Carousel
+        activeIndex={index}
+        onSelect={(selectedIndex: number) => setIndex(selectedIndex)}
+        variant="dark"
+        interval={null}
+        indicators={false}
+        controls={true}
+        touch={true}
+        keyboard={true}
+      >
+        {images.map((img, i) => (
+          <Carousel.Item key={i}>
+            <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
+              <img src={img.src} alt={img.alt || img.title} loading="lazy" style={{ maxWidth: "100%", maxHeight: "60vh", objectFit: "contain" }} />
+            </div>
+            <div className="mt-3">
+              <div className="bg-white bg-opacity-90 p-3 rounded text-body shadow-sm" style={{ maxHeight: 200, overflowY: "auto" }}>
+                <div className="fw-bold mb-1">{img.title}</div>
+                <div className="small text-muted">{img.description}</div>
+              </div>
+            </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
+  );
+}
+
 export default forwardRef(function Gallery({ images, columns = 3, hideThumbnails = false }: GalleryProps, ref) {
   // Create a function to open modal via custom event
   const open = (i: number) => {
