@@ -31,16 +31,25 @@ export default function Layout({ children }: LayoutProps) {
       let bestId: string | null = null;
       let bestVisible = 0;
 
+      const debugRows: string[] = [];
       sections.forEach((s) => {
         const rect = s.getBoundingClientRect();
         const visibleTop = Math.max(rect.top, viewportTop);
         const visibleBottom = Math.min(rect.bottom, viewportBottom);
         const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        debugRows.push(`${s.id}: top=${Math.round(rect.top)}, bottom=${Math.round(rect.bottom)}, vis=${Math.round(visibleHeight)}`);
         if (visibleHeight > bestVisible) {
           bestVisible = visibleHeight;
           bestId = s.id;
         }
       });
+
+      // debug output to help trace why Kontakt isn't activating
+      // Remove these logs after debugging
+      console.debug('[active-debug] scrollY=', Math.round(window.scrollY), 'innerH=', window.innerHeight, 'docH=', document.documentElement.scrollHeight);
+      console.debug('[active-debug] sections:', debugRows.join(' | '));
+      console.debug('[active-debug] bestVisible=', Math.round(bestVisible), 'bestId=', bestId);
+
 
       // Only set active if the best visible amount is meaningful.
       // But allow the last section to become active when near the bottom of the page
