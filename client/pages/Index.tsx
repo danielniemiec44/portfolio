@@ -32,9 +32,9 @@ export default function Index() {
           {
             title: "Generator map pogodowych",
             description: `Generator map pogodowych [Java] [Closed-Source]
-Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
-Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
-Projekt ma posta�� aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
+    Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
+    Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
+    Projekt ma postać aplikacji na komputer oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
             tags: ["Java"],
             date: "2023-06-01",
           },
@@ -51,10 +51,10 @@ https://github.com/Defective4/sdr-toolkit`,
           {
             title: "JDocDex",
             description: `JDocDex [Java] [Closed-Source]
-Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
-Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
+    Self-hostowalna usługa pozwalająca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
+    Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
 
-<Tu będzie link do demo jak zaczne hostować>`,
+    <Tu będzie link do demo jak zacznę hostować>`,
             tags: ["Java", "Javalin"],
             date: "2024-02-20",
           },
@@ -139,7 +139,7 @@ https://github.com/Defective4/vcd4j`,
         src: "/assets/realizacja/wsm_page16_img1.png",
         title: "Dodawanie i modyfikacja kategorii produktów",
         description:
-          "Formularz umożliwia tworzenie i edycję kategorii oraz definiowanie pól opisujących cechy produktów; zapewnia integralność danych.",
+          "Formularz umożliwia tworzenie i edycj�� kategorii oraz definiowanie pól opisujących cechy produktów; zapewnia integralność danych.",
       },
       {
         src: "/assets/realizacja/wsm_page17_img1.png",
