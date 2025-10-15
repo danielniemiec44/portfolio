@@ -53,20 +53,14 @@ export default function Layout({ children }: LayoutProps) {
         return;
       }
 
-      // If user scrolled to bottom, activate the last section explicitly if it's at least partially visible
-      if (isAtBottom) {
-        const last = sections[sections.length - 1];
-        if (last) {
-          const rect = last.getBoundingClientRect();
-          const visibleTop = Math.max(rect.top, viewportTop);
-          const visibleBottom = Math.min(rect.bottom, viewportBottom);
-          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-          if (visibleHeight > 20) {
-            setActive((prev) => (prev === last.id ? prev : last.id));
-            return;
-          }
-        }
+      // If user scrolled to bottom, activate the last section explicitly
+    if (isAtBottom) {
+      const last = sections[sections.length - 1];
+      if (last) {
+        setActive((prev) => (prev === last.id ? prev : last.id));
+        return;
       }
+    }
 
       // If the best candidate is the last section and at least slightly visible, accept it
       const lastCandidate = sections[sections.length - 1];
