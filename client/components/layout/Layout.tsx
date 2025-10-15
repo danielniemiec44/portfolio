@@ -23,8 +23,6 @@ export default function Layout({ children }: LayoutProps) {
 
     let ticking = false;
 
-    import { chooseActiveSection } from "./activeSection";
-
     const computeActive = () => {
       const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
       const navHeight = nav?.offsetHeight ?? 0;
