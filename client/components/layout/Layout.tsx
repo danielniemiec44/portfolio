@@ -16,70 +16,62 @@ export default function Layout({ children }: LayoutProps) {
       return; // if explicit hash provided, don't auto-switch
     }
 
-    // If no hash, wait for user's first scroll to start active-tracking
-    const sections = Array.from(document.querySelectorAll('#autorzy, #projekty, #kontakt')) as HTMLElement[];
+    const ids = ['autorzy', 'projekty', 'kontakt'];
+    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
     if (!sections.length) return;
 
-    let started = false;
     let ticking = false;
 
-    const updateActiveFromScroll = () => {
+    const computeActive = () => {
       const nav = document.querySelector('.softify-navbar') as HTMLElement | null;
       const navHeight = nav?.offsetHeight ?? 0;
+      const viewportTop = navHeight; // content starts below navbar
+      const viewportBottom = window.innerHeight;
 
-      // choose section whose top is closest to the nav offset but not below it
-      let best: string | null = null;
-      let bestOffset = -Infinity;
+      let bestId: string | null = null;
+      let bestVisible = 0;
 
       sections.forEach((s) => {
         const rect = s.getBoundingClientRect();
-        const offset = rect.top - navHeight; // distance from nav bottom
-        if (offset <= 20 && offset > bestOffset) {
-          best = s.id;
-          bestOffset = offset;
+        const visibleTop = Math.max(rect.top, viewportTop);
+        const visibleBottom = Math.min(rect.bottom, viewportBottom);
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        if (visibleHeight > bestVisible) {
+          bestVisible = visibleHeight;
+          bestId = s.id;
         }
       });
 
-      // if none found, optionally select first section below the nav
-      if (!best) {
-        // find the section closest to top
-        let minAbs = Infinity;
-        sections.forEach((s) => {
-          const rect = s.getBoundingClientRect();
-          const offset = Math.abs(rect.top - navHeight);
-          if (offset < minAbs) {
-            minAbs = offset;
-            best = s.id;
-          }
-        });
+      // Only set active if the best visible amount is meaningful.
+      // This prevents a tiny sliver of a section from making it active.
+      const minVisible = Math.max(120, window.innerHeight * 0.12);
+      if (bestVisible >= minVisible) {
+        setActive((prev) => (prev === bestId ? prev : bestId));
+      } else {
+        // if nothing sufficiently visible, clear active to avoid premature highlighting
+        setActive((prev) => (prev === null ? prev : null));
       }
-
-      setActive((prev) => (best === prev ? prev : best));
     };
 
     const onScroll = () => {
-      if (!started) return; // ignore until user explicitly scrolls
       if (!ticking) {
         ticking = true;
         requestAnimationFrame(() => {
-          updateActiveFromScroll();
+          computeActive();
           ticking = false;
         });
       }
     };
 
-    const onFirstScroll = () => {
-      started = true;
-      updateActiveFromScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.removeEventListener('scroll', onFirstScroll);
-    };
+    // run once on mount to set initial active if applicable
+    requestAnimationFrame(() => computeActive());
 
-    window.addEventListener('scroll', onFirstScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
 
     return () => {
-      window.removeEventListener('scroll', onFirstScroll);
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, []);
 
