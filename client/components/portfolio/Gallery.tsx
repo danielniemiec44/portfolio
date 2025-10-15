@@ -73,12 +73,7 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
           <Modal.Title>{images[index]?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div
-            onPointerDown={(e) => {
-              const el = e.currentTarget as HTMLDivElement;
-            }}
-            style={{ userSelect: "none" }}
-          >
+          <div style={{ userSelect: "none" }}>
             {/* Pointer drag handling for desktop and touch */}
             <CarouselWrapper images={images} index={index} setIndex={setIndex} />
           </div>
