@@ -73,7 +73,7 @@ https://github.com/Defective4/vcd4j`,
         id: "autor2",
         name: "DeeRave",
         role: "Full‑Stack & Game Developer",
-        bio: "Full‑Stack developer specjalizujący się w budowie skalowalnych aplikacji webowych z wykorzystaniem Node.js i React. Doświadczenie w projektowaniu API, integracji z bazami danych oraz automatyzacji (boty Discord). Tworzę również wtyczki do Minecraft (Spigot/Paper) oraz aplikacje w Unity (C#). Posiadam praktyczną znajomość administracji Linux i Windows Server.",
+        bio: "Tworzę Webowy System Magazynowy (WSM): implementuję mechanizmy logowania, centralny panel nawigacyjny (SPA), responsywne menu mobilne, moduł 'Magazyn' z kategoriami i tabelami produktów, formularze dodawania i edycji, modale analizy ilościowej, listy wydań i przyjęć oraz zaawansowane wykresy. Utrzymuję także panel zarządzania użytkownikami i system audytu operacji.",
         skills: [
           "Node.js",
           "Express",
@@ -171,7 +171,7 @@ https://github.com/Defective4/vcd4j`,
       },
       {
         src: "/assets/realizacja/wsm_page22_img1.png",
-        title: "Szczegóły ilościowe produktu – wizualizacja w formie wykresu",
+        title: "Szczeg��ły ilościowe produktu – wizualizacja w formie wykresu",
         description:
           "Wykres liniowy obrazuje przyjęcia (zielone) i wydania (czerwone) w funkcji daty; nad wykresem podsumowanie liczby operacji.",
       },
