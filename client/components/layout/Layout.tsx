@@ -88,7 +88,7 @@ export default function Layout({ children }: LayoutProps) {
             <span className="softify-logo bg-gradient">S</span> Softify
           </Navbar.Brand>
 
-          <Nav className="ms-auto d-flex flex-row gap-3 align-items-center pe-3">
+          <Nav className="ms-auto d-flex flex-row gap-3 align-items-center pe-5">
             {navItems.map((n) => (
               <Nav.Link key={n.id} href={n.href} onClick={handleNavClick(n.id)} active={active === n.id} className={active === n.id ? 'fw-semibold' : ''}>
                 {n.label}
