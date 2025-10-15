@@ -296,6 +296,7 @@ github.com`,
                 <AuthorCard
                   id={a.id}
                   name={a.name}
+                  avatarUrl={a.avatarUrl}
                   role={a.role}
                   bio={a.bio}
                   skills={a.skills}
