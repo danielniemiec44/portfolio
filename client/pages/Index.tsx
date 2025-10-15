@@ -78,11 +78,6 @@ https://github.com/Defective4/vcd4j`,
 
   const deeRaveImages = useMemo(() => [
     {
-      src: "/assets/realizacja/page1_img1.png",
-      title: "Logowanie — formularz użytkownika",
-      description: "Formularz logowania z walidacją pól, komunikatami błędów oraz opcją przejścia do sklepu. Widok używany jako punkt wejścia do panelu administracyjnego.",
-    },
-    {
       src: "/assets/realizacja/page11_img1.png",
       title: "Dashboard — strona główna po zalogowaniu",
       description: "Główny ekran aplikacji prezentujący kafle z modułami (Magazyn, Klienci, Przyjęcia, Wydania) oraz górną nawigację i CTA.",
