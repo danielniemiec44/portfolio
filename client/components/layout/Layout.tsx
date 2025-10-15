@@ -54,19 +54,16 @@ export default function Layout({ children }: LayoutProps) {
         return;
       }
 
-      // If user scrolled to bottom (or near it), activate the last section explicitly
-      if (isNearBottom) {
-        const last = sections[sections.length - 1];
-        if (last) {
-          setActive((prev) => (prev === last.id ? prev : last.id));
-          return;
-        }
+      // Allow the last section to become active when the user scrolls it into view manually
+      const last = sections[sections.length - 1];
+      if (bestId === last?.id && bestVisible > 0) {
+        setActive((prev) => (prev === bestId ? prev : bestId));
+        return;
       }
 
-      // If the best candidate is the last section and at least slightly visible, accept it
-      const lastCandidate = sections[sections.length - 1];
-      if (bestId === lastCandidate?.id && bestVisible > 20) {
-        setActive((prev) => (prev === bestId ? prev : bestId));
+      // If user is near page bottom, activate last as a fallback
+      if (isNearBottom && last) {
+        setActive((prev) => (prev === last.id ? prev : last.id));
         return;
       }
 
