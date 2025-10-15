@@ -73,30 +73,15 @@ const GalleryInner = ({ images, columns = 3, hideThumbnails = false }: GalleryPr
           <Modal.Title>{images[index]?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Carousel
-            activeIndex={index}
-            onSelect={(selectedIndex: number) => setIndex(selectedIndex)}
-            variant="dark"
-            interval={null}
-            indicators={false}
-            controls={true}
-            touch={true}
-            keyboard={true}
+          <div
+            onPointerDown={(e) => {
+              const el = e.currentTarget as HTMLDivElement;
+            }}
+            style={{ userSelect: "none" }}
           >
-            {images.map((img, i) => (
-              <Carousel.Item key={i}>
-                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: 360 }}>
-                  <img src={img.src} alt={img.alt || img.title} loading="lazy" style={{ maxWidth: "100%", maxHeight: "60vh", objectFit: "contain" }} />
-                </div>
-                <div className="mt-3">
-                  <div className="bg-white bg-opacity-90 p-3 rounded text-body shadow-sm" style={{ maxHeight: 200, overflowY: "auto" }}>
-                    <div className="fw-bold mb-1">{img.title}</div>
-                    <div className="small text-muted">{img.description}</div>
-                  </div>
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
+            {/* Pointer drag handling for desktop and touch */}
+            <CarouselWrapper images={images} index={index} setIndex={setIndex} />
+          </div>
 
           <div className="d-flex justify-content-center mt-2">
             {images.map((_, i) => (
