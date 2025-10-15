@@ -11,7 +11,8 @@ export default function Index() {
       {
         id: "autor1",
         name: "Defective",
-        avatarUrl: "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F449a5048a02940ebbd5bfd2fed5e2df2?format=webp&width=800",
+        avatarUrl:
+          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F449a5048a02940ebbd5bfd2fed5e2df2?format=webp&width=800",
         role: "Java Backend & Embedded Systems Developer",
         bio: "Java backend developer z doświadczeniem w frameworkach Spring, Javalin i Hibernate. Projektuję oraz wdrażam skalowalne API i rozwiązania oparte na SQL. Posiadam doświadczenie w administracji systemów Linux oraz pracach serwerowych. Dodatkowo pracuję z Pythonem (DSP) i C++ (AVR), tworzę modyfikacje i pluginy do Minecraft (Forge, Fabric, Spigot/Paper) oraz boty i aplikacje dla Discord.",
         skills: [
@@ -72,7 +73,8 @@ github.com`,
       {
         id: "autor2",
         name: "DeeRave",
-        avatarUrl: "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
+        avatarUrl:
+          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
         role: "Full‑Stack & Game Developer",
         bio: "Tworzę Webowy System Magazynowy (WSM): implementuję mechanizmy logowania, centralny panel nawigacyjny (SPA), responsywne menu mobilne, moduł 'Magazyn' z kategoriami i tabelami produktów, formularze dodawania i edycji, modale analizy ilościowej, listy wydań i przyjęć oraz zaawansowane wykresy. Utrzymuję także panel zarządzania użytkownikami i system audytu operacji.",
         skills: [
@@ -243,7 +245,7 @@ github.com`,
           "Panel logów audytu prezentuje historię operacji systemowych (data, użytkownik, metoda, endpoint, status, czas i IP) z opcjami filtrowania.",
       },
     ],
-    []
+    [],
   );
 
   return (

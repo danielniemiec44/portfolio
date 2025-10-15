@@ -18,7 +18,13 @@ function linkify(text: string) {
     const isUrl = /^https?:\/\//.test(part);
     if (isUrl) {
       return (
-        <a key={i} href={part} target="_blank" rel="noreferrer" className="link-primary">
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noreferrer"
+          className="link-primary"
+        >
           {part}
         </a>
       );
@@ -34,17 +40,32 @@ function linkify(text: string) {
   });
 }
 
-export default function ProjectCard({ title, description, image, tags, link, galleryLabel = "Zobacz galerię", onGallery }: ProjectCardProps) {
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  tags,
+  link,
+  galleryLabel = "Zobacz galerię",
+  onGallery,
+}: ProjectCardProps) {
   return (
     <RBCard className="h-100 shadow-sm border-0 rounded-4 overflow-hidden softify-card">
       {image && (
         <div className="ratio ratio-16x9 bg-body-secondary">
-          <img src={image} alt={title} loading="lazy" className="w-100 h-100 object-fit-cover" />
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="w-100 h-100 object-fit-cover"
+          />
         </div>
       )}
       <RBCard.Body className="p-4 d-flex flex-column">
         <RBCard.Title className="fw-bold mb-2">{title}</RBCard.Title>
-        <RBCard.Text className="text-muted flex-grow-1">{linkify(description)}</RBCard.Text>
+        <RBCard.Text className="text-muted flex-grow-1">
+          {linkify(description)}
+        </RBCard.Text>
         <div className="d-flex align-items-center gap-2 flex-wrap mt-2">
           {tags?.map((t) => (
             <span key={t} className="badge rounded-pill text-bg-light border">
