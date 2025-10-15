@@ -72,6 +72,7 @@ github.com`,
       {
         id: "autor2",
         name: "DeeRave",
+        avatarUrl: "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
         role: "Full‑Stack & Game Developer",
         bio: "Tworzę Webowy System Magazynowy (WSM): implementuję mechanizmy logowania, centralny panel nawigacyjny (SPA), responsywne menu mobilne, moduł 'Magazyn' z kategoriami i tabelami produktów, formularze dodawania i edycji, modale analizy ilościowej, listy wydań i przyjęć oraz zaawansowane wykresy. Utrzymuję także panel zarządzania użytkownikami i system audytu operacji.",
         skills: [
@@ -91,7 +92,7 @@ github.com`,
         projects: [
           {
             title: "Webowy System Magazynowy (WSM)",
-            description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną histori�� operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, JWT\nFrontend: React, Bootstrap, Chart.js\nNarzędzia: Docker, Git`,
+            description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, JWT\nFrontend: React, Bootstrap, Chart.js\nNarzędzia: Docker, Git`,
             tags: ["Node.js", "React", "PostgreSQL", "Express", "Bootstrap"],
             date: "2025-10-10",
           },
@@ -165,7 +166,7 @@ github.com`,
       },
       {
         src: "/assets/realizacja/wsm_page21_img1.png",
-        title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
+        title: "Szczegóły ilo��ciowe produktu – łączony spis wydań i przyjęć",
         description:
           "Chronologiczny wykaz operacji magazynowych (przyjęcia i wydania) z informacją o typie, dokumencie, kontrahencie i zmianach ilości.",
       },
