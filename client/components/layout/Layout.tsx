@@ -1,5 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { chooseActiveSection } from "./activeSection";
 
 interface LayoutProps {
   children: ReactNode;
