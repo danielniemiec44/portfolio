@@ -168,7 +168,7 @@ github.com`,
       },
       {
         src: "/assets/realizacja/wsm_page21_img1.png",
-        title: "Szczegóły ilo��ciowe produktu – łączony spis wydań i przyjęć",
+        title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
         description:
           "Chronologiczny wykaz operacji magazynowych (przyjęcia i wydania) z informacją o typie, dokumencie, kontrahencie i zmianach ilości.",
       },
@@ -362,6 +362,13 @@ github.com`,
                 href="mailto:kontakt@softify.com.pl"
               >
                 kontakt@softify.com.pl
+              </a>
+              <a
+                className="btn btn-outline-dark"
+                href="tel:+48514397827"
+                aria-label="Zadzwoń pod numer +48 514 397 827"
+              >
+                +48 514 397 827
               </a>
             </div>
           </section>
