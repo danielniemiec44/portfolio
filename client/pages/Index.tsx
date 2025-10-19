@@ -34,9 +34,9 @@ export default function Index() {
           {
             title: "Guns",
             description: `
-            
+            Plugin Minecraft dodajacy strzelankę opartą na Wyścigu Zbrojeń z gry Counter Strike 2
+            z pewnymi urozmaiceniami, takimi jak zniszczalne obiekty na mapie czy autorskie boty z zaawansowaną AI.
             `,
-            link: "https://github.com/Defective4/Test",
             tags: ["Minecraft", "Java", "Closed-Source"],
             date: "2022-02-01"
           },
@@ -45,7 +45,7 @@ export default function Index() {
             description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
 Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
 Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
-            tags: ["Java", "Closed-Source"],
+            tags: ["Android", "Usługa", "Java", "Closed-Source"],
             date: "2023-06-01",
           }
         ]
