@@ -315,6 +315,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
                       tags={a.projects[0].tags}
                       galleryLabel="Zobacz galerię projektu"
                       onGallery={() => galleryRef.current?.open(0)}
+                      link={a.projects[0].link}
                     />
                   ) : a.projects.length > 1 ? (
                     <Row xs={1} className="g-3">
@@ -324,6 +325,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
                             title={p.title}
                             description={p.description}
                             tags={p.tags}
+                            link={p.link}
                           />
                         </Col>
                       ))}
