@@ -31,7 +31,24 @@ export default function Index() {
           "C#"
         ],
         projects: [
-        ],
+          {
+            title: "Guns",
+            description: `
+            
+            `,
+            link: "https://github.com/Defective4/Test",
+            tags: ["Minecraft", "Java", "Closed-Source"],
+            date: "2022-02-01"
+          },
+          {
+            title: "Generator map pogodowych",
+            description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
+Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
+Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
+            tags: ["Java", "Closed-Source"],
+            date: "2023-06-01",
+          }
+        ]
       },
       {
         id: "autor2",
