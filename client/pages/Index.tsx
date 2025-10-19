@@ -14,60 +14,23 @@ export default function Index() {
         avatarUrl:
           "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F449a5048a02940ebbd5bfd2fed5e2df2?format=webp&width=800",
         role: "Java Backend & Embedded Systems Developer",
-        bio: "Java backend developer z doświadczeniem w frameworkach Spring, Javalin i Hibernate. Projektuję oraz wdrażam skalowalne API i rozwiązania oparte na SQL. Posiadam doświadczenie w administracji systemów Linux oraz pracach serwerowych. Dodatkowo pracuję z Pythonem (DSP) i C++ (AVR), tworzę modyfikacje i pluginy do Minecraft (Forge, Fabric, Spigot/Paper) oraz boty i aplikacje dla Discord.",
+        bio: "Jestem zapalonym pasjonatem programowania rozwijającym swoje hobby codziennie od wielu lat. \nWykorzystuję swoją wiedzę do tworzenia zaawansowanych narzędzi dostosowanych do konkretnych potrzeb i projektowania, oraz wdrażania systemów i usług. Zajmuję się również pisaniem i utrzymywaniem botów Discord i tworzeniem rozbudowanych pluginów Minecraft. \nPosiadam ogromne doświadczenie w administracji systemami opartymi na Linuxie (tj. wszelkiego rodzaju VPSy i serwery), oraz tworzeniu i prowadzeniu serwerów Minecraft od podstaw. \nInteresuję się również systemami wbudowanymi opartymi na Raspberry Pi i Arduino, oraz administracją sieciami komputerowymi.",
         skills: [
-          "Java",
-          "Spring",
-          "Javalin",
-          "Hibernate",
-          "SQL",
-          "Python (DSP)",
-          "C++ (AVR)",
+          "Pluginy Minecraft (Bukkit/Spigot/Paper)",
+          "Mody Minecraft (Forge/Fabric)",
+          "Boty Discord",
+          "Usługi",
+          "Systemy wbudowane",
+          "Bazy danych SQL",
+          "Raspberry Pi",
+          "Arduino",
           "Linux",
-          "Minecraft Forge",
-          "Fabric",
-          "Bukkit/Spigot/Paper",
-          "Discord bots",
-          "API Design",
+          "Java",
+          "Python",
+          "C",
+          "C#"
         ],
         projects: [
-          {
-            title: "Generator map pogodowych",
-            description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
-Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
-Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
-            tags: ["Java", "Closed-Source"],
-            date: "2023-06-01",
-          },
-          {
-            title: "SDR Toolkit",
-            description: `Zestaw narzędzi do interakcji z serwerami RTL-TCP i do podstawowej manipulacji cyfrowymi sygnałami
-
-https://github.com/Defective4/sdr-toolkit`,
-            tags: ["Java", "SDR"],
-            link: "https://github.com/Defective4/sdr-toolkit",
-            date: "2022-11-12",
-          },
-          {
-            title: "JDocDex",
-            description: `Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
-Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
-
-<Tu będzie link do demo jak zaczne hostować>`,
-            tags: ["Java", "Javalin", "Closed-Source"],
-            date: "2024-02-20",
-          },
-          {
-            title: "VCD4J",
-            description: `Prosta biblioteka do manipulacji plikami VCD (Value Change Dump).
-Pozwala na odczyt i modyfikację plików VCD, odtwarzanie i symulację istniejących nagrań jak i nagrywanie nowych z zewnętrznych źródeł.
-
-https://github.com/Defective4/vcd4j
-github.com`,
-            tags: ["Java", "VCD"],
-            link: "https://github.com/Defective4/vcd4j",
-            date: "2021-08-05",
-          },
         ],
       },
       {
