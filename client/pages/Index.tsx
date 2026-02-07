@@ -207,7 +207,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
               <h1 className="display-6 display-lg-5 fw-extrabold mb-1 text-white">
                 Daniel Niemiec — Full-Stack & Game Developer
               </h1>
-              <p className="lead fs-5 fs-md-base text-white-50 mb-3">
+              <p className="lead fs-5 fs-md-base text-white-50 mb-2">
                 Portfolio projektów, które łączą estetykę i technologię,
                 aby tworzyć dopracowane produkty cyfrowe.
               </p>
