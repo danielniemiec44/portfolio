@@ -102,10 +102,10 @@ export default function Layout({ children }: LayoutProps) {
     <div className="d-flex flex-column min-vh-100">
       <Navbar
         expand="lg"
-        className="py-2 softify-navbar position-fixed top-0 w-100"
+        className="softify-navbar position-fixed top-0 w-100"
         bg="light"
         variant="light"
-        style={{ zIndex: 1030 }}
+        style={{ zIndex: 1030, padding: "0.5rem 0" }}
       >
         <Container fluid className="px-3 px-lg-0">
           <Navbar.Brand
