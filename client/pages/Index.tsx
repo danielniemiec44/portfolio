@@ -205,10 +205,10 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           <Row className="align-items-center g-4">
             <Col lg={7} className="mx-auto mx-lg-0">
               <h1 className="display-5 fw-extrabold mb-3 text-white">
-                Softify — Zespół kreatywnych twórców
+                Daniel Niemiec — Full-Stack & Game Developer
               </h1>
               <p className="lead text-white-50 mb-4">
-                Portfolio dwóch autorów, którzy łączą estetykę i technologię,
+                Portfolio projektów, które łączą estetykę i technologię,
                 aby tworzyć dopracowane produkty cyfrowe.
               </p>
               <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
@@ -224,7 +224,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
                   href="#autorzy"
                   className="px-4 py-2 fw-semibold"
                 >
-                  Poznaj autorów
+                  O mnie
                 </Button>
               </div>
             </Col>
@@ -233,10 +233,10 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
         <div className="softify-hero-blur" />
       </section>
 
-      {/* Authors */}
+      {/* About */}
       <section id="autorzy" className="py-5">
         <Container>
-          <h2 className="h4 fw-bold mb-4">Autorzy</h2>
+          <h2 className="h4 fw-bold mb-4">O mnie</h2>
 
           <Row className="g-4 mb-5 justify-content-center">
             {authors.map((a) => (
@@ -302,7 +302,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           <section id="kontakt" className="mt-5 pt-4 border-top">
             <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
             <p className="mb-2">
-              Masz pytania lub chcesz współpracować? Napisz do nas.
+              Masz pytania lub chcesz współpracować? Napisz do mnie.
             </p>
             <div className="d-flex flex-wrap gap-2">
               <a
