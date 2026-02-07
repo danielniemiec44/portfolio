@@ -104,10 +104,9 @@ main {
   background: linear-gradient(180deg, #071020 0%, #0f1723 100%);
   color: #fff;
   position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   margin-top: -56px;
-  padding-top: calc(3rem + 56px);
+  padding-top: calc(1.5rem + 56px);
+  padding-bottom: 2.5rem;
 }
 .softify-hero .lead {
   color: rgba(255, 255, 255, 0.8);
