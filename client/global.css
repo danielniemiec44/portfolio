@@ -48,6 +48,10 @@ body,
   --navbar-height: 56px;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family:
     Inter,
@@ -183,6 +187,7 @@ body {
   display: flex;
   align-items: center;
   padding: 3rem 0;
+  overflow: hidden;
 }
 
 @media (max-width: 991px) {
