@@ -197,21 +197,21 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
   return (
     <>
       {/* Hero */}
-      <section className="softify-hero py-5 py-lg-6 position-relative overflow-hidden">
+      <section className="softify-hero py-4 py-md-5 py-lg-6 position-relative overflow-hidden">
         <Container
           className="text-center text-lg-start position-relative"
           style={{ zIndex: 1 }}
         >
           <Row className="align-items-center g-4">
-            <Col lg={7} className="mx-auto mx-lg-0">
-              <h1 className="display-5 fw-extrabold mb-3 text-white">
+            <Col xs={12} lg={7} className="mx-auto mx-lg-0">
+              <h1 className="display-6 display-lg-5 fw-extrabold mb-3 text-white">
                 Daniel Niemiec — Full-Stack & Game Developer
               </h1>
-              <p className="lead text-white-50 mb-4">
+              <p className="lead fs-5 fs-md-base text-white-50 mb-4">
                 Portfolio projektów, które łączą estetykę i technologię,
                 aby tworzyć dopracowane produkty cyfrowe.
               </p>
-              <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
+              <div className="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
                 <Button
                   variant="light"
                   href="#projekty"
