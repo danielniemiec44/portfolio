@@ -93,7 +93,7 @@ export default function Layout({ children }: LayoutProps) {
     };
 
   const navItems = [
-    { href: "#autorzy", label: "Autorzy", id: "autorzy" },
+    { href: "#autorzy", label: "O mnie", id: "autorzy" },
     { href: "#projekty", label: "Portfolio", id: "projekty" },
     { href: "#kontakt", label: "Kontakt", id: "kontakt" },
   ];
@@ -101,13 +101,13 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Navbar
-        expand={false}
-        className="py-1 softify-navbar position-fixed top-0 w-100"
+        expand="lg"
+        className="py-2 softify-navbar position-fixed top-0 w-100"
         bg="light"
         variant="light"
-        style={{ zIndex: 1030, paddingRight: "1.25rem" }}
+        style={{ zIndex: 1030 }}
       >
-        <Container fluid className="px-3">
+        <Container fluid className="px-3 px-lg-0">
           <Navbar.Brand
             href="/"
             className="fw-bold text-primary d-flex align-items-center"
@@ -117,26 +117,29 @@ export default function Layout({ children }: LayoutProps) {
               alt="Softify logo"
               className="softify-logo-img me-2"
             />
-            <span>Softify</span>
+            <span className="d-none d-sm-inline">Softify</span>
           </Navbar.Brand>
 
-          <Nav className="ms-auto d-flex flex-row gap-3 align-items-center pe-5">
-            {navItems.map((n) => (
-              <Nav.Link
-                key={n.id}
-                href={n.href}
-                onClick={handleNavClick(n.id)}
-                active={active === n.id}
-                className={active === n.id ? "fw-semibold" : ""}
-              >
-                {n.label}
-              </Nav.Link>
-            ))}
-          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto d-flex flex-column flex-lg-row gap-2 gap-lg-3 align-items-start align-items-lg-center pe-lg-3">
+              {navItems.map((n) => (
+                <Nav.Link
+                  key={n.id}
+                  href={n.href}
+                  onClick={handleNavClick(n.id)}
+                  active={active === n.id}
+                  className={active === n.id ? "fw-semibold" : ""}
+                >
+                  {n.label}
+                </Nav.Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <main className="flex-grow-1">{children}</main>
+      <main className="flex-grow-1" style={{ paddingTop: 0 }}>{children}</main>
 
       <footer className="py-4 mt-auto border-top bg-white-50">
         <Container className="d-flex flex-wrap align-items-center justify-content-between gap-2 text-muted">
