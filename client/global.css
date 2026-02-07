@@ -105,7 +105,7 @@ main {
   color: #fff;
   position: relative;
   margin-top: -56px;
-  padding-top: calc(1.5rem + 56px);
+  padding-top: calc(1rem + 56px);
   padding-bottom: 2.5rem;
 }
 .softify-hero .lead {
