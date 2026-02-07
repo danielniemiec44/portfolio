@@ -238,9 +238,9 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
         <Container>
           <h2 className="h4 fw-bold mb-4">Autorzy</h2>
 
-          <Row className="g-4 mb-5">
+          <Row className="g-4 mb-5 justify-content-center">
             {authors.map((a) => (
-              <Col key={a.id} xs={12} md={6}>
+              <Col key={a.id} xs={12} lg={10}>
                 <AuthorCard
                   id={a.id}
                   name={a.name}
