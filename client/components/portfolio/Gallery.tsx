@@ -13,6 +13,7 @@ import {
   Container,
   Button,
 } from "react-bootstrap";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryImage {
   src: string;
@@ -58,8 +59,8 @@ const GalleryInner = ({
   return (
     <>
       {!hideThumbnails && (
-        <Container className="py-4">
-          <Row xs={1} sm={2} md={columns} className="g-3">
+        <Container className="py-4 px-3 px-sm-4">
+          <Row xs={1} sm={2} md={Math.min(columns, 3)} lg={columns} className="g-3 g-md-4">
             {images.map((img, i) => (
               <Col key={i}>
                 <div
@@ -69,7 +70,7 @@ const GalleryInner = ({
                     if ((e as any).key === "Enter") openAt(i);
                   }}
                   tabIndex={0}
-                  className="rounded-3 overflow-hidden border bg-white shadow-sm"
+                  className="rounded-3 overflow-hidden border bg-white shadow-sm transition-shadow hover-shadow"
                   style={{ cursor: "pointer" }}
                 >
                   <div
@@ -91,11 +92,11 @@ const GalleryInner = ({
                       }}
                     />
                   </div>
-                  <div className="p-2">
-                    <div className="fw-semibold small mb-1">{img.title}</div>
+                  <div className="p-3">
+                    <div className="fw-semibold mb-1">{img.title}</div>
                     <div
                       className="text-muted small"
-                      style={{ maxHeight: 56, overflow: "hidden" }}
+                      style={{ maxHeight: 60, overflow: "hidden" }}
                     >
                       {img.description}
                     </div>
@@ -169,7 +170,7 @@ function CarouselWrapper({
       tgt &&
       tgt.closest &&
       tgt.closest(
-        ".carousel-control-prev, .carousel-control-next, .carousel-indicators, .carousel-control",
+        ".carousel-control-prev, .carousel-control-next, .carousel-indicators, .carousel-control, .carousel-nav-btn, button",
       )
     ) {
       isDown.current = false;
@@ -219,45 +220,72 @@ function CarouselWrapper({
       onPointerCancel={handlePointerUp}
       onPointerLeave={handlePointerUp}
     >
-      <Carousel
-        activeIndex={index}
-        onSelect={(selectedIndex: number) => setIndex(selectedIndex)}
-        variant="dark"
-        interval={null}
-        indicators={false}
-        controls={true}
-        touch={true}
-        keyboard={true}
-      >
-        {images.map((img, i) => (
-          <Carousel.Item key={i}>
-            <div
-              className="d-flex justify-content-center align-items-center"
-              style={{ minHeight: 360 }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt || img.title}
-                loading="lazy"
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "60vh",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-            <div className="mt-3">
-              <div
-                className="bg-white bg-opacity-90 p-3 rounded text-body shadow-sm"
-                style={{ maxHeight: 200, overflowY: "auto" }}
-              >
-                <div className="fw-bold mb-1">{img.title}</div>
-                <div className="small text-muted">{img.description}</div>
-              </div>
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      <div className="carousel-with-nav">
+        <button
+          type="button"
+          onClick={() => setIndex(Math.max(0, index - 1))}
+          disabled={index === 0}
+          className="carousel-nav-area"
+          aria-label="Poprzednie zdjęcie"
+        >
+          <span className="carousel-nav-icon">
+            <ChevronLeft size={24} />
+          </span>
+        </button>
+        <div className="carousel-main">
+          <Carousel
+            activeIndex={index}
+            onSelect={(selectedIndex: number) => setIndex(selectedIndex)}
+            variant="dark"
+            interval={null}
+            indicators={false}
+            controls={false}
+            touch={true}
+            keyboard={true}
+          >
+            {images.map((img, i) => (
+              <Carousel.Item key={i}>
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  style={{ minHeight: "300px", maxHeight: "70vh" }}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt || img.title}
+                    loading="lazy"
+                    className="img-fluid"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "60vh",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+                <div className="mt-3 px-2">
+                  <div
+                    className="bg-white bg-opacity-90 p-3 rounded text-body shadow-sm"
+                    style={{ maxHeight: "200px", overflowY: "auto" }}
+                  >
+                    <div className="fw-bold mb-2">{img.title}</div>
+                    <div className="text-muted">{img.description}</div>
+                  </div>
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+        <button
+          type="button"
+          onClick={() => setIndex(Math.min(images.length - 1, index + 1))}
+          disabled={index === images.length - 1}
+          className="carousel-nav-area"
+          aria-label="Następne zdjęcie"
+        >
+          <span className="carousel-nav-icon">
+            <ChevronRight size={24} />
+          </span>
+        </button>
+      </div>
     </div>
   );
 }

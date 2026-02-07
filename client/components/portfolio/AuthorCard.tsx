@@ -22,29 +22,30 @@ export default function AuthorCard({
       id={id}
       className="shadow-sm border-0 rounded-4 overflow-hidden softify-card"
     >
-      <RBCard.Body className="p-3 p-sm-4">
-        <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 mb-3">
+      <RBCard.Body className="p-3 p-sm-4 p-md-5">
+        <div className="d-flex flex-column flex-sm-row align-items-center align-items-sm-start gap-3 gap-sm-4 mb-3 mb-md-4">
           <img
             src={avatarUrl || "/placeholder.svg"}
             alt={name}
-            className="rounded-circle border-2 border-primary-subtle flex-shrink-0"
-            width={56}
-            height={56}
+            className="rounded-3 border-2 border-primary-subtle flex-shrink-0"
+            width={64}
+            height={64}
+            style={{ width: '64px', height: '64px' }}
           />
-          <div className="w-100">
-            <h3 className="h6 h5 mb-1 fw-bold">{name}</h3>
-            <div className="text-secondary small text-sm-base">{role}</div>
+          <div className="w-100 text-center text-sm-start">
+            <h3 className="h5 h4 mb-2 fw-bold">{name}</h3>
+            <div className="text-secondary fs-6">{role}</div>
           </div>
         </div>
 
         {/* Render bio preserving blank lines and single newlines */}
-        <div className="mb-3 text-muted">
+        <div className="mb-3 mb-md-4 text-muted fs-6">
           {bio
             .split(/\n\s*\n/) // split into paragraphs on empty-line (double newline)
             .map((para, pIdx) => {
               const lines = para.split(/\n/);
               return (
-                <p key={pIdx} className="mb-2">
+                <p key={pIdx} className="mb-3 lh-base">
                   {lines.map((line, lIdx) => (
                     <span key={lIdx}>
                       {line}
@@ -58,7 +59,11 @@ export default function AuthorCard({
 
         <Stack direction="horizontal" gap={2} className="flex-wrap">
           {skills.map((s) => (
-            <Badge bg="primary" key={s} className="softify-badge">
+            <Badge
+              bg="primary"
+              key={s}
+              className={`softify-badge px-2 py-1${s === "Paper" ? " badge-highlight" : ""}`}
+            >
               {s}
             </Badge>
           ))}

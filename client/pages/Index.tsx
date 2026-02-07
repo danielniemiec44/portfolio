@@ -11,36 +11,36 @@ export default function Index() {
       {
         id: "autor2",
         name: "Daniel Niemiec",
-        avatarUrl:
-          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F24f8ba66bc5c41cd95666d9f9453e7fa",
-        role: "Full‑Stack & Game Developer",
-        bio: `Zajmuję się projektowaniem i tworzeniem nowoczesnych aplikacji internetowych oraz gier. Łączę wiedzę techniczną z wyczuciem estetyki, dbając o to, by to, co tworzę, było nie tylko funkcjonalne, ale też wygodne i przyjazne w codziennym użytkowaniu.
+        avatarUrl: "/assets/daniel.jpg",
+        role: "CEO",
+        bio: `Specjalizuję się w projektowaniu, tworzeniu i wdrażaniu systemów informatycznych. Stawiam na nowoczesne podejście do rozwiązywania problemów — analizuję potrzeby klienta i dostarczam rozwiązania, które są funkcjonalne, skalowalne i przyjazne w codziennym użytkowaniu.
 
-Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i działania strony, przez logikę działania aplikacji, aż po zarządzanie danymi i serwerami. Potrafię też tworzyć boty na Discorda, dodatki do gier takich jak Minecraft oraz proste gry w silniku Unity.
+Pracuję w pełnym zakresie — od interfejsu użytkownika, przez logikę biznesową, po infrastrukturę serwerową i bazodanową. Moje doświadczenie obejmuje zarówno aplikacje webowe, jak i automatyzację procesów, integracje systemowe czy narzędzia wewnętrzne.
 
 🛠️ Zakres moich kompetencji obejmuje m.in.:
-– aplikacje internetowe (Node.js, React, PostgreSQL)
-– automatyzację i skrypty (Python)
-– gry i silniki gier (Unity, C#, Java)
-– pracę na serwerach (Linux, Windows Server)`,
+– projektowanie i wdrażanie systemów IT
+– aplikacje webowe (Node.js, React, PostgreSQL)
+– automatyzację procesów i skrypty (Python)
+– administrację serwerami (Linux, Windows Server)
+– pluginy i rozszerzenia (Minecraft, Discord)`,
         skills: [
           "Node.js",
           "Express",
           "React",
           "PostgreSQL",
           "Python",
+          "Java",
           "Discord bots",
           "Minecraft plugins (Spigot/Paper)",
-          "Unity",
-          "C#",
           "Linux",
           "Windows Server",
-          "Java",
+          "Unity",
         ],
         projects: [
           {
             title: "Webowy System Magazynowy (WSM)",
             description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, Sequelize, JWT\nFrontend: React, MUI, Chart.js\nNarzędzia: Docker, Git`,
+            image: "/assets/realizacja/wsm_page12_img1.png",
             tags: [
               "Node.js",
               "React",
@@ -50,6 +50,21 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
               "Sequelize",
             ],
             date: "2025-10-10",
+            showGallery: true,
+          },
+          {
+            title: "Strona wizytówkowa — Gabinet Psychoterapii",
+            description: `Strona internetowa dla gabinetu psychoterapeutycznego Piwowarczyk Terapia.\n\nProjekt obejmował zaprojektowanie i wdrożenie responsywnej strony wizytówkowej, prezentującej ofertę gabinetu, informacje o terapeucie oraz dane kontaktowe z integracją mapy Google.\n\nStrona została zoptymalizowana pod kątem SEO i szybkości ładowania, aby zapewnić widoczność w wynikach wyszukiwania i wygodne korzystanie na urządzeniach mobilnych.`,
+            tags: [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Responsywność",
+              "SEO",
+            ],
+            link: "https://www.piwowarczykterapia.pl/",
+            date: "2025",
+            showGallery: false,
           },
         ],
       },
@@ -204,113 +219,124 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
   return (
     <>
       {/* Hero */}
-      <section className="softify-hero position-relative overflow-hidden">
+      <section className="softify-hero position-relative">
         <Container
-          className="text-center text-lg-start position-relative"
+          className="text-center text-lg-start position-relative px-3 px-sm-4 pt-4"
           style={{ zIndex: 1 }}
         >
           <Row className="align-items-center g-3">
-            <Col xs={12} lg={7} className="mx-auto mx-lg-0">
-              <h1 className="display-6 display-lg-5 fw-extrabold mb-2 mb-sm-3 text-white">
-                Daniel Niemiec — Full-Stack & Game Developer
+            <Col xs={12} lg={8} xl={7} className="mx-auto mx-lg-0">
+              <div className="hero-tagline mb-3">
+                <span className="hero-tagline-dot" />
+                Dostępny do współpracy
+              </div>
+              <h1 className="fw-extrabold mb-3 mb-md-4 text-white hero-title">
+                Tworzę rzeczy,<br />
+                które <span className="hero-gradient-text">działają</span> i{" "}
+                <span className="hero-gradient-text">wyglądają.</span>
               </h1>
-              <p className="lead fs-5 fs-md-base text-white-50 mb-3 mb-sm-4">
-                Portfolio projektów, które łączą estetykę i technologię, aby
-                tworzyć dopracowane produkty cyfrowe.
+              <p className="hero-subtitle mb-4">
+                Nowoczesne podejście do rozwiązywania problemów — projektuję,
+                buduję i wdrażam systemy IT dopasowane do potrzeb klienta.
               </p>
-              <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+              <div className="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
                 <Button
                   variant="light"
                   href="#projekty"
-                  className="px-4 py-2 fw-semibold"
+                  className="hero-btn-primary px-4 py-2 fw-semibold rounded-pill"
                 >
-                  Zobacz projekty
+                  Zobacz projekty →
                 </Button>
                 <Button
                   variant="outline-light"
                   href="#autorzy"
-                  className="px-4 py-2 fw-semibold"
+                  className="hero-btn-secondary px-4 py-2 fw-semibold rounded-pill"
                 >
-                  O mnie
+                  Poznaj mnie
                 </Button>
               </div>
             </Col>
           </Row>
         </Container>
         <div className="softify-hero-blur" />
+        <div className="hero-grid-bg" />
       </section>
 
-      {/* About */}
-      <section id="autorzy" className="py-3 py-sm-4 py-md-5">
-        <Container>
-          <h2 className="h5 h4 fw-bold mb-3 mb-sm-4">O mnie</h2>
-
-          <Row className="g-3 g-sm-4 mb-4 justify-content-center">
-            {authors.map((a) => (
-              <Col key={a.id} xs={12} lg={10}>
-                <AuthorCard
-                  id={a.id}
-                  name={a.name}
-                  avatarUrl={a.avatarUrl}
-                  role={a.role}
-                  bio={a.bio}
-                  skills={a.skills}
-                />
-              </Col>
-            ))}
-          </Row>
+      {/* Sekcja O mnie */}
+      <section id="autorzy" className="section-about py-4 py-md-5">
+        <Container className="px-3 px-sm-4">
+          <div className="section-header mb-3 mb-md-4">
+            <span className="section-kicker">Sekcja</span>
+            <h2 className="section-title h4 h3 fw-bold mb-0">O mnie</h2>
+          </div>
+          {authors.map((a) => (
+            <AuthorCard
+              key={a.id}
+              id={a.id}
+              name={a.name}
+              avatarUrl={a.avatarUrl}
+              role={a.role}
+              bio={a.bio}
+              skills={a.skills}
+            />
+          ))}
         </Container>
       </section>
 
-      {/* Portfolio */}
-      <section id="projekty" className="py-3 py-sm-4 py-md-5">
-        <Container>
-          <h2 className="h5 h4 fw-bold mb-3 mb-sm-4">Portfolio</h2>
-
+      {/* Sekcja Portfolio */}
+      <section id="projekty" className="section-portfolio py-4 py-md-5">
+        <Container className="px-3 px-sm-4">
+          <div className="section-header mb-3 mb-md-4">
+            <span className="section-kicker">Sekcja</span>
+            <h2 className="section-title h4 h3 fw-bold mb-0">Portfolio</h2>
+          </div>
           {authors[0]?.projects.length ? (
-            <Row xs={1} sm={1} md={1} lg={2} className="g-3 g-sm-4">
-              {authors[0].projects.map((p) => (
-                <Col key={p.title}>
-                  <ProjectCard
-                    title={p.title}
-                    description={p.description}
-                    tags={p.tags}
-                    galleryLabel="Zobacz galerię projektu"
-                    onGallery={() => galleryRef.current?.open(0)}
-                    link={p.link}
-                  />
-                </Col>
+            <div className="d-flex flex-column gap-3 gap-md-4">
+              {authors[0].projects.map((p, idx) => (
+                <ProjectCard
+                  key={p.title}
+                  title={p.title}
+                  description={p.description}
+                  image={p.image}
+                  tags={p.tags}
+                  galleryLabel="Zobacz galerię projektu"
+                  onGallery={p.showGallery ? () => galleryRef.current?.open(0) : undefined}
+                  link={p.link}
+                  projectNumber={idx + 1}
+                />
               ))}
-            </Row>
+            </div>
           ) : (
             <div className="text-muted">Brak projektów do wyświetlenia.</div>
           )}
+        </Container>
+      </section>
 
-          {/* Contact / Social */}
-          <section
-            id="kontakt"
-            className="mt-3 mt-sm-4 mt-md-5 pt-3 pt-sm-4 border-top"
-          >
-            <h3 className="h6 h5 fw-semibold mb-2 mb-sm-3">Kontakt</h3>
-            <p className="mb-2 mb-sm-3 text-muted small">
-              Masz pytania lub chcesz współpracować? Napisz do mnie.
-            </p>
-            <div className="d-flex flex-column flex-sm-row flex-wrap gap-2">
-              <a
-                className="btn btn-outline-dark w-100 w-sm-auto btn-sm"
-                href="mailto:kontakt@softify.com.pl"
-              >
-                kontakt@softify.com.pl
-              </a>
-              <a
-                className="btn btn-outline-dark w-100 w-sm-auto btn-sm"
-                href="tel:+48514397827"
-                aria-label="Zadzwoń pod numer +48 514 397 827"
-              >
-                +48 514 397 827
-              </a>
-            </div>
-          </section>
+      {/* Sekcja Kontakt */}
+      <section id="kontakt" className="section-contact py-4 py-md-5">
+        <Container className="px-3 px-sm-4">
+          <div className="section-header mb-3">
+            <span className="section-kicker">Sekcja</span>
+            <h3 className="section-title h5 h4 fw-semibold mb-0">Kontakt</h3>
+          </div>
+          <p className="mb-3 text-muted">
+            Masz pytania lub chcesz współpracować? Napisz do mnie.
+          </p>
+          <div className="d-flex flex-column flex-sm-row flex-wrap gap-2 gap-sm-3">
+            <a
+              className="btn btn-outline-dark btn-sm w-100 w-sm-auto"
+              href="mailto:kontakt@softify.com.pl"
+            >
+              kontakt@softify.com.pl
+            </a>
+            <a
+              className="btn btn-outline-dark btn-sm w-100 w-sm-auto"
+              href="tel:+48514397827"
+              aria-label="Zadzwoń pod numer +48 514 397 827"
+            >
+              +48 514 397 827
+            </a>
+          </div>
         </Container>
       </section>
 
