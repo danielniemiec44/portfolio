@@ -234,11 +234,11 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       </section>
 
       {/* About */}
-      <section id="autorzy" className="py-4 py-md-5">
+      <section id="autorzy" className="py-3 py-sm-4 py-md-5">
         <Container>
           <h2 className="h5 h4 fw-bold mb-4">O mnie</h2>
 
-          <Row className="g-4 mb-5 justify-content-center">
+          <Row className="g-3 g-sm-4 mb-4 justify-content-center">
             {authors.map((a) => (
               <Col key={a.id} xs={12} lg={10}>
                 <AuthorCard
@@ -256,12 +256,12 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       </section>
 
       {/* Portfolio */}
-      <section id="projekty" className="py-4 py-md-5">
+      <section id="projekty" className="py-3 py-sm-4 py-md-5">
         <Container>
           <h2 className="h5 h4 fw-bold mb-4">Portfolio</h2>
 
           {authors[0]?.projects.length ? (
-            <Row xs={1} sm={1} md={1} lg={2} className="g-3 g-md-4">
+            <Row xs={1} sm={1} md={1} lg={2} className="g-3 g-sm-4">
               {authors[0].projects.map((p) => (
                 <Col key={p.title}>
                   <ProjectCard
@@ -280,7 +280,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           )}
 
           {/* Contact / Social */}
-          <section id="kontakt" className="mt-4 mt-md-5 pt-4 border-top">
+          <section id="kontakt" className="mt-3 mt-sm-4 mt-md-5 pt-3 pt-sm-4 border-top">
             <h3 className="h6 h5 fw-semibold mb-3">Kontakt</h3>
             <p className="mb-3 text-muted">
               Masz pytania lub chcesz współpracować? Napisz do mnie.
