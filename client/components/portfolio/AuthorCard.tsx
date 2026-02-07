@@ -9,9 +9,19 @@ interface AuthorCardProps {
   avatarUrl?: string;
 }
 
-export default function AuthorCard({ id, name, role, bio, skills, avatarUrl }: AuthorCardProps) {
+export default function AuthorCard({
+  id,
+  name,
+  role,
+  bio,
+  skills,
+  avatarUrl,
+}: AuthorCardProps) {
   return (
-    <RBCard id={id} className="shadow-sm border-0 rounded-4 overflow-hidden softify-card">
+    <RBCard
+      id={id}
+      className="shadow-sm border-0 rounded-4 overflow-hidden softify-card"
+    >
       <RBCard.Body className="p-3 p-sm-4">
         <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 mb-3">
           <img

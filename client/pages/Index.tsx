@@ -41,7 +41,14 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           {
             title: "Webowy System Magazynowy (WSM)",
             description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, Sequelize, JWT\nFrontend: React, MUI, Chart.js\nNarzędzia: Docker, Git`,
-            tags: ["Node.js", "React", "PostgreSQL", "Express", "MUI", "Sequelize"],
+            tags: [
+              "Node.js",
+              "React",
+              "PostgreSQL",
+              "Express",
+              "MUI",
+              "Sequelize",
+            ],
             date: "2025-10-10",
           },
         ],
@@ -208,8 +215,8 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
                 Daniel Niemiec — Full-Stack & Game Developer
               </h1>
               <p className="lead fs-5 fs-md-base text-white-50 mb-3 mb-sm-4">
-                Portfolio projektów, które łączą estetykę i technologię,
-                aby tworzyć dopracowane produkty cyfrowe.
+                Portfolio projektów, które łączą estetykę i technologię, aby
+                tworzyć dopracowane produkty cyfrowe.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
                 <Button
@@ -280,7 +287,10 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           )}
 
           {/* Contact / Social */}
-          <section id="kontakt" className="mt-3 mt-sm-4 mt-md-5 pt-3 pt-sm-4 border-top">
+          <section
+            id="kontakt"
+            className="mt-3 mt-sm-4 mt-md-5 pt-3 pt-sm-4 border-top"
+          >
             <h3 className="h6 h5 fw-semibold mb-2 mb-sm-3">Kontakt</h3>
             <p className="mb-2 mb-sm-3 text-muted small">
               Masz pytania lub chcesz współpracować? Napisz do mnie.

@@ -139,7 +139,9 @@ export default function Layout({ children }: LayoutProps) {
         </Container>
       </Navbar>
 
-      <main className="flex-grow-1" style={{ paddingTop: 0 }}>{children}</main>
+      <main className="flex-grow-1" style={{ paddingTop: 0 }}>
+        {children}
+      </main>
 
       <footer className="py-4 mt-auto border-top bg-white-50">
         <Container className="d-flex flex-wrap align-items-center justify-content-between gap-2 text-muted">
