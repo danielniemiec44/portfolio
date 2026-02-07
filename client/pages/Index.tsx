@@ -236,7 +236,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       {/* About */}
       <section id="autorzy" className="py-3 py-sm-4 py-md-5">
         <Container>
-          <h2 className="h5 h4 fw-bold mb-4">O mnie</h2>
+          <h2 className="h5 h4 fw-bold mb-3 mb-sm-4">O mnie</h2>
 
           <Row className="g-3 g-sm-4 mb-4 justify-content-center">
             {authors.map((a) => (
