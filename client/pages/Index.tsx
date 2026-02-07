@@ -234,9 +234,9 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       </section>
 
       {/* About */}
-      <section id="autorzy" className="py-5">
+      <section id="autorzy" className="py-4 py-md-5">
         <Container>
-          <h2 className="h4 fw-bold mb-4">O mnie</h2>
+          <h2 className="h5 h4 fw-bold mb-4">O mnie</h2>
 
           <Row className="g-4 mb-5 justify-content-center">
             {authors.map((a) => (
@@ -256,12 +256,12 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       </section>
 
       {/* Portfolio */}
-      <section id="projekty" className="py-5">
+      <section id="projekty" className="py-4 py-md-5">
         <Container>
-          <h2 className="h4 fw-bold mb-4">Portfolio</h2>
+          <h2 className="h5 h4 fw-bold mb-4">Portfolio</h2>
 
           {authors[0]?.projects.length ? (
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} sm={1} md={1} lg={2} className="g-3 g-md-4">
               {authors[0].projects.map((p) => (
                 <Col key={p.title}>
                   <ProjectCard
@@ -280,20 +280,20 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           )}
 
           {/* Contact / Social */}
-          <section id="kontakt" className="mt-5 pt-4 border-top">
-            <h3 className="h5 fw-semibold mb-3">Kontakt</h3>
-            <p className="mb-2">
+          <section id="kontakt" className="mt-4 mt-md-5 pt-4 border-top">
+            <h3 className="h6 h5 fw-semibold mb-3">Kontakt</h3>
+            <p className="mb-3 text-muted">
               Masz pytania lub chcesz współpracować? Napisz do mnie.
             </p>
-            <div className="d-flex flex-wrap gap-2">
+            <div className="d-flex flex-column flex-sm-row flex-wrap gap-2">
               <a
-                className="btn btn-outline-dark"
+                className="btn btn-outline-dark w-100 w-sm-auto"
                 href="mailto:kontakt@softify.com.pl"
               >
                 kontakt@softify.com.pl
               </a>
               <a
-                className="btn btn-outline-dark"
+                className="btn btn-outline-dark w-100 w-sm-auto"
                 href="tel:+48514397827"
                 aria-label="Zadzwoń pod numer +48 514 397 827"
               >
