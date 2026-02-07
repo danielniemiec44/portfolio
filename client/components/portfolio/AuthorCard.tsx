@@ -23,16 +23,16 @@ export default function AuthorCard({
       className="shadow-sm border-0 rounded-4 overflow-hidden softify-card"
     >
       <RBCard.Body className="p-3 p-sm-4 p-md-5">
-        <div className="d-flex flex-column flex-sm-row align-items-center align-items-sm-start gap-3 gap-sm-4 mb-3 mb-md-4">
+        <div className="d-flex flex-column align-items-center text-center gap-3 gap-sm-4 mb-3 mb-md-4">
           <img
             src={avatarUrl || "/placeholder.svg"}
             alt={name}
             className="rounded-3 border-2 border-primary-subtle flex-shrink-0"
-            width={64}
-            height={64}
-            style={{ width: '64px', height: '64px' }}
+            width={120}
+            height={120}
+            style={{ width: '120px', height: '120px' }}
           />
-          <div className="w-100 text-center text-sm-start">
+          <div className="w-100 text-center">
             <h3 className="h5 h4 mb-2 fw-bold">{name}</h3>
             <div className="text-secondary fs-6">{role}</div>
           </div>
