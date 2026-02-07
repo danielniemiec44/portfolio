@@ -282,7 +282,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           {/* Contact / Social */}
           <section id="kontakt" className="mt-3 mt-sm-4 mt-md-5 pt-3 pt-sm-4 border-top">
             <h3 className="h6 h5 fw-semibold mb-2 mb-sm-3">Kontakt</h3>
-            <p className="mb-3 text-muted">
+            <p className="mb-2 mb-sm-3 text-muted small">
               Masz pytania lub chcesz współpracować? Napisz do mnie.
             </p>
             <div className="d-flex flex-column flex-sm-row flex-wrap gap-2">
