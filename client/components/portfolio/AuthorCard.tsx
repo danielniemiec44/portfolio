@@ -12,18 +12,18 @@ interface AuthorCardProps {
 export default function AuthorCard({ id, name, role, bio, skills, avatarUrl }: AuthorCardProps) {
   return (
     <RBCard id={id} className="shadow-sm border-0 rounded-4 overflow-hidden softify-card">
-      <RBCard.Body className="p-4">
-        <div className="d-flex align-items-center gap-3 mb-3">
+      <RBCard.Body className="p-3 p-sm-4">
+        <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 mb-3">
           <img
             src={avatarUrl || "/placeholder.svg"}
             alt={name}
-            className="rounded-circle border-2 border-primary-subtle"
-            width={64}
-            height={64}
+            className="rounded-circle border-2 border-primary-subtle flex-shrink-0"
+            width={56}
+            height={56}
           />
-          <div>
-            <h3 className="h5 mb-0 fw-bold">{name}</h3>
-            <div className="text-secondary">{role}</div>
+          <div className="w-100">
+            <h3 className="h6 h5 mb-1 fw-bold">{name}</h3>
+            <div className="text-secondary small text-sm-base">{role}</div>
           </div>
         </div>
 
