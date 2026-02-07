@@ -107,7 +107,7 @@ export default function Layout({ children }: LayoutProps) {
         variant="light"
         style={{ zIndex: 1030, padding: "0.5rem 0" }}
       >
-        <Container fluid className="px-2 px-sm-3 px-lg-0">
+        <Container fluid className="px-3 px-sm-4 px-lg-3">
           <Navbar.Brand
             href="/"
             className="fw-bold text-primary d-flex align-items-center"
