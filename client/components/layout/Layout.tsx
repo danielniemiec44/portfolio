@@ -122,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex flex-column flex-lg-row gap-2 gap-lg-2 align-items-start align-items-lg-center pe-lg-2 pt-2 pt-lg-0">
+            <Nav className="ms-auto d-flex flex-column flex-lg-row gap-2 gap-lg-3 align-items-start align-items-lg-center pe-lg-3 pt-2 pt-lg-0">
               {navItems.map((n) => (
                 <Nav.Link
                   key={n.id}
