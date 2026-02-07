@@ -779,3 +779,73 @@ body.dark-mode .project-number {
   box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
 }
 
+/* ── Scroll fade-in animations ── */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside visible sections */
+.fade-in-section.is-visible .softify-card {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.fade-in-section.is-visible .softify-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.fade-in-section.is-visible .softify-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero entrance animation */
+.softify-hero .hero-tagline {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.softify-hero .hero-title {
+  animation: fadeInUp 0.6s ease-out 0.35s both;
+}
+
+.softify-hero .hero-subtitle {
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.softify-hero .hero-btn-primary,
+.softify-hero .hero-btn-secondary {
+  animation: fadeInUp 0.6s ease-out 0.65s both;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .fade-in-section.is-visible .softify-card,
+  .softify-hero .hero-tagline,
+  .softify-hero .hero-title,
+  .softify-hero .hero-subtitle,
+  .softify-hero .hero-btn-primary,
+  .softify-hero .hero-btn-secondary {
+    animation: none;
+  }
+}

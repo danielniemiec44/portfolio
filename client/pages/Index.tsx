@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AuthorCard from "../components/portfolio/AuthorCard";
 import ProjectCard from "../components/portfolio/ProjectCard";
@@ -6,6 +6,23 @@ import Gallery from "../components/portfolio/Gallery";
 
 export default function Index() {
   const galleryRef = useRef<any>(null);
+
+  // Scroll fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    document.querySelectorAll(".fade-in-section").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const authors = useMemo(
     () => [
       {
@@ -242,17 +259,24 @@ Pracuję w pełnym zakresie — od interfejsu użytkownika, przez logikę biznes
               <div className="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
                 <Button
                   variant="light"
-                  href="#projekty"
+                  href="mailto:kontakt@softify.com.pl"
                   className="hero-btn-primary px-4 py-2 fw-semibold rounded-pill"
                 >
-                  Zobacz projekty →
+                  ✉ Napisz maila
+                </Button>
+                <Button
+                  variant="light"
+                  href="sms:+48514397827"
+                  className="hero-btn-primary px-4 py-2 fw-semibold rounded-pill"
+                >
+                  💬 Wyślij SMS
                 </Button>
                 <Button
                   variant="outline-light"
-                  href="#autorzy"
+                  href="#projekty"
                   className="hero-btn-secondary px-4 py-2 fw-semibold rounded-pill"
                 >
-                  Poznaj mnie
+                  Zobacz projekty →
                 </Button>
               </div>
             </Col>
@@ -263,7 +287,7 @@ Pracuję w pełnym zakresie — od interfejsu użytkownika, przez logikę biznes
       </section>
 
       {/* Sekcja O mnie */}
-      <section id="autorzy" className="section-about py-4 py-md-5">
+      <section id="autorzy" className="section-about py-4 py-md-5 fade-in-section">
         <Container className="px-3 px-sm-4">
           <div className="section-header mb-3 mb-md-4">
             <span className="section-kicker">Sekcja</span>
@@ -284,7 +308,7 @@ Pracuję w pełnym zakresie — od interfejsu użytkownika, przez logikę biznes
       </section>
 
       {/* Sekcja Portfolio */}
-      <section id="projekty" className="section-portfolio py-4 py-md-5">
+      <section id="projekty" className="section-portfolio py-4 py-md-5 fade-in-section">
         <Container className="px-3 px-sm-4">
           <div className="section-header mb-3 mb-md-4">
             <span className="section-kicker">Sekcja</span>
@@ -313,7 +337,7 @@ Pracuję w pełnym zakresie — od interfejsu użytkownika, przez logikę biznes
       </section>
 
       {/* Sekcja Kontakt */}
-      <section id="kontakt" className="section-contact py-4 py-md-5">
+      <section id="kontakt" className="section-contact py-4 py-md-5 fade-in-section">
         <Container className="px-3 px-sm-4">
           <div className="section-header mb-3">
             <span className="section-kicker">Sekcja</span>
