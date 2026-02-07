@@ -34,7 +34,7 @@ body {
   background: var(--softify-surface);
   margin: 0;
   padding: 0 !important;
-  padding-top: 48px !important;
+  padding-top: 56px !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -43,13 +43,14 @@ body {
 .softify-navbar {
   margin-top: 0 !important;
   top: 0 !important;
+  padding: 0.5rem 0 !important;
+  min-height: 56px;
 }
 
-/* reserve space for fixed navbar to avoid content jump */
-@media (min-width: 992px) {
-  body {
-    padding-top: var(--navbar-height) !important;
-  }
+/* ensure content flows properly after fixed navbar */
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* Navbar */
@@ -103,8 +104,10 @@ body {
   background: linear-gradient(180deg, #071020 0%, #0f1723 100%);
   color: #fff;
   position: relative;
-  padding-top: 3.5rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: -56px;
+  padding-top: calc(3rem + 56px);
 }
 .softify-hero .lead {
   color: rgba(255, 255, 255, 0.8);
@@ -210,8 +213,9 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 576px) {
   .softify-hero {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: calc(1.5rem + 56px);
+    padding-bottom: 1.5rem;
+    margin-top: -56px;
   }
 
   .display-6 {
@@ -219,12 +223,15 @@ footer {
   }
 
   .navbar {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    min-height: 56px;
   }
 
   .navbar-brand {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.25rem 0;
   }
 
   .navbar-nav {
@@ -232,13 +239,21 @@ footer {
   }
 
   .navbar-nav .nav-link {
-    padding: 0.5rem 0 !important;
+    padding: 0.75rem 0 !important;
     font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   section {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  section#autorzy,
+  section#projekty,
+  section#kontakt {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   .h5 {
