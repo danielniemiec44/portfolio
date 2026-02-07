@@ -48,11 +48,8 @@ body,
   --navbar-height: 56px;
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
 body {
+  overflow-x: hidden;
   font-family:
     Inter,
     system-ui,
