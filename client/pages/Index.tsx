@@ -204,7 +204,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
         >
           <Row className="align-items-center g-3">
             <Col xs={12} lg={7} className="mx-auto mx-lg-0">
-              <h1 className="display-6 display-lg-5 fw-extrabold mb-1 text-white">
+              <h1 className="display-6 display-lg-5 fw-extrabold mb-2 mb-sm-3 text-white">
                 Daniel Niemiec — Full-Stack & Game Developer
               </h1>
               <p className="lead fs-5 fs-md-base text-white-50 mb-2">
