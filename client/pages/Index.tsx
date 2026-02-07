@@ -197,7 +197,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
   return (
     <>
       {/* Hero */}
-      <section className="softify-hero py-4 py-md-5 py-lg-6 position-relative overflow-hidden">
+      <section className="softify-hero py-3 py-sm-4 py-md-5 py-lg-6 position-relative overflow-hidden">
         <Container
           className="text-center text-lg-start position-relative"
           style={{ zIndex: 1 }}
