@@ -287,13 +287,13 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
             </p>
             <div className="d-flex flex-column flex-sm-row flex-wrap gap-2">
               <a
-                className="btn btn-outline-dark w-100 w-sm-auto"
+                className="btn btn-outline-dark w-100 w-sm-auto btn-sm"
                 href="mailto:kontakt@softify.com.pl"
               >
                 kontakt@softify.com.pl
               </a>
               <a
-                className="btn btn-outline-dark w-100 w-sm-auto"
+                className="btn btn-outline-dark w-100 w-sm-auto btn-sm"
                 href="tel:+48514397827"
                 aria-label="Zadzwoń pod numer +48 514 397 827"
               >
