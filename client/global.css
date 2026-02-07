@@ -210,8 +210,8 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 576px) {
   .softify-hero {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .display-6 {
@@ -223,12 +223,17 @@ footer {
     padding-right: 0.5rem !important;
   }
 
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
   .navbar-nav {
     padding: 0.5rem 0;
   }
 
   .navbar-nav .nav-link {
     padding: 0.5rem 0 !important;
+    font-size: 0.95rem;
   }
 
   section {
