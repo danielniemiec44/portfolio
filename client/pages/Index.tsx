@@ -211,7 +211,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
                 Portfolio projektów, które łączą estetykę i technologię,
                 aby tworzyć dopracowane produkty cyfrowe.
               </p>
-              <div className="d-flex flex-column flex-sm-row gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
+              <div className="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
                 <Button
                   variant="light"
                   href="#projekty"
