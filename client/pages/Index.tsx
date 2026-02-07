@@ -9,50 +9,8 @@ export default function Index() {
   const authors = useMemo(
     () => [
       {
-        id: "autor1",
-        name: "Defective",
-        avatarUrl:
-          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F449a5048a02940ebbd5bfd2fed5e2df2?format=webp&width=800",
-        role: "Java Backend & Embedded Systems Developer",
-        bio: "Jestem zapalonym pasjonatem programowania rozwijającym swoje hobby codziennie od wielu lat. \nWykorzystuję swoją wiedzę do tworzenia zaawansowanych narzędzi dostosowanych do konkretnych potrzeb i projektowania, oraz wdrażania systemów i usług. Zajmuję się również pisaniem i utrzymywaniem botów Discord i tworzeniem rozbudowanych pluginów Minecraft. \nPosiadam ogromne doświadczenie w administracji systemami opartymi na Linuxie (tj. wszelkiego rodzaju VPSy i serwery), oraz tworzeniu i prowadzeniu serwerów Minecraft od podstaw. \nInteresuję się również systemami wbudowanymi opartymi na Raspberry Pi i Arduino, oraz administracją sieciami komputerowymi.",
-        skills: [
-          "Pluginy Minecraft (Bukkit/Spigot/Paper)",
-          "Mody Minecraft (Forge/Fabric)",
-          "Boty Discord",
-          "Usługi",
-          "Systemy wbudowane",
-          "Bazy danych SQL",
-          "Raspberry Pi",
-          "Arduino",
-          "Linux",
-          "Java",
-          "Python",
-          "C",
-          "C#"
-        ],
-        projects: [
-          {
-            title: "Guns",
-            description: `
-            Plugin Minecraft dodajacy strzelankę opartą na Wyścigu Zbrojeń z gry Counter Strike 2
-            z pewnymi urozmaiceniami, takimi jak zniszczalne obiekty na mapie czy autorskie boty z zaawansowaną AI.
-            `,
-            tags: ["Minecraft", "Java", "Closed-Source"],
-            date: "2022-02-01"
-          },
-          {
-            title: "Generator map pogodowych",
-            description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
-Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
-Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
-            tags: ["Android", "Usługa", "Java", "Closed-Source"],
-            date: "2023-06-01",
-          }
-        ]
-      },
-      {
         id: "autor2",
-        name: "DeeRave",
+        name: "Daniel Niemiec",
         avatarUrl:
           "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
         role: "Full‑Stack & Game Developer",
