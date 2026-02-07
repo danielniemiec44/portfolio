@@ -258,7 +258,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
       {/* Portfolio */}
       <section id="projekty" className="py-3 py-sm-4 py-md-5">
         <Container>
-          <h2 className="h5 h4 fw-bold mb-4">Portfolio</h2>
+          <h2 className="h5 h4 fw-bold mb-3 mb-sm-4">Portfolio</h2>
 
           {authors[0]?.projects.length ? (
             <Row xs={1} sm={1} md={1} lg={2} className="g-3 g-sm-4">
