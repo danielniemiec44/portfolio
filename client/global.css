@@ -34,6 +34,7 @@ body {
   background: var(--softify-surface);
   margin: 0;
   padding: 0 !important;
+  padding-top: 48px !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,8 +46,10 @@ body {
 }
 
 /* reserve space for fixed navbar to avoid content jump */
-body {
-  padding-top: var(--navbar-height);
+@media (min-width: 992px) {
+  body {
+    padding-top: var(--navbar-height) !important;
+  }
 }
 
 /* Navbar */
