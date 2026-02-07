@@ -212,7 +212,7 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 576px) {
   .softify-hero {
-    padding-top: calc(1.5rem + 56px);
+    padding-top: calc(1rem + 56px);
     padding-bottom: 1.5rem;
     margin-top: -56px;
   }
