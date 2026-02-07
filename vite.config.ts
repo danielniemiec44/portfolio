@@ -8,6 +8,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [
+      "softify.com.pl",
+      ".softify.com.pl",
+    ],
     fs: {
       allow: ["./client", "./shared", "./node_modules", "./"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],

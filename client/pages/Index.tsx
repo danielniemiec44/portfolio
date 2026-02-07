@@ -14,61 +14,41 @@ export default function Index() {
         avatarUrl:
           "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F449a5048a02940ebbd5bfd2fed5e2df2?format=webp&width=800",
         role: "Java Backend & Embedded Systems Developer",
-        bio: "Java backend developer z doświadczeniem w frameworkach Spring, Javalin i Hibernate. Projektuję oraz wdrażam skalowalne API i rozwiązania oparte na SQL. Posiadam doświadczenie w administracji systemów Linux oraz pracach serwerowych. Dodatkowo pracuję z Pythonem (DSP) i C++ (AVR), tworzę modyfikacje i pluginy do Minecraft (Forge, Fabric, Spigot/Paper) oraz boty i aplikacje dla Discord.",
+        bio: "Jestem zapalonym pasjonatem programowania rozwijającym swoje hobby codziennie od wielu lat. \nWykorzystuję swoją wiedzę do tworzenia zaawansowanych narzędzi dostosowanych do konkretnych potrzeb i projektowania, oraz wdrażania systemów i usług. Zajmuję się również pisaniem i utrzymywaniem botów Discord i tworzeniem rozbudowanych pluginów Minecraft. \nPosiadam ogromne doświadczenie w administracji systemami opartymi na Linuxie (tj. wszelkiego rodzaju VPSy i serwery), oraz tworzeniu i prowadzeniu serwerów Minecraft od podstaw. \nInteresuję się również systemami wbudowanymi opartymi na Raspberry Pi i Arduino, oraz administracją sieciami komputerowymi.",
         skills: [
-          "Java",
-          "Spring",
-          "Javalin",
-          "Hibernate",
-          "SQL",
-          "Python (DSP)",
-          "C++ (AVR)",
+          "Pluginy Minecraft (Bukkit/Spigot/Paper)",
+          "Mody Minecraft (Forge/Fabric)",
+          "Boty Discord",
+          "Usługi",
+          "Systemy wbudowane",
+          "Bazy danych SQL",
+          "Raspberry Pi",
+          "Arduino",
           "Linux",
-          "Minecraft Forge",
-          "Fabric",
-          "Bukkit/Spigot/Paper",
-          "Discord bots",
-          "API Design",
+          "Java",
+          "Python",
+          "C",
+          "C#"
         ],
         projects: [
+          {
+            title: "Guns",
+            description: `
+            Plugin Minecraft dodajacy strzelankę opartą na Wyścigu Zbrojeń z gry Counter Strike 2
+            z pewnymi urozmaiceniami, takimi jak zniszczalne obiekty na mapie czy autorskie boty z zaawansowaną AI.
+            `,
+            tags: ["Minecraft", "Java", "Closed-Source"],
+            date: "2022-02-01"
+          },
           {
             title: "Generator map pogodowych",
             description: `Program do generowania map pogodowych napisany dla ekipy Myszkowskich Łowców Burz.
 Zawiera narzędzia do generowania graficznych mapek i do zarządzania członkami ekipy - wbudowany grafik prognoz, lista nieobecności.
 Projekt ma postać aplikacji na komputer, oraz aplikacji mobilnej wraz z obsługą powiadomień w czasie rzeczywistym.`,
-            tags: ["Java", "Closed-Source"],
+            tags: ["Android", "Usługa", "Java", "Closed-Source"],
             date: "2023-06-01",
-          },
-          {
-            title: "SDR Toolkit",
-            description: `Zestaw narzędzi do interakcji z serwerami RTL-TCP i do podstawowej manipulacji cyfrowymi sygnałami
-
-https://github.com/Defective4/sdr-toolkit`,
-            tags: ["Java", "SDR"],
-            link: "https://github.com/Defective4/sdr-toolkit",
-            date: "2022-11-12",
-          },
-          {
-            title: "JDocDex",
-            description: `Self-hostowalna usługa pozwalajaca na zarządzanie swoją biblioteką dokumentacji w formacie JavaDoc.
-Posiada backend oparty na frameworku Javalin i frontend korzystający z Bootstrap
-
-<Tu będzie link do demo jak zaczne hostować>`,
-            tags: ["Java", "Javalin", "Closed-Source"],
-            date: "2024-02-20",
-          },
-          {
-            title: "VCD4J",
-            description: `Prosta biblioteka do manipulacji plikami VCD (Value Change Dump).
-Pozwala na odczyt i modyfikację plików VCD, odtwarzanie i symulację istniejących nagrań jak i nagrywanie nowych z zewnętrznych źródeł.
-
-https://github.com/Defective4/vcd4j
-github.com`,
-            tags: ["Java", "VCD"],
-            link: "https://github.com/Defective4/vcd4j",
-            date: "2021-08-05",
-          },
-        ],
+          }
+        ]
       },
       {
         id: "autor2",
@@ -76,7 +56,15 @@ github.com`,
         avatarUrl:
           "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
         role: "Full‑Stack & Game Developer",
-        bio: "Tworzę Webowy System Magazynowy (WSM): implementuję mechanizmy logowania, centralny panel nawigacyjny (SPA), responsywne menu mobilne, moduł 'Magazyn' z kategoriami i tabelami produktów, formularze dodawania i edycji, modale analizy ilościowej, listy wydań i przyjęć oraz zaawansowane wykresy. Utrzymuję także panel zarządzania użytkownikami i system audytu operacji.",
+        bio: `Zajmuję się projektowaniem i tworzeniem nowoczesnych aplikacji internetowych oraz gier. Łączę wiedzę techniczną z wyczuciem estetyki, dbając o to, by to, co tworzę, było nie tylko funkcjonalne, ale też wygodne i przyjazne w codziennym użytkowaniu.
+
+Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i działania strony, przez logikę działania aplikacji, aż po zarządzanie danymi i serwerami. Potrafię też tworzyć boty na Discorda, dodatki do gier takich jak Minecraft oraz proste gry w silniku Unity.
+
+🛠️ Zakres moich kompetencji obejmuje m.in.:
+– aplikacje internetowe (Node.js, React, PostgreSQL)
+– automatyzację i skrypty (Python)
+– gry i silniki gier (Unity, C#, Java)
+– pracę na serwerach (Linux, Windows Server)`,
         skills: [
           "Node.js",
           "Express",
@@ -94,8 +82,8 @@ github.com`,
         projects: [
           {
             title: "Webowy System Magazynowy (WSM)",
-            description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, JWT\nFrontend: React, Bootstrap, Chart.js\nNarzędzia: Docker, Git`,
-            tags: ["Node.js", "React", "PostgreSQL", "Express", "Bootstrap"],
+            description: `Webowy System Magazynowy [Node.js, React, PostgreSQL]\nPełnowymiarowy system do zarządzania magazynem stworzony jako praca inżynierska (obroniona 10.10.2025).\n\nSystem oferuje:\n• Zarządzanie stanami magazynowymi z obsługą kategorii i atrybutów produktów\n• Rejestrację operacji magazynowych (WZ, PZ) z automatycznym śleedzeniem stanów\n• Panel administracyjny z zarządzaniem użytkownikami i uprawnieniami\n• System audytu z pełną historią operacji\n• Zaawansowaną wizualizację danych (wykresy, raporty)\n• Responsywny interfejs użytkownika z obsługą urządzeń mobilnych\n• API RESTful z pełną dokumentacją\n• Mechanizmy bezpieczeństwa (JWT, hashowanie, walidacja)\n\nStack technologiczny:\nBackend: Node.js, Express, PostgreSQL, Sequelize, JWT\nFrontend: React, MUI, Chart.js\nNarzędzia: Docker, Git`,
+            tags: ["Node.js", "React", "PostgreSQL", "Express", "MUI", "Sequelize"],
             date: "2025-10-10",
           },
         ],
@@ -168,7 +156,7 @@ github.com`,
       },
       {
         src: "/assets/realizacja/wsm_page21_img1.png",
-        title: "Szczegóły ilo��ciowe produktu – łączony spis wydań i przyjęć",
+        title: "Szczegóły ilościowe produktu – łączony spis wydań i przyjęć",
         description:
           "Chronologiczny wykaz operacji magazynowych (przyjęcia i wydania) z informacją o typie, dokumencie, kontrahencie i zmianach ilości.",
       },
@@ -327,6 +315,7 @@ github.com`,
                       tags={a.projects[0].tags}
                       galleryLabel="Zobacz galerię projektu"
                       onGallery={() => galleryRef.current?.open(0)}
+                      link={a.projects[0].link}
                     />
                   ) : a.projects.length > 1 ? (
                     <Row xs={1} className="g-3">
@@ -336,6 +325,7 @@ github.com`,
                             title={p.title}
                             description={p.description}
                             tags={p.tags}
+                            link={p.link}
                           />
                         </Col>
                       ))}
@@ -362,6 +352,13 @@ github.com`,
                 href="mailto:kontakt@softify.com.pl"
               >
                 kontakt@softify.com.pl
+              </a>
+              <a
+                className="btn btn-outline-dark"
+                href="tel:+48514397827"
+                aria-label="Zadzwoń pod numer +48 514 397 827"
+              >
+                +48 514 397 827
               </a>
             </div>
           </section>
