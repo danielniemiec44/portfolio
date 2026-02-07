@@ -117,7 +117,7 @@ export default function Layout({ children }: LayoutProps) {
               alt="Softify logo"
               className="softify-logo-img me-1 me-sm-2"
             />
-            <span className="d-none d-xs-inline">Softify</span>
+            <span className="d-inline">Softify</span>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
