@@ -12,7 +12,7 @@ export default function Index() {
         id: "autor2",
         name: "Daniel Niemiec",
         avatarUrl:
-          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F6fea1051fc794253aad97e01a82730f6?format=webp&width=800",
+          "https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F24f8ba66bc5c41cd95666d9f9453e7fa",
         role: "Full‑Stack & Game Developer",
         bio: `Zajmuję się projektowaniem i tworzeniem nowoczesnych aplikacji internetowych oraz gier. Łączę wiedzę techniczną z wyczuciem estetyki, dbając o to, by to, co tworzę, było nie tylko funkcjonalne, ale też wygodne i przyjazne w codziennym użytkowaniu.
 
