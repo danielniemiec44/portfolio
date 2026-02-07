@@ -260,43 +260,24 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
         <Container>
           <h2 className="h4 fw-bold mb-4">Portfolio</h2>
 
-          <Row className="g-4">
-            {authors.map((a) => (
-              <Col key={a.id} id={`portfolio-${a.id}`} xs={12} md={6}>
-                <h3 className="h5 fw-semibold mb-3">{a.name}</h3>
-
-                <div className="portfolio-column">
-                  {a.id === "autor2" && a.projects.length === 1 ? (
-                    <ProjectCard
-                      title={a.projects[0].title}
-                      description={a.projects[0].description}
-                      tags={a.projects[0].tags}
-                      galleryLabel="Zobacz galerię projektu"
-                      onGallery={() => galleryRef.current?.open(0)}
-                      link={a.projects[0].link}
-                    />
-                  ) : a.projects.length > 1 ? (
-                    <Row xs={1} className="g-3">
-                      {a.projects.map((p) => (
-                        <Col key={p.title}>
-                          <ProjectCard
-                            title={p.title}
-                            description={p.description}
-                            tags={p.tags}
-                            link={p.link}
-                          />
-                        </Col>
-                      ))}
-                    </Row>
-                  ) : (
-                    <div className="text-muted">
-                      Brak projektów do wyświetlenia.
-                    </div>
-                  )}
-                </div>
-              </Col>
-            ))}
-          </Row>
+          {authors[0]?.projects.length ? (
+            <Row xs={1} md={2} className="g-4">
+              {authors[0].projects.map((p) => (
+                <Col key={p.title}>
+                  <ProjectCard
+                    title={p.title}
+                    description={p.description}
+                    tags={p.tags}
+                    galleryLabel="Zobacz galerię projektu"
+                    onGallery={() => galleryRef.current?.open(0)}
+                    link={p.link}
+                  />
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <div className="text-muted">Brak projektów do wyświetlenia.</div>
+          )}
 
           {/* Contact / Social */}
           <section id="kontakt" className="mt-5 pt-4 border-top">
