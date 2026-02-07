@@ -115,9 +115,9 @@ export default function Layout({ children }: LayoutProps) {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fa60aa1fec7fb40aab924339183f3fd58%2F15aac3ea074c4328a2d0d02199bbede8?format=webp&width=800"
               alt="Softify logo"
-              className="softify-logo-img me-2"
+              className="softify-logo-img me-1 me-sm-2"
             />
-            <span className="d-none d-sm-inline">Softify</span>
+            <span className="d-none d-xs-inline">Softify</span>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
