@@ -202,7 +202,7 @@ Mam umiejętności w zakresie tworzenia kompletnych systemów – od wyglądu i 
           className="text-center text-lg-start position-relative"
           style={{ zIndex: 1 }}
         >
-          <Row className="align-items-center g-2">
+          <Row className="align-items-center g-3">
             <Col xs={12} lg={7} className="mx-auto mx-lg-0">
               <h1 className="display-6 display-lg-5 fw-extrabold mb-1 text-white">
                 Daniel Niemiec — Full-Stack & Game Developer
